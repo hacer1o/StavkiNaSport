@@ -632,6 +632,10 @@ int main(int argc, char* argv[]) {
 	cin >> command_choose1;
 	cout << ("Write number of second command") << endl;
 	cin >> command_choose2;
+	if (command_choose1 == command_choose2 || command_choose1 > 14 || command_choose2 > 14 || command_choose1 < 1 || command_choose2 < 1) {
+		cout << "error" << endl;
+		goto end;
+	}
 	choose_command();
 	//------------------------------------------------------------------Нейрони--------------------------------------------------------
 
@@ -703,6 +707,7 @@ int main(int argc, char* argv[]) {
 	cout << "Tottenham: " << neyr3_14 << " power points." << endl;
 	cout << "Chance of win Tottenham " << neyr3_14 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 	end:
+	cout << "Press any key to continue" << endl;
 	_getch();
 	return 0;
 }
