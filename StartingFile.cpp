@@ -12,8 +12,6 @@ long license_value = -1;
 int days;
 float chance_win;
 //База данних
-// My changes
-// Andriy - new cganges
 int results_correct[] = {//Результати
 	1 , 0 , 2 , 4 , 0 ,10 , 6 , 4 ,11 , 6 , 8 , 3 , 5 , 7 , 0 , 9 , 5 , 6 , 0 ,11 , 2 , 0 , 6 , 0 , 9 , 2 , 0 , 1 , 0 , 1 , 0 , 7 , 7 , 3 , 6 ,11 , 0 , 3 , 4 , 4 , 0 , 8 , 1 ,12 , 8 ,13 , 4 , 7 ,13 , 9 , 9 , 0 ,14 , 0 , 0 , 6 , 9 ,14 , 0 ,11 ,10 ,10 , 0
 };
@@ -78,6 +76,10 @@ int correct;
 int st;
 int real_correct;
 int times_correct;
+
+//Нова механіка вибору команд
+int command_choose1;
+int command_choose2;
 //Змінні для зберігання данних нейронів
 
 int ney1_1;
@@ -146,11 +148,6 @@ double ws3_1; double ws3_2; double ws3_3; double ws3_4; double ws3_5; double ws3
 double ws4_1; double ws4_2; double ws4_3; double ws4_4; double ws4_5; double ws4_6; double ws4_7; double ws4_8; double ws4_9; double ws4_10; double ws4_11; double ws4_12; double ws4_13; double ws4_14;
 double ws5_1; double ws5_2; double ws5_3; double ws5_4; double ws5_5; double ws5_6; double ws5_7; double ws5_8; double ws5_9; double ws5_10; double ws5_11; double ws5_12; double ws5_13; double ws5_14;
 
-/*int ws2_1_1; int ws2_1_2; int ws2_1_3; int ws2_1_4;
-int ws2_2_1; int ws2_2_2; int ws2_2_3; int ws2_2_4;
-int ws2_3_1; int ws2_3_2; int ws2_3_3; int ws2_3_4;
-int ws2_4_1; int ws2_4_2; int ws2_4_3; int ws2_4_4;
-int ws2_5_1; int ws2_5_2; int ws2_5_3; int ws2_5_4;*/
 double ws2_1_1; double ws2_1_2; double ws2_1_3; double ws2_1_4; double ws2_1_5;
 double ws2_2_1; double ws2_2_2; double ws2_2_3; double ws2_2_4; double ws2_2_5;
 double ws2_3_1; double ws2_3_2; double ws2_3_3; double ws2_3_4; double ws2_3_5;
@@ -382,6 +379,37 @@ void load_base() {
 	ney1_13 = command_correct13[st];
 	ney1_14 = command_correct14[st];
 }
+void choose_command() {
+	if (command_choose1 == 1) ney1_1 = 1;
+	else if (command_choose1 == 2) ney1_2 = 1;
+	else if (command_choose1 == 3) ney1_3 = 1;
+	else if (command_choose1 == 4) ney1_4 = 1;
+	else if (command_choose1 == 5) ney1_5 = 1;
+	else if (command_choose1 == 6) ney1_6 = 1;
+	else if (command_choose1 == 7) ney1_7 = 1;
+	else if (command_choose1 == 8) ney1_8 = 1;
+	else if (command_choose1 == 9) ney1_9 = 1;
+	else if (command_choose1 == 10) ney1_10 = 1;
+	else if (command_choose1 == 11) ney1_11 = 1;
+	else if (command_choose1 == 12) ney1_12 = 1;
+	else if (command_choose1 == 13) ney1_13 = 1;
+	else ney1_14 = 1;
+
+	if (command_choose2 == 1) ney1_1 = 1;
+	else if (command_choose2 == 2) ney1_2 = 1;
+	else if (command_choose2 == 3) ney1_3 = 1;
+	else if (command_choose2 == 4) ney1_4 = 1;
+	else if (command_choose2 == 5) ney1_5 = 1;
+	else if (command_choose2 == 6) ney1_6 = 1;
+	else if (command_choose2 == 7) ney1_7 = 1;
+	else if (command_choose2 == 8) ney1_8 = 1;
+	else if (command_choose2 == 9) ney1_9 = 1;
+	else if (command_choose2 == 10) ney1_10 = 1;
+	else if (command_choose2 == 11) ney1_11 = 1;
+	else if (command_choose2 == 12) ney1_12 = 1;
+	else if (command_choose2 == 13) ney1_13 = 1;
+	else ney1_14 = 1;
+}
 int main(int argc, char* argv[]) {
 	omp_set_num_threads(4);
 	//#pragma omp parallel for
@@ -440,6 +468,7 @@ int main(int argc, char* argv[]) {
 	times_correct = 0;
 	allClear();
 	//-----------------------------------------------------------Друга-Стадія-Навчання------------------------------------------------
+	#pragma omp parallel for
 	for (int d = 0; d < 2000; d++) {
 		for (int a = 0; a < 1000; a++) {
 			load_base();
@@ -556,8 +585,6 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-
-
 //1 Ювентус
 //2 Реал Мадрид
 //3 Барселона
@@ -569,36 +596,43 @@ int main(int argc, char* argv[]) {
 //9 Манчестер Сіті
 //10 Челси
 //11 Мілан 
+
 	//-----------------------------------------------------------------Опитування-----------------------------------------------------
+	ney1_1 = 0;
+	ney1_2 = 0;
+	ney1_3 = 0;
+	ney1_4 = 0;
+	ney1_5 = 0;
+	ney1_6 = 0;
+	ney1_7 = 0;
+	ney1_8 = 0;
+	ney1_9 = 0;
+	ney1_10 = 0;
+	ney1_11 = 0;
+	ney1_12 = 0;
+	ney1_13 = 0;
+	ney1_14 = 0;
 	allClear();
-	cout << ("Play Yuwentus?") << endl;
-	cin >> ney1_1;
-	cout << ("Play Real Madrid?") << endl;
-	cin >> ney1_2;
-	cout << ("Play Barselona?") << endl;
-	cin >> ney1_3;
-	cout << ("Play Manchester United?") << endl;
-	cin >> ney1_4;
-	cout << ("Play Arsenal?") << endl;
-	cin >> ney1_5;
-	cout << ("Play Bavaria?") << endl;
-	cin >> ney1_6;
-	cout << ("Play Liverpoul?") << endl;
-	cin >> ney1_7;
-	cout << ("Play Borussia D?") << endl;
-	cin >> ney1_8;
-	cout << ("Play Manchester City?") << endl;
-	cin >> ney1_9;
-	cout << ("Play Chelsi?") << endl;
-	cin >> ney1_10;
-	cout << ("Play Milan?") << endl;
-	cin >> ney1_11;
-	cout << ("Play Bayer?") << endl;
-	cin >> ney1_12;
-	cout << ("Play Lester?") << endl;
-	cin >> ney1_13;
-	cout << ("Play Tottenham?") << endl;
-	cin >> ney1_14;
+	
+	cout << ("1.Yuwentus") << endl;
+	cout << ("2.Real Madrid") << endl;
+	cout << ("3.Barselona") << endl;
+	cout << ("4.Manchester United") << endl;
+	cout << ("5.Arsenal") << endl;
+	cout << ("6.Bavaria") << endl;
+	cout << ("7.Liverpoul") << endl;
+	cout << ("8.Borussia D") << endl;
+	cout << ("9.Manchester City") << endl;
+	cout << ("10.Chelsi") << endl;
+	cout << ("11.Milan") << endl;
+	cout << ("12.Bayer") << endl;
+	cout << ("13.Lester") << endl;
+	cout << ("14.Tottenham") << endl;
+	cout << ("Write number of first command") << endl;
+	cin >> command_choose1;
+	cout << ("Write number of second command") << endl;
+	cin >> command_choose2;
+	choose_command();
 	//------------------------------------------------------------------Нейрони--------------------------------------------------------
 
 	neyron2_1(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws1_1, ws1_2, ws1_3, ws1_4, ws1_5, ws1_6, ws1_7, ws1_8, ws1_9, ws1_10, ws1_11, ws1_12, ws1_13, ws1_14);
