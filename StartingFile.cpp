@@ -677,35 +677,62 @@ int main(int argc, char* argv[]) {
 	else {
 		cout << ("Draw") << endl;
 	}
-	
-	cout << "Yuwentus: "<< neyr3_1 << " power points."<<endl;
-	cout << "Chance of win Yuwentus "<< neyr3_1 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Real Madrid: "<< neyr3_2 << "power points." << endl;
-	cout << "Chance of win Real Madrid "<< neyr3_2 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + +neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Barselona: "<< neyr3_3 << " power points." << endl;
-	cout << "Chance of win Barselona "<< neyr3_3 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Manchester United: "<< neyr3_4 << " power points." << endl;
-	cout << "Chance of win Manchester United " << neyr3_4 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Arsenal: "<< neyr3_5 << " power points." << endl;
-	cout << "Chance of win Arsenal " << neyr3_5 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Bavaria: "<< neyr3_6 << " power points." << endl;
-	cout << "Chance of win Bavaria " << neyr3_6 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Liverpoul: "<< neyr3_7 << " power points." << endl;
-	cout << "Chance of win Liverpoul " << neyr3_7 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Borussia D: "<< neyr3_8 << " power points." << endl;
-	cout << "Chance of win Borussia D " << neyr3_8 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Manchester City: "<< neyr3_9 << " power points." << endl;
-	cout << "Chance of win Manchester City " << neyr3_9 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Chelsi: " <<neyr3_10 << " power points." << endl;
-	cout << "Chance of win Chelsi " << neyr3_10 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Milan: "<< neyr3_11<< " power points." << endl;
-	cout << "Chance of win Milan " << neyr3_11 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Bayer: " << neyr3_12 << " power points." << endl;
-	cout << "Chance of win Bayer " << neyr3_12 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Lester: " << neyr3_13 << " power points." << endl;
-	cout << "Chance of win Lester " << neyr3_13 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
-	cout << "Tottenham: " << neyr3_14 << " power points." << endl;
-	cout << "Chance of win Tottenham " << neyr3_14 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	if (ney1_1) {
+		cout << "Yuwentus: " << neyr3_1 << " power points." << endl;
+		cout << "Chance of win Yuwentus " << neyr3_1 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_2) {
+		cout << "Real Madrid: " << neyr3_2 << "power points." << endl;
+		cout << "Chance of win Real Madrid " << neyr3_2 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + +neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_3) {
+		cout << "Barselona: " << neyr3_3 << " power points." << endl;
+		cout << "Chance of win Barselona " << neyr3_3 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_4) {
+		cout << "Manchester United: " << neyr3_4 << " power points." << endl;
+		cout << "Chance of win Manchester United " << neyr3_4 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_5) {
+		cout << "Arsenal: " << neyr3_5 << " power points." << endl;
+		cout << "Chance of win Arsenal " << neyr3_5 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_6) {
+		cout << "Bavaria: " << neyr3_6 << " power points." << endl;
+		cout << "Chance of win Bavaria " << neyr3_6 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_7) {
+		cout << "Liverpoul: " << neyr3_7 << " power points." << endl;
+		cout << "Chance of win Liverpoul " << neyr3_7 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_8) {
+		cout << "Borussia D: " << neyr3_8 << " power points." << endl;
+		cout << "Chance of win Borussia D " << neyr3_8 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_9) {
+		cout << "Manchester City: " << neyr3_9 << " power points." << endl;
+		cout << "Chance of win Manchester City " << neyr3_9 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_10) {
+		cout << "Chelsi: " << neyr3_10 << " power points." << endl;
+		cout << "Chance of win Chelsi " << neyr3_10 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_11) {
+		cout << "Milan: " << neyr3_11 << " power points." << endl;
+		cout << "Chance of win Milan " << neyr3_11 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_12) {
+		cout << "Bayer: " << neyr3_12 << " power points." << endl;
+		cout << "Chance of win Bayer " << neyr3_12 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_13) {
+		cout << "Lester: " << neyr3_13 << " power points." << endl;
+		cout << "Chance of win Lester " << neyr3_13 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
+	if (ney1_14) {
+		cout << "Tottenham: " << neyr3_14 << " power points." << endl;
+		cout << "Chance of win Tottenham " << neyr3_14 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+	}
 	end:
 	cout << "Press any key to continue" << endl;
 	_getch();
