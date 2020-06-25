@@ -8,7 +8,7 @@
 //				 //
 ///////////////////
 //License
-long license_value = -1;
+//long license_value = -1;
 int days;
 float chance_win;
 //База данних
@@ -419,7 +419,7 @@ int main(int argc, char* argv[]) {
 	fin >> lmasive;
 	fin.close();*/
 	//-----------------Ліцензія----------------------
-		time_t seconds;
+		/*time_t seconds;
 		seconds = time(NULL);
 		days = seconds / 60 / 60 /24;
 		if (days >= license_value && license_value != -1) {
@@ -439,7 +439,7 @@ int main(int argc, char* argv[]) {
 		}
 		else {
 			cout << ("You have unlimited license") << endl;
-		}
+		}*/
 		
 	//-----------------Навчання----------------------
 	
