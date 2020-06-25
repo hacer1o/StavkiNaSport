@@ -420,6 +420,7 @@ int main(int argc, char* argv[]) {
 	fin.close();*/
 	//-----------------Λ³φενη³ÿ----------------------
 		/*time_t seconds;
+
 		seconds = time(NULL);
 		days = seconds / 60 / 60 /24;
 		if (days >= license_value && license_value != -1) {
