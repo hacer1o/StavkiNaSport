@@ -46,14 +46,6 @@ double ney2;
 double ney3;
 double ney4;
 
-double ney3_1;
-double ney3_2;
-double ney3_3;
-double ney3_4;
-double ney3_5;
-double ney3_6;
-double ney3_7;
-
 double ney4_1;
 double ney4_2;
 double ney4_3;
@@ -73,8 +65,8 @@ int abc(float x) {
 	if (x < 0) return x;
 	else return x * -1;
 }
-int neyron2(double n1, double n2, double n3, double n4, double n5, double n6, double n7, double n8, double n9, double n10, double n11, double n12, double n13, double n14, double w1, double w2, double w3, double w4, double w5, double w6, double w7, double w8, double w9, double w10, double w11, double w12, double w13, double w14) {
-	ney2 = n1 * w1 + n2 * w2 + n3 * w3 + n4 * w4 + n5 * w5 + n6 * w6 + n7 * w7 + n8 * w8 + n9 * w9 + n10 * w10 + n11 * w11 + n12 * w12 + n13 * w13 + n14 * w14;
+int neyron2(double field, double wf, double n1, double n2, double n3, double n4, double n5, double n6, double n7, double n8, double n9, double n10, double n11, double n12, double n13, double n14, double w1, double w2, double w3, double w4, double w5, double w6, double w7, double w8, double w9, double w10, double w11, double w12, double w13, double w14) {
+	ney2 = field * wf + n1 * w1 + n2 * w2 + n3 * w3 + n4 * w4 + n5 * w5 + n6 * w6 + n7 * w7 + n8 * w8 + n9 * w9 + n10 * w10 + n11 * w11 + n12 * w12 + n13 * w13 + n14 * w14;
 	return ney2;
 }
 
@@ -88,9 +80,9 @@ int neyron4(double n1, double n2, double n3, double n4, double n5, double n6, do
 	return ney4;
 }
 
-void neyron2_1(double n1, double n2, double n3, double n4, double n5, double n6, double n7, double n8, double n9, double n10, double n11, double n12, double n13, double n14, double w1, double w2, double w3, double w4, double w5, double w6, double w7, double w8, double w9, double w10, double w11, double w12, double w13, double w14) {
+/*void neyron2_1(double n1, double n2, double n3, double n4, double n5, double n6, double n7, double n8, double n9, double n10, double n11, double n12, double n13, double n14, double w1, double w2, double w3, double w4, double w5, double w6, double w7, double w8, double w9, double w10, double w11, double w12, double w13, double w14) {
 	ney2_1 = n1 * w1 /*+ n2 * w2 + n3 * w3 + n4 * w4 + n5 * w5 + n6 * w6 + n7 * w7 + n8 * w8 + n9 * w9 + n10 * w10 + n11 * w11*/;
-	ney2_1 = n2 * w2 + ney2_1;
+/*	ney2_1 = n2 * w2 + ney2_1;
 	ney2_1 = n3 * w3 + ney2_1;
 	ney2_1 = n4 * w4 + ney2_1;
 	ney2_1 = n5 * w5 + ney2_1;
@@ -106,7 +98,7 @@ void neyron2_1(double n1, double n2, double n3, double n4, double n5, double n6,
 }
 void neyron2_2(double n1, double n2, double n3, double n4, double n5, double n6, double n7, double n8, double n9, double n10, double n11, double n12, double n13, double n14, double w1, double w2, double w3, double w4, double w5, double w6, double w7, double w8, double w9, double w10, double w11, double w12, double w13, double w14) {
 	ney2_2 = n1 * w1 /*+ n2 * w2 + n3 * w3 + n4 * w4 + n5 * w5 + n6 * w6 + n7 * w7 + n8 * w8 + n9 * w9 + n10 * w10 + n11 * w11*/;
-	ney2_2 = n2 * w2 + ney2_2;
+	/*ney2_2 = n2 * w2 + ney2_2;
 	ney2_2 = n3 * w3 + ney2_2;
 	ney2_2 = n4 * w4 + ney2_2;
 	ney2_2 = n5 * w5 + ney2_2;
@@ -122,7 +114,7 @@ void neyron2_2(double n1, double n2, double n3, double n4, double n5, double n6,
 }
 void neyron2_3(double n1, double n2, double n3, double n4, double n5, double n6, double n7, double n8, double n9, double n10, double n11, double n12, double n13, double n14, double w1, double w2, double w3, double w4, double w5, double w6, double w7, double w8, double w9, double w10, double w11, double w12, double w13, double w14) {
 	ney2_3 = n1 * w1; /*+ n2_2 * w2_2 + n3_2 * w3_2 + n4_2 * w4_2 + n5_2 * w5_2 + n6_2 * w6_2 + n7_2 * w7_2 + n8_2 * w8_2 + n9_2 * w9_2 + n10_2 * w10_2 + n11_2 * w11_2;*/
-	ney2_3 = n2 * w2 + ney2_3;
+/*	ney2_3 = n2 * w2 + ney2_3;
 	ney2_3 = n3 * w3 + ney2_3;
 	ney2_3 = n4 * w4 + ney2_3;
 	ney2_3 = n5 * w5 + ney2_3;
@@ -138,7 +130,7 @@ void neyron2_3(double n1, double n2, double n3, double n4, double n5, double n6,
 }
 void neyron2_4(double n1, double n2, double n3, double n4, double n5, double n6, double n7, double n8, double n9, double n10, double n11, double n12, double n13, double n14, double w1, double w2, double w3, double w4, double w5, double w6, double w7, double w8, double w9, double w10, double w11, double w12, double w13, double w14) {
 	ney2_4 = n1 * w1;/* + n2_2 * w2_2 + n3_2 * w3_2 + n4_2 * w4_2 + n5_2 * w5_2 + n6_2 * w6_2 + n7_2 * w7_2 + n8_2 * w8_2 + n9_2 * w9_2 + n10_2 * w10_2 + n11_2 * w11_2;*/
-	ney2_4 = n2 * w2 + ney2_4;
+/*	ney2_4 = n2 * w2 + ney2_4;
 	ney2_4 = n3 * w3 + ney2_4;
 	ney2_4 = n4 * w4 + ney2_4;
 	ney2_4 = n5 * w5 + ney2_4;
@@ -154,7 +146,7 @@ void neyron2_4(double n1, double n2, double n3, double n4, double n5, double n6,
 }
 void neyron2_5(double n1, double n2, double n3, double n4, double n5, double n6, double n7, double n8, double n9, double n10, double n11, double n12, double n13, double n14, double w1, double w2, double w3, double w4, double w5, double w6, double w7, double w8, double w9, double w10, double w11, double w12, double w13, double w14) {
 	ney2_5 = n1 * w1;/* + n2_2 * w2_2 + n3_2 * w3_2 + n4_2 * w4_2 + n5_2 * w5_2 + n6_2 * w6_2 + n7_2 * w7_2 + n8_2 * w8_2 + n9_2 * w9_2 + n10_2 * w10_2 + n11_2 * w11_2;*/
-	ney2_5 = n2 * w2 + ney2_5;
+	/*ney2_5 = n2 * w2 + ney2_5;
 	ney2_5 = n3 * w3 + ney2_5;
 	ney2_5 = n4 * w4 + ney2_5;
 	ney2_5 = n5 * w5 + ney2_5;
@@ -171,7 +163,7 @@ void neyron2_5(double n1, double n2, double n3, double n4, double n5, double n6,
 
 void neyron3_1(float w1, float w2, float w3, float w4, float w5) {
 	ney3_1 = ney2_1 * w1; /*+ ney2_2 * w2 + ney2_3 * w3 + ney2_4 * w4;*/
-	ney3_1 = ney2_2 * w2 + ney3_1;
+	/*ney3_1 = ney2_2 * w2 + ney3_1;
 	ney3_1 = ney2_3 * w3 + ney3_1;
 	ney3_1 = ney2_4 * w4 + ney3_1;
 	ney3_1 = ney2_5 * w5 + ney3_1;
@@ -179,14 +171,14 @@ void neyron3_1(float w1, float w2, float w3, float w4, float w5) {
 }
 void neyron3_2(float w1, float w2, float w3, float w4, float w5) {
 	ney3_2 = ney2_1 * w1; /*+ ney2_2 * w2 + ney2_3 * w3 + ney2_4 * w4;*/
-	ney3_2 = ney2_2 * w2 + ney3_2;
+	/*ney3_2 = ney2_2 * w2 + ney3_2;
 	ney3_2 = ney2_3 * w3 + ney3_2;
 	ney3_2 = ney2_4 * w4 + ney3_2;
 	ney3_2 = ney2_5 * w5 + ney3_2;
 }
 void neyron3_3(float w1, float w2, float w3, float w4 , float w5) {
 	ney3_3 = ney2_1 * w1; /*+ ney2_2 * w2 + ney2_3 * w3 + ney2_4 * w4;*/
-	ney3_3 = ney2_2 * w2 + ney3_3;
+	/*ney3_3 = ney2_2 * w2 + ney3_3;
 	ney3_3 = ney2_3 * w3 + ney3_3;
 	ney3_3 = ney2_4 * w4 + ney3_3;
 	ney3_3 = ney2_5 * w5 + ney3_3;
@@ -194,7 +186,7 @@ void neyron3_3(float w1, float w2, float w3, float w4 , float w5) {
 }
 void neyron3_4(float w1, float w2, float w3, float w4, float w5) {
 	ney3_4 = ney2_1 * w1; /*+ ney2_2 * w2 + ney2_3 * w3 + ney2_4 * w4;*/
-	ney3_4 = ney2_2 * w2 + ney3_4;
+	/*ney3_4 = ney2_2 * w2 + ney3_4;
 	ney3_4 = ney2_3 * w3 + ney3_4;
 	ney3_4 = ney2_4 * w4 + ney3_4;
 	ney3_4 = ney2_5 * w5 + ney3_4;
@@ -202,7 +194,7 @@ void neyron3_4(float w1, float w2, float w3, float w4, float w5) {
 }
 void neyron3_5(float w1, float w2, float w3, float w4, float w5) {
 	ney3_5 = ney2_1 * w1;/* + ney2_2 * w2 + ney2_3 * w3 + ney2_4 * w4;*/
-	ney3_5 = ney2_2 * w2 + ney3_5;
+	/*ney3_5 = ney2_2 * w2 + ney3_5;
 	ney3_5 = ney2_3 * w3 + ney3_5;
 	ney3_5 = ney2_4 * w4 + ney3_5;
 	ney3_5 = ney2_5 * w5 + ney3_5;
@@ -276,7 +268,7 @@ int neyron4_13(double w1, double w2, double w3, double w4, double w5, double w6,
 int neyron4_14(double w1, double w2, double w3, double w4, double w5, double w6, double w7) {
 	ney4_14 = ney3_1 * w1 + ney3_2 * w2 + ney3_3 * w3 + ney3_4 * w4 + ney3_5 * w5 + ney3_6 * w6 + ney3_7 * w7;
 	return ney4_14;
-}
+}*/
 void allClear() {
 	ney2_1 = 0;
 	ney2_2 = 0;

@@ -65,7 +65,27 @@ int fist_command_correct[] = {
 int second_command_correct[] = {
 
 };
+int stadiumn_correct[] = {
 
+};
+int first_command_result_correct[] = {
+
+};
+int second_command_result_correct[] = {
+
+};
+
+	//1 Ювентус
+	//2 Реал Мадрид
+	//3 Барселона
+	//4 Манчестер Юнайтед
+	//5 Арсенал
+	//6 Баварія
+	//7 Ліверпуль
+	//8 Борусія
+	//9 Манчестер Сіті
+	//10 Челси
+	//11 Мілан
 */
 //Бібліотеки
 #include <omp.h>
@@ -90,7 +110,7 @@ int times_correct;
 int command_choose1;
 int command_choose2;
 //Змінні для зберігання данних нейронів
-
+int stadiumn_choose;
 int ney1_1;
 int ney1_2;
 int ney1_3;
@@ -105,6 +125,19 @@ int ney1_11;
 int ney1_12;
 int ney1_13;
 int ney1_14;
+int ney2_1;
+int ney2_2;
+int ney2_3;
+int ney2_4;
+int ney2_5;
+
+int ney3_1;
+int ney3_2;
+int ney3_3;
+int ney3_4;
+int ney3_5;
+int ney3_6;
+int ney3_7;
 double neyr3_1;
 double neyr3_2;
 double neyr3_3;
@@ -121,11 +154,11 @@ double neyr3_13;
 double neyr3_14;
 //Ініціалізація весов
 
-double w1_1; double w1_2; double w1_3; double w1_4; double w1_5; double w1_6; double w1_7; double w1_8; double w1_9; double w1_10; double w1_11; double w1_12; double w1_13; double w1_14;
-double w2_1; double w2_2; double w2_3; double w2_4; double w2_5; double w2_6; double w2_7; double w2_8; double w2_9; double w2_10; double w2_11; double w2_12; double w2_13; double w2_14;
-double w3_1; double w3_2; double w3_3; double w3_4; double w3_5; double w3_6; double w3_7; double w3_8; double w3_9; double w3_10; double w3_11; double w3_12; double w3_13; double w3_14;
-double w4_1; double w4_2; double w4_3; double w4_4; double w4_5; double w4_6; double w4_7; double w4_8; double w4_9; double w4_10; double w4_11; double w4_12; double w4_13; double w4_14;
-double w5_1; double w5_2; double w5_3; double w5_4; double w5_5; double w5_6; double w5_7; double w5_8; double w5_9; double w5_10; double w5_11; double w5_12; double w5_13; double w5_14;
+double wf1; double w1_1; double w1_2; double w1_3; double w1_4; double w1_5; double w1_6; double w1_7; double w1_8; double w1_9; double w1_10; double w1_11; double w1_12; double w1_13; double w1_14;
+double wf2; double w2_1; double w2_2; double w2_3; double w2_4; double w2_5; double w2_6; double w2_7; double w2_8; double w2_9; double w2_10; double w2_11; double w2_12; double w2_13; double w2_14;
+double wf3; double w3_1; double w3_2; double w3_3; double w3_4; double w3_5; double w3_6; double w3_7; double w3_8; double w3_9; double w3_10; double w3_11; double w3_12; double w3_13; double w3_14;
+double wf4; double w4_1; double w4_2; double w4_3; double w4_4; double w4_5; double w4_6; double w4_7; double w4_8; double w4_9; double w4_10; double w4_11; double w4_12; double w4_13; double w4_14;
+double wf5; double w5_1; double w5_2; double w5_3; double w5_4; double w5_5; double w5_6; double w5_7; double w5_8; double w5_9; double w5_10; double w5_11; double w5_12; double w5_13; double w5_14;
 
 double w2_1_1; double w2_1_2; double w2_1_3; double w2_1_4; double w2_1_5;
 double w2_2_1; double w2_2_2; double w2_2_3; double w2_2_4; double w2_2_5;
@@ -151,11 +184,11 @@ double w3_13_1; double w3_13_2; double w3_13_3; double w3_13_4; double w3_13_5; 
 double w3_14_1; double w3_14_2; double w3_14_3; double w3_14_4; double w3_14_5; double w3_14_6; double w3_14_7;
 //Ініціалізація весов для збереження
 
-double ws1_1; double ws1_2; double ws1_3; double ws1_4; double ws1_5; double ws1_6; double ws1_7; double ws1_8; double ws1_9; double ws1_10; double ws1_11; double ws1_12; double ws1_13; double ws1_14;
-double ws2_1; double ws2_2; double ws2_3; double ws2_4; double ws2_5; double ws2_6; double ws2_7; double ws2_8; double ws2_9; double ws2_10; double ws2_11; double ws2_12; double ws2_13; double ws2_14;
-double ws3_1; double ws3_2; double ws3_3; double ws3_4; double ws3_5; double ws3_6; double ws3_7; double ws3_8; double ws3_9; double ws3_10; double ws3_11; double ws3_12; double ws3_13; double ws3_14;
-double ws4_1; double ws4_2; double ws4_3; double ws4_4; double ws4_5; double ws4_6; double ws4_7; double ws4_8; double ws4_9; double ws4_10; double ws4_11; double ws4_12; double ws4_13; double ws4_14;
-double ws5_1; double ws5_2; double ws5_3; double ws5_4; double ws5_5; double ws5_6; double ws5_7; double ws5_8; double ws5_9; double ws5_10; double ws5_11; double ws5_12; double ws5_13; double ws5_14;
+double wsf1; double ws1_1; double ws1_2; double ws1_3; double ws1_4; double ws1_5; double ws1_6; double ws1_7; double ws1_8; double ws1_9; double ws1_10; double ws1_11; double ws1_12; double ws1_13; double ws1_14;
+double wsf2; double ws2_1; double ws2_2; double ws2_3; double ws2_4; double ws2_5; double ws2_6; double ws2_7; double ws2_8; double ws2_9; double ws2_10; double ws2_11; double ws2_12; double ws2_13; double ws2_14;
+double wsf3; double ws3_1; double ws3_2; double ws3_3; double ws3_4; double ws3_5; double ws3_6; double ws3_7; double ws3_8; double ws3_9; double ws3_10; double ws3_11; double ws3_12; double ws3_13; double ws3_14;
+double wsf4; double ws4_1; double ws4_2; double ws4_3; double ws4_4; double ws4_5; double ws4_6; double ws4_7; double ws4_8; double ws4_9; double ws4_10; double ws4_11; double ws4_12; double ws4_13; double ws4_14;
+double wsf5; double ws5_1; double ws5_2; double ws5_3; double ws5_4; double ws5_5; double ws5_6; double ws5_7; double ws5_8; double ws5_9; double ws5_10; double ws5_11; double ws5_12; double ws5_13; double ws5_14;
 
 double ws2_1_1; double ws2_1_2; double ws2_1_3; double ws2_1_4; double ws2_1_5;
 double ws2_2_1; double ws2_2_2; double ws2_2_3; double ws2_2_4; double ws2_2_5;
@@ -181,13 +214,29 @@ double ws3_13_1; double ws3_13_2; double ws3_13_3; double ws3_13_4; double ws3_1
 double ws3_14_1; double ws3_14_2; double ws3_14_3; double ws3_14_4; double ws3_14_5; double ws3_14_6; double ws3_14_7;
 
 void neyro_start() {
-	neyron2_1(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w1_1, w1_2, w1_3, w1_4, w1_5, w1_6, w1_7, w1_8, w1_9, w1_10, w1_11, w1_12, w1_13, w1_14);
+/*	neyron2_1(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w1_1, w1_2, w1_3, w1_4, w1_5, w1_6, w1_7, w1_8, w1_9, w1_10, w1_11, w1_12, w1_13, w1_14);
 	neyron2_2(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w2_1, w2_2, w2_3, w2_4, w2_5, w2_6, w2_7, w2_8, w2_9, w2_10, w2_11, w2_12, w2_13, w2_14);
 	neyron2_3(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w3_1, w3_2, w3_3, w3_4, w3_5, w3_6, w3_7, w3_8, w3_9, w3_10, w3_11, w3_12, w3_13, w3_14);
 	neyron2_4(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w4_1, w4_2, w4_3, w4_4, w4_5, w4_6, w4_7, w4_8, w4_9, w4_10, w4_11, w4_12, w4_13, w4_14);
 	neyron2_5(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w5_1, w5_2, w5_3, w5_4, w5_5, w5_6, w5_7, w5_8, w5_9, w5_10, w5_11, w5_12, w5_13, w5_14);
+*/
+	//neyron4(neyron3(neyron2(stadiumn_choose, wf1, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w1_1, w1_2, w1_3, w1_4, w1_5, w1_6, w1_7, w1_8, w1_9, w1_10, w1_11, w1_12, w1_13, w1_14),neyron2(),neyron2(),neyron2(),neyron2(),w2_1_1, w2_1_2, w2_1_3, w2_1_4, w2_1_5)
+	ney2_1 = neyron2(stadiumn_choose, wf1, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w1_1, w1_2, w1_3, w1_4, w1_5, w1_6, w1_7, w1_8, w1_9, w1_10, w1_11, w1_12, w1_13, w1_14);
+	ney2_2 = neyron2(stadiumn_choose, wf2, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w2_1, w2_2, w2_3, w2_4, w2_5, w2_6, w2_7, w2_8, w2_9, w2_10, w2_11, w2_12, w2_13, w2_14);
+	ney2_3 = neyron2(stadiumn_choose, wf3, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w3_1, w3_2, w3_3, w3_4, w3_5, w3_6, w3_7, w3_8, w3_9, w3_10, w3_11, w3_12, w3_13, w3_14);
+	ney2_4 = neyron2(stadiumn_choose, wf4, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w4_1, w4_2, w4_3, w4_4, w4_5, w4_6, w4_7, w4_8, w4_9, w4_10, w4_11, w4_12, w4_13, w4_14);
+	ney2_5 = neyron2(stadiumn_choose, wf5, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w5_1, w5_2, w5_3, w5_4, w5_5, w5_6, w5_7, w5_8, w5_9, w5_10, w5_11, w5_12, w5_13, w5_14);
+	
+	ney3_1 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_1_1, w2_1_2, w2_1_3, w2_1_4, w2_1_5);
+	ney3_2 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_2_1, w2_2_2, w2_2_3, w2_2_4, w2_2_5);
+	ney3_3 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_3_1, w2_3_2, w2_3_3, w2_3_4, w2_3_5);
+	ney3_4 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_4_1, w2_4_2, w2_4_3, w2_4_4, w2_4_5);
+	ney3_5 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_5_1, w2_5_2, w2_5_3, w2_5_4, w2_5_5);
+	ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_6_1, w2_6_2, w2_6_3, w2_6_4, w2_6_5);
+	ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_7_1, w2_7_2, w2_7_3, w2_7_4, w2_7_5);
 
-	neyron3_1(w2_1_1, w2_1_2, w2_1_3, w2_1_4, w2_1_5);
+
+	/*neyron3_1(w2_1_1, w2_1_2, w2_1_3, w2_1_4, w2_1_5);
 	neyron3_2(w2_2_1, w2_2_2, w2_2_3, w2_2_4, w2_2_5);
 	neyron3_3(w2_3_1, w2_3_2, w2_3_3, w2_3_4, w2_3_5);
 	neyron3_4(w2_4_1, w2_4_2, w2_4_3, w2_4_4, w2_4_5);
@@ -208,7 +257,7 @@ void neyro_start() {
 	neyr3_11 = neyron4_11(w3_11_1, w3_11_2, w3_11_3, w3_11_4, w3_11_5, w3_11_6, w3_11_7);
 	neyr3_12 = neyron4_12(w3_12_1, w3_12_2, w3_12_3, w3_12_4, w3_12_5, w3_12_6, w3_12_7);
 	neyr3_13 = neyron4_13(w3_13_1, w3_13_2, w3_13_3, w3_13_4, w3_13_5, w3_13_6, w3_13_7);
-	neyr3_14 = neyron4_14(w3_14_1, w3_14_2, w3_14_3, w3_14_4, w3_14_5, w3_14_6, w3_14_7);
+	neyr3_14 = neyron4_14(w3_14_1, w3_14_2, w3_14_3, w3_14_4, w3_14_5, w3_14_6, w3_14_7);*/
 }
 int arifmetic(double a, double b) {
 	a = a + b;
@@ -246,11 +295,11 @@ void do_correct() {
 	if (neyr3_14 < 0) neyr3_14 = neyr3_14 * -1;
 }
 void allRandom() {
-	w1_1 = ran(); w1_2 = ran(); w1_3 = ran(); w1_4 = ran(); w1_5 = ran(); w1_6 = ran(); w1_7 = ran(); w1_8 = ran(); w1_9 = ran(); w1_10 = ran(); w1_11 = ran();	 w1_12 = ran(); w1_13 = ran(); w1_14 = ran();
-	w2_1 = ran(); w2_2 = ran(); w2_3 = ran(); w2_4 = ran(); w2_5 = ran(); w2_6 = ran(); w2_7 = ran(); w2_8 = ran(); w2_9 = ran(); w2_10 = ran(); w2_11 = ran();	 w2_12 = ran(); w2_13 = ran(); w2_14 = ran();
-	w3_1 = ran(); w3_2 = ran(); w3_3 = ran(); w3_4 = ran(); w3_5 = ran(); w3_6 = ran(); w3_7 = ran(); w3_8 = ran(); w3_9 = ran(); w3_10 = ran(); w3_11 = ran();  w3_12 = ran(); w3_13 = ran(); w3_14 = ran();
-	w4_1 = ran(); w4_2 = ran(); w4_3 = ran(); w4_4 = ran(); w4_5 = ran(); w4_6 = ran(); w4_7 = ran(); w4_8 = ran(); w4_9 = ran(); w4_10 = ran(); w4_11 = ran();  w4_12 = ran(); w4_13 = ran(); w4_14 = ran();
-	w5_1 = ran(); w5_2 = ran(); w5_3 = ran(); w5_4 = ran(); w5_5 = ran(); w5_6 = ran(); w5_7 = ran(); w5_8 = ran(); w5_9 = ran(); w5_10 = ran(); w5_11 = ran();  w5_12 = ran(); w5_13 = ran(); w5_14 = ran();
+	wf1 = ran(); w1_1 = ran(); w1_2 = ran(); w1_3 = ran(); w1_4 = ran(); w1_5 = ran(); w1_6 = ran(); w1_7 = ran(); w1_8 = ran(); w1_9 = ran(); w1_10 = ran(); w1_11 = ran(); w1_12 = ran(); w1_13 = ran(); w1_14 = ran();
+	wf2 = ran(); w2_1 = ran(); w2_2 = ran(); w2_3 = ran(); w2_4 = ran(); w2_5 = ran(); w2_6 = ran(); w2_7 = ran(); w2_8 = ran(); w2_9 = ran(); w2_10 = ran(); w2_11 = ran(); w2_12 = ran(); w2_13 = ran(); w2_14 = ran();
+	wf3 = ran(); w3_1 = ran(); w3_2 = ran(); w3_3 = ran(); w3_4 = ran(); w3_5 = ran(); w3_6 = ran(); w3_7 = ran(); w3_8 = ran(); w3_9 = ran(); w3_10 = ran(); w3_11 = ran(); w3_12 = ran(); w3_13 = ran(); w3_14 = ran();
+	wf4 = ran(); w4_1 = ran(); w4_2 = ran(); w4_3 = ran(); w4_4 = ran(); w4_5 = ran(); w4_6 = ran(); w4_7 = ran(); w4_8 = ran(); w4_9 = ran(); w4_10 = ran(); w4_11 = ran(); w4_12 = ran(); w4_13 = ran(); w4_14 = ran();
+	wf5 = ran(); w5_1 = ran(); w5_2 = ran(); w5_3 = ran(); w5_4 = ran(); w5_5 = ran(); w5_6 = ran(); w5_7 = ran(); w5_8 = ran(); w5_9 = ran(); w5_10 = ran(); w5_11 = ran(); w5_12 = ran(); w5_13 = ran(); w5_14 = ran();
 
 	w2_1_1 = ran(); w2_1_2 = ran(); w2_1_3 = ran(); w2_1_4 = ran();  w2_1_5 = ran();
 	w2_2_1 = ran(); w2_2_2 = ran(); w2_2_3 = ran(); w2_2_4 = ran();  w2_2_5 = ran();
@@ -276,11 +325,11 @@ void allRandom() {
 	w3_14_1 = ran(); w3_14_2 = ran(); w3_14_3 = ran(); w3_14_4 = ran(); w3_14_5 = ran(); w3_14_6 = ran(); w3_14_7 = ran();
 }
 void random1() {
-	w1_1 = ran(); w1_2 = ran(); w1_3 = ran(); w1_4 = ran(); w1_5 = ran(); w1_6 = ran(); w1_7 = ran(); w1_8 = ran(); w1_9 = ran(); w1_10 = ran(); w1_11 = ran();	 w1_12 = ran(); w1_13 = ran(); w1_14 = ran();
-	w2_1 = ran(); w2_2 = ran(); w2_3 = ran(); w2_4 = ran(); w2_5 = ran(); w2_6 = ran(); w2_7 = ran(); w2_8 = ran(); w2_9 = ran(); w2_10 = ran(); w2_11 = ran();	 w2_12 = ran(); w2_13 = ran(); w2_14 = ran();
-	w3_1 = ran(); w3_2 = ran(); w3_3 = ran(); w3_4 = ran(); w3_5 = ran(); w3_6 = ran(); w3_7 = ran(); w3_8 = ran(); w3_9 = ran(); w3_10 = ran(); w3_11 = ran();  w3_12 = ran(); w3_13 = ran(); w3_14 = ran();
-	w4_1 = ran(); w4_2 = ran(); w4_3 = ran(); w4_4 = ran(); w4_5 = ran(); w4_6 = ran(); w4_7 = ran(); w4_8 = ran(); w4_9 = ran(); w4_10 = ran(); w4_11 = ran();  w4_12 = ran(); w4_13 = ran(); w4_14 = ran();
-	w5_1 = ran(); w5_2 = ran(); w5_3 = ran(); w5_4 = ran(); w5_5 = ran(); w5_6 = ran(); w5_7 = ran(); w5_8 = ran(); w5_9 = ran(); w5_10 = ran(); w5_11 = ran();  w5_12 = ran(); w5_13 = ran(); w5_14 = ran();
+	wf1 = ran(); w1_1 = ran(); w1_2 = ran(); w1_3 = ran(); w1_4 = ran(); w1_5 = ran(); w1_6 = ran(); w1_7 = ran(); w1_8 = ran(); w1_9 = ran(); w1_10 = ran(); w1_11 = ran(); w1_12 = ran(); w1_13 = ran(); w1_14 = ran();
+	wf2 = ran(); w2_1 = ran(); w2_2 = ran(); w2_3 = ran(); w2_4 = ran(); w2_5 = ran(); w2_6 = ran(); w2_7 = ran(); w2_8 = ran(); w2_9 = ran(); w2_10 = ran(); w2_11 = ran(); w2_12 = ran(); w2_13 = ran(); w2_14 = ran();
+	wf3 = ran(); w3_1 = ran(); w3_2 = ran(); w3_3 = ran(); w3_4 = ran(); w3_5 = ran(); w3_6 = ran(); w3_7 = ran(); w3_8 = ran(); w3_9 = ran(); w3_10 = ran(); w3_11 = ran(); w3_12 = ran(); w3_13 = ran(); w3_14 = ran();
+	wf4 = ran(); w4_1 = ran(); w4_2 = ran(); w4_3 = ran(); w4_4 = ran(); w4_5 = ran(); w4_6 = ran(); w4_7 = ran(); w4_8 = ran(); w4_9 = ran(); w4_10 = ran(); w4_11 = ran(); w4_12 = ran(); w4_13 = ran(); w4_14 = ran();
+	wf5 = ran(); w5_1 = ran(); w5_2 = ran(); w5_3 = ran(); w5_4 = ran(); w5_5 = ran(); w5_6 = ran(); w5_7 = ran(); w5_8 = ran(); w5_9 = ran(); w5_10 = ran(); w5_11 = ran(); w5_12 = ran(); w5_13 = ran(); w5_14 = ran();
 }
 
 void random2() {
@@ -310,11 +359,11 @@ void random3() {
 	w3_14_1 = ran(); w3_14_2 = ran(); w3_14_3 = ran(); w3_14_4 = ran(); w3_14_5 = ran(); w3_14_6 = ran(); w3_14_7 = ran();
 }
 void save_first() {
-	ws1_1 = w1_1; ws1_2 = w1_2; ws1_3 = w1_3; ws1_4 = w1_4; ws1_5 = w1_5; ws1_6 = w1_6; ws1_7 = w1_7; ws1_8 = w1_8; ws1_9 = w1_9; ws1_10 = w1_10; ws1_11 = w1_11; ws1_12 = w1_12; ws1_13 = w1_13; ws1_14 = w1_14;
-	ws2_1 = w2_1; ws2_2 = w2_2; ws2_3 = w2_3; ws2_4 = w2_4; ws2_5 = w2_5; ws2_6 = w2_6; ws2_7 = w2_7; ws2_8 = w2_8; ws2_9 = w2_9; ws2_10 = w2_10; ws2_11 = w2_11; ws2_12 = w2_12; ws2_13 = w2_13; ws2_14 = w2_14;
-	ws3_1 = w3_1; ws3_2 = w3_2; ws3_3 = w3_3; ws3_4 = w3_4; ws3_5 = w3_5; ws3_6 = w3_6; ws3_7 = w3_7; ws3_8 = w3_8; ws3_9 = w3_9; ws3_10 = w3_10; ws3_11 = w3_11; ws3_12 = w3_12; ws3_13 = w3_13; ws3_14 = w3_14;
-	ws4_1 = w4_1; ws4_2 = w4_2; ws4_3 = w4_3; ws4_4 = w4_4; ws4_5 = w4_5; ws4_6 = w4_6; ws4_7 = w4_7; ws4_8 = w4_8; ws4_9 = w4_9; ws4_10 = w4_10; ws4_11 = w4_11; ws4_12 = w4_12; ws4_13 = w4_13; ws4_14 = w4_14;
-	ws5_1 = w5_1; ws5_2 = w5_2; ws5_3 = w5_3; ws5_4 = w5_4; ws5_5 = w5_5; ws5_6 = w5_6; ws5_7 = w5_7; ws5_8 = w5_8; ws5_9 = w5_9; ws5_10 = w5_10; ws5_11 = w5_11; ws5_12 = w5_12; ws5_13 = w5_13; ws5_14 = w5_14;
+	wsf1 = wf1; ws1_1 = w1_1; ws1_2 = w1_2; ws1_3 = w1_3; ws1_4 = w1_4; ws1_5 = w1_5; ws1_6 = w1_6; ws1_7 = w1_7; ws1_8 = w1_8; ws1_9 = w1_9; ws1_10 = w1_10; ws1_11 = w1_11; ws1_12 = w1_12; ws1_13 = w1_13; ws1_14 = w1_14;
+	wsf2 = wf2; ws2_1 = w2_1; ws2_2 = w2_2; ws2_3 = w2_3; ws2_4 = w2_4; ws2_5 = w2_5; ws2_6 = w2_6; ws2_7 = w2_7; ws2_8 = w2_8; ws2_9 = w2_9; ws2_10 = w2_10; ws2_11 = w2_11; ws2_12 = w2_12; ws2_13 = w2_13; ws2_14 = w2_14;
+	wsf3 = wf3; ws3_1 = w3_1; ws3_2 = w3_2; ws3_3 = w3_3; ws3_4 = w3_4; ws3_5 = w3_5; ws3_6 = w3_6; ws3_7 = w3_7; ws3_8 = w3_8; ws3_9 = w3_9; ws3_10 = w3_10; ws3_11 = w3_11; ws3_12 = w3_12; ws3_13 = w3_13; ws3_14 = w3_14;
+	wsf4 = wf4; ws4_1 = w4_1; ws4_2 = w4_2; ws4_3 = w4_3; ws4_4 = w4_4; ws4_5 = w4_5; ws4_6 = w4_6; ws4_7 = w4_7; ws4_8 = w4_8; ws4_9 = w4_9; ws4_10 = w4_10; ws4_11 = w4_11; ws4_12 = w4_12; ws4_13 = w4_13; ws4_14 = w4_14;
+	wsf5 = wf5; ws5_1 = w5_1; ws5_2 = w5_2; ws5_3 = w5_3; ws5_4 = w5_4; ws5_5 = w5_5; ws5_6 = w5_6; ws5_7 = w5_7; ws5_8 = w5_8; ws5_9 = w5_9; ws5_10 = w5_10; ws5_11 = w5_11; ws5_12 = w5_12; ws5_13 = w5_13; ws5_14 = w5_14;
 
 	ws2_1_1 = w2_1_1; ws2_1_2 = w2_1_2; ws2_1_3 = w2_1_3; ws2_1_4 = w2_1_4; ws2_1_5 = w2_1_5;
 	ws2_2_1 = w2_2_1; ws2_2_2 = w2_2_2; ws2_2_3 = w2_2_3; ws2_2_4 = w2_2_4; ws2_2_4 = w2_2_4;
@@ -340,11 +389,11 @@ void save_first() {
 	ws3_14_1 = w3_14_1; ws3_14_2 = w3_14_2; ws3_14_3 = w3_14_3; ws3_14_4 = w3_14_4; ws3_14_5 = w3_14_5; ws3_14_6 = w3_14_6; ws3_14_7 = w3_14_7;
 }
 void save1() {
-	ws1_1 = arifmetic(ws1_1, w1_1); ws1_2 = arifmetic(ws1_2, w1_2); ws1_3 = arifmetic(ws1_3, w1_3); ws1_4 = arifmetic(ws1_4, w1_4); ws1_5 = arifmetic(ws1_5, w1_5); ws1_6 = arifmetic(ws1_6, w1_6); ws1_7 = arifmetic(ws1_7, w1_7); ws1_8 = arifmetic(ws1_8, w1_8); ws1_9 = arifmetic(ws1_9, w1_9); ws1_10 = arifmetic(ws1_10, w1_10); ws1_11 = arifmetic(ws1_11, w1_11); ws1_12 = arifmetic(ws1_12, w1_12); ws1_13 = arifmetic(ws1_13, w1_13); ws1_14 = arifmetic(ws1_14, w1_14);
-	ws2_1 = arifmetic(ws2_1, w2_1); ws2_2 = arifmetic(ws2_2, w2_2); ws2_3 = arifmetic(ws2_3, w2_3); ws2_4 = arifmetic(ws2_4, w2_4); ws2_5 = arifmetic(ws2_5, w2_5); ws2_6 = arifmetic(ws2_6, w2_6); ws2_7 = arifmetic(ws2_7, w2_7); ws2_8 = arifmetic(ws2_8, w2_8); ws2_9 = arifmetic(ws2_9, w2_9); ws2_10 = arifmetic(ws2_10, w2_10); ws2_11 = arifmetic(ws2_11, w2_11); ws2_12 = arifmetic(ws2_12, w2_12); ws2_13 = arifmetic(ws2_13, w2_13); ws2_14 = arifmetic(ws2_14, w2_14);
-	ws3_1 = arifmetic(ws3_1, w3_1); ws2_2 = arifmetic(ws3_2, w3_2); ws3_3 = arifmetic(ws3_3, w3_3); ws3_4 = arifmetic(ws3_4, w3_4); ws3_5 = arifmetic(ws3_5, w3_5); ws3_6 = arifmetic(ws3_6, w3_6); ws3_7 = arifmetic(ws3_7, w3_7); ws3_8 = arifmetic(ws3_8, w3_8); ws3_9 = arifmetic(ws3_9, w3_9); ws3_10 = arifmetic(ws3_10, w3_10); ws3_11 = arifmetic(ws3_11, w3_11); ws3_12 = arifmetic(ws3_12, w3_12); ws3_13 = arifmetic(ws3_13, w3_13); ws3_14 = arifmetic(ws3_14, w3_14);
-	ws4_1 = arifmetic(ws4_1, w4_1); ws4_2 = arifmetic(ws4_2, w4_2); ws4_3 = arifmetic(ws4_3, w4_3); ws4_4 = arifmetic(ws4_4, w4_4); ws4_5 = arifmetic(ws4_5, w4_5); ws4_6 = arifmetic(ws4_6, w4_6); ws4_7 = arifmetic(ws4_7, w4_7); ws4_8 = arifmetic(ws4_8, w4_8); ws4_9 = arifmetic(ws4_9, w4_9); ws4_10 = arifmetic(ws4_10, w4_10); ws4_11 = arifmetic(ws4_11, w4_11); ws4_12 = arifmetic(ws4_12, w4_12); ws4_13 = arifmetic(ws4_13, w4_13); ws4_14 = arifmetic(ws4_14, w4_14);
-	ws5_1 = arifmetic(ws5_1, w5_1); ws5_2 = arifmetic(ws5_2, w5_2); ws5_3 = arifmetic(ws5_3, w5_3); ws5_4 = arifmetic(ws5_4, w5_4); ws5_5 = arifmetic(ws5_5, w5_5); ws5_6 = arifmetic(ws5_6, w5_6); ws5_7 = arifmetic(ws5_7, w5_7); ws5_8 = arifmetic(ws5_8, w5_8); ws5_9 = arifmetic(ws5_9, w5_9); ws5_10 = arifmetic(ws5_10, w5_10); ws5_11 = arifmetic(ws5_11, w5_11); ws5_12 = arifmetic(ws5_12, w5_12); ws5_13 = arifmetic(ws5_13, w5_13); ws5_14 = arifmetic(ws5_14, w5_14);
+	wsf1 = arifmetic(wf1, wsf1); ws1_1 = arifmetic(ws1_1, w1_1); ws1_2 = arifmetic(ws1_2, w1_2); ws1_3 = arifmetic(ws1_3, w1_3); ws1_4 = arifmetic(ws1_4, w1_4); ws1_5 = arifmetic(ws1_5, w1_5); ws1_6 = arifmetic(ws1_6, w1_6); ws1_7 = arifmetic(ws1_7, w1_7); ws1_8 = arifmetic(ws1_8, w1_8); ws1_9 = arifmetic(ws1_9, w1_9); ws1_10 = arifmetic(ws1_10, w1_10); ws1_11 = arifmetic(ws1_11, w1_11); ws1_12 = arifmetic(ws1_12, w1_12); ws1_13 = arifmetic(ws1_13, w1_13); ws1_14 = arifmetic(ws1_14, w1_14);
+	wsf2 = arifmetic(wf2, wsf2); ws2_1 = arifmetic(ws2_1, w2_1); ws2_2 = arifmetic(ws2_2, w2_2); ws2_3 = arifmetic(ws2_3, w2_3); ws2_4 = arifmetic(ws2_4, w2_4); ws2_5 = arifmetic(ws2_5, w2_5); ws2_6 = arifmetic(ws2_6, w2_6); ws2_7 = arifmetic(ws2_7, w2_7); ws2_8 = arifmetic(ws2_8, w2_8); ws2_9 = arifmetic(ws2_9, w2_9); ws2_10 = arifmetic(ws2_10, w2_10); ws2_11 = arifmetic(ws2_11, w2_11); ws2_12 = arifmetic(ws2_12, w2_12); ws2_13 = arifmetic(ws2_13, w2_13); ws2_14 = arifmetic(ws2_14, w2_14);
+	wsf3 = arifmetic(wf3, wsf3); ws3_1 = arifmetic(ws3_1, w3_1); ws2_2 = arifmetic(ws3_2, w3_2); ws3_3 = arifmetic(ws3_3, w3_3); ws3_4 = arifmetic(ws3_4, w3_4); ws3_5 = arifmetic(ws3_5, w3_5); ws3_6 = arifmetic(ws3_6, w3_6); ws3_7 = arifmetic(ws3_7, w3_7); ws3_8 = arifmetic(ws3_8, w3_8); ws3_9 = arifmetic(ws3_9, w3_9); ws3_10 = arifmetic(ws3_10, w3_10); ws3_11 = arifmetic(ws3_11, w3_11); ws3_12 = arifmetic(ws3_12, w3_12); ws3_13 = arifmetic(ws3_13, w3_13); ws3_14 = arifmetic(ws3_14, w3_14);
+	wsf4 = arifmetic(wf4, wsf4); ws4_1 = arifmetic(ws4_1, w4_1); ws4_2 = arifmetic(ws4_2, w4_2); ws4_3 = arifmetic(ws4_3, w4_3); ws4_4 = arifmetic(ws4_4, w4_4); ws4_5 = arifmetic(ws4_5, w4_5); ws4_6 = arifmetic(ws4_6, w4_6); ws4_7 = arifmetic(ws4_7, w4_7); ws4_8 = arifmetic(ws4_8, w4_8); ws4_9 = arifmetic(ws4_9, w4_9); ws4_10 = arifmetic(ws4_10, w4_10); ws4_11 = arifmetic(ws4_11, w4_11); ws4_12 = arifmetic(ws4_12, w4_12); ws4_13 = arifmetic(ws4_13, w4_13); ws4_14 = arifmetic(ws4_14, w4_14);
+	wsf5 = arifmetic(wf5, wsf5); ws5_1 = arifmetic(ws5_1, w5_1); ws5_2 = arifmetic(ws5_2, w5_2); ws5_3 = arifmetic(ws5_3, w5_3); ws5_4 = arifmetic(ws5_4, w5_4); ws5_5 = arifmetic(ws5_5, w5_5); ws5_6 = arifmetic(ws5_6, w5_6); ws5_7 = arifmetic(ws5_7, w5_7); ws5_8 = arifmetic(ws5_8, w5_8); ws5_9 = arifmetic(ws5_9, w5_9); ws5_10 = arifmetic(ws5_10, w5_10); ws5_11 = arifmetic(ws5_11, w5_11); ws5_12 = arifmetic(ws5_12, w5_12); ws5_13 = arifmetic(ws5_13, w5_13); ws5_14 = arifmetic(ws5_14, w5_14);
 }
 void save2() {
 	ws2_1_1 = arifmetic(ws2_1_1, w2_1_1); ws2_1_2 = arifmetic(ws2_1_2, w2_1_2); ws2_1_3 = arifmetic(ws2_1_3, w2_1_3); ws2_1_4 = arifmetic(ws2_1_4, w2_1_4); ws2_1_5 = arifmetic(ws2_1_5, w2_1_5);
