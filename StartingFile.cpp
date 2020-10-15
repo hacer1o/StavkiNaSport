@@ -8,6 +8,7 @@
 //				 //
 ///////////////////
 //License
+//xgdgysygsysdf
 //long license_value = -1;
 int days;
 float chance_win;
