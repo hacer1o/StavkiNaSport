@@ -9,6 +9,7 @@
 ///////////////////
 //License
 //xgdgysygsysdf
+// vladik PRIVET
 //long license_value = -1;
 int days;
 float chance_win;
