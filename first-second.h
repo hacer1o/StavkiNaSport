@@ -36,11 +36,11 @@ neyron4_11(w3_11_1, w3_11_2, w3_11_3, w3_11_4, w3_11_5);
 #include <math.h>
 #ifndef first_second_H_
 #define first_second_H_
-double ney2_1;
+/*double ney2_1;
 double ney2_2;
 double ney2_3;
 double ney2_4;
-double ney2_5;
+double ney2_5;*/
 
 double ney2;
 double ney3;
@@ -270,7 +270,7 @@ int neyron4_14(double w1, double w2, double w3, double w4, double w5, double w6,
 	return ney4_14;
 }*/
 void allClear() {
-	ney2_1 = 0;
+/*	ney2_1 = 0;
 	ney2_2 = 0;
 	ney2_3 = 0;
 	ney2_4 = 0;
@@ -295,6 +295,6 @@ void allClear() {
 	ney4_11 =0;
 	ney4_12 =0;
 	ney4_13 =0;
-	ney4_14 =0;
+	ney4_14 =0;*/
 }
 #endif
