@@ -105,6 +105,7 @@ int second_command_result_correct[] = {
 #include "first-second.h"
 #include "random.h"
 #include "provirka.h"
+#include "debug_save.h"
 using namespace std;
 int correct;
 int st;
@@ -225,11 +226,11 @@ void neyro_start() {
 	neyron2_4(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w4_1, w4_2, w4_3, w4_4, w4_5, w4_6, w4_7, w4_8, w4_9, w4_10, w4_11, w4_12, w4_13, w4_14);
 	neyron2_5(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w5_1, w5_2, w5_3, w5_4, w5_5, w5_6, w5_7, w5_8, w5_9, w5_10, w5_11, w5_12, w5_13, w5_14);
 */
-	ney2_1 = neyron2(stadiumn_choose, wf1, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w1_1, w1_2, w1_3, w1_4, w1_5, w1_6, w1_7, w1_8, w1_9, w1_10, w1_11, w1_12, w1_13, w1_14);
-	ney2_2 = neyron2(stadiumn_choose, wf2, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w2_1, w2_2, w2_3, w2_4, w2_5, w2_6, w2_7, w2_8, w2_9, w2_10, w2_11, w2_12, w2_13, w2_14);
-	ney2_3 = neyron2(stadiumn_choose, wf3, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w3_1, w3_2, w3_3, w3_4, w3_5, w3_6, w3_7, w3_8, w3_9, w3_10, w3_11, w3_12, w3_13, w3_14);
-	ney2_4 = neyron2(stadiumn_choose, wf4, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w4_1, w4_2, w4_3, w4_4, w4_5, w4_6, w4_7, w4_8, w4_9, w4_10, w4_11, w4_12, w4_13, w4_14);
-	ney2_5 = neyron2(stadiumn_choose, wf5, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w5_1, w5_2, w5_3, w5_4, w5_5, w5_6, w5_7, w5_8, w5_9, w5_10, w5_11, w5_12, w5_13, w5_14);
+	ney2_1 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w1_1, w1_2, w1_3, w1_4, w1_5, w1_6, w1_7, w1_8, w1_9, w1_10, w1_11, w1_12, w1_13, w1_14);
+	ney2_2 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w2_1, w2_2, w2_3, w2_4, w2_5, w2_6, w2_7, w2_8, w2_9, w2_10, w2_11, w2_12, w2_13, w2_14);
+	ney2_3 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w3_1, w3_2, w3_3, w3_4, w3_5, w3_6, w3_7, w3_8, w3_9, w3_10, w3_11, w3_12, w3_13, w3_14);
+	ney2_4 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w4_1, w4_2, w4_3, w4_4, w4_5, w4_6, w4_7, w4_8, w4_9, w4_10, w4_11, w4_12, w4_13, w4_14);
+	ney2_5 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w5_1, w5_2, w5_3, w5_4, w5_5, w5_6, w5_7, w5_8, w5_9, w5_10, w5_11, w5_12, w5_13, w5_14);
 	
 	ney3_1 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_1_1, w2_1_2, w2_1_3, w2_1_4, w2_1_5);
 	ney3_2 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_2_1, w2_2_2, w2_2_3, w2_2_4, w2_2_5);
@@ -519,6 +520,51 @@ void choose_command() {
 	else if (command_choose2 == 13) ney1_13 = 1;
 	else ney1_14 = 1;
 }
+void stadium() {
+	stadium_number = stadiumn_choose;
+	if (stadium_number == 1) {
+		ney1_1 = 2;
+	}
+	else if (stadium_number == 2) {
+		ney1_2 = 2;
+	}
+	else if (stadium_number == 3) {
+		ney1_3 = 2;
+	}
+	else if (stadium_number == 4) {
+		ney1_4 = 2;
+	}
+	else if (stadium_number == 5) {
+		ney1_5 = 2;
+	}
+	else if (stadium_number == 6) {
+		ney1_6 = 2;
+	}
+	else if (stadium_number == 7) {
+		ney1_7 = 2;
+	}
+	else if (stadium_number == 8) {
+		ney1_8 = 2;
+	}
+	else if (stadium_number == 9) {
+		ney1_9 = 2;
+	}
+	else if (stadium_number == 10) {
+		ney1_10 = 2;
+	}
+	else if (stadium_number == 11) {
+		ney1_11 = 2;
+	}
+	else if (stadium_number == 12) {
+		ney1_12 = 2;
+	}
+	else if (stadium_number == 13) {
+		ney1_13 = 2;
+	}
+	else if (stadium_number == 11) {
+		ney1_14 = 2;
+	}
+}
 int main(int argc, char* argv[]) {
 	omp_set_num_threads(4);
 	//#pragma omp parallel for
@@ -557,6 +603,7 @@ int main(int argc, char* argv[]) {
 #pragma omp parallel for
 	for (int i = 0; i <= 1000000; i++) {
 		load_base();
+		stadium();
 		allRandom();
 		neyro_start();
 		do_correct();
@@ -583,6 +630,7 @@ int main(int argc, char* argv[]) {
 		for (int a = 0; a < 1000; a++) {
 			load_base();
 			random3();
+			stadium();
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -598,6 +646,7 @@ int main(int argc, char* argv[]) {
 		for (int b = 0; b < 1000; b++) {
 			random2();
 			load_base();
+			stadium()
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -613,6 +662,7 @@ int main(int argc, char* argv[]) {
 		for (int c = 0; c < 1000; c++) {
 			random1();
 			load_base();
+			stadium();
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -631,6 +681,7 @@ int main(int argc, char* argv[]) {
 	for (int c = 0; c < 50000; c++) {
 		allRandom();
 		load_base();
+		stadium();
 		neyro_start();
 		do_correct();
 		correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -651,6 +702,7 @@ int main(int argc, char* argv[]) {
 		for (int a = 0; a < 1000; a++) {
 			load_base();
 			random3();
+			stadium();
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -666,6 +718,7 @@ int main(int argc, char* argv[]) {
 		for (int b = 0; b < 1000; b++) {
 			random2();
 			load_base();
+			stadium();
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -681,6 +734,7 @@ int main(int argc, char* argv[]) {
 		for (int c = 0; c < 1000; c++) {
 			random1();
 			load_base();
+			stadium();
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -707,6 +761,8 @@ int main(int argc, char* argv[]) {
 	//10 Челси
 	//11 Мілан 
 	for (int i = 0; i > -1; i++) {
+		cout << ("Debug? ");
+		cin >> deb;
 		//-----------------------------------------------------------------Опитування-----------------------------------------------------
 		ney1_1 = 0;
 		ney1_2 = 0;
@@ -744,6 +800,17 @@ int main(int argc, char* argv[]) {
 		cin >> command_choose2;
 		cout << ("Write number of command, whitch play home") << endl;
 		cin >> stadiumn_choose;
+		if (stadium_choose != command_choose1 && stadiumn_choose != command_choose2 && stadiumn_choose != 0) {
+			cout << "Error" << endl;
+			continue;
+		}
+		stadium();
+		if (deb) {
+			debug_file(1 , command_choose1);
+			debug_file(1 , command_choose2);
+			debug_file(1, stadiumn_choose);
+		}
+		
 		if (command_choose1 == command_choose2 || command_choose1 > 14 || command_choose2 > 14 || command_choose1 < 1 || command_choose2 < 1) {
 			cout << "error" << endl;
 			goto end;
@@ -779,11 +846,19 @@ int main(int argc, char* argv[]) {
 		neyr3_12 = neyron4_12(ws3_12_1, ws3_12_2, ws3_12_3, ws3_12_4, ws3_12_5, ws3_12_6, ws3_12_7);
 		neyr3_13 = neyron4_13(ws3_11_1, ws3_11_2, ws3_11_3, ws3_11_4, ws3_11_5, ws3_13_6, ws3_13_7);
 		neyr3_14 = neyron4_14(ws3_12_1, ws3_12_2, ws3_12_3, ws3_12_4, ws3_12_5, ws3_14_6, ws3_14_7);*/
-		ney2_1 = neyron2(stadiumn_choose, wsf1, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws1_1, ws1_2, ws1_3, ws1_4, ws1_5, ws1_6, ws1_7, ws1_8, ws1_9, ws1_10, ws1_11, ws1_12, ws1_13, ws1_14);
-		ney2_2 = neyron2(stadiumn_choose, wsf2, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws2_1, ws2_2, ws2_3, ws2_4, ws2_5, ws2_6, ws2_7, ws2_8, ws2_9, ws2_10, ws2_11, ws2_12, ws2_13, ws2_14);
-		ney2_3 = neyron2(stadiumn_choose, wsf3, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws3_1, ws3_2, ws3_3, ws3_4, ws3_5, ws3_6, ws3_7, ws3_8, ws3_9, ws3_10, ws3_11, ws3_12, ws3_13, ws3_14);
-		ney2_4 = neyron2(stadiumn_choose, wsf4, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws4_1, ws4_2, ws4_3, ws4_4, ws4_5, ws4_6, ws4_7, ws4_8, ws4_9, ws4_10, ws4_11, ws4_12, ws4_13, ws4_14);
-		ney2_5 = neyron2(stadiumn_choose, wsf5, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws5_1, ws5_2, ws5_3, ws5_4, ws5_5, ws5_6, ws5_7, ws5_8, ws5_9, ws5_10, ws5_11, ws5_12, ws5_13, ws5_14);
+		ney2_1 = neyron2(0, wsf1, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws1_1, ws1_2, ws1_3, ws1_4, ws1_5, ws1_6, ws1_7, ws1_8, ws1_9, ws1_10, ws1_11, ws1_12, ws1_13, ws1_14);
+		ney2_2 = neyron2(0, wsf2, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws2_1, ws2_2, ws2_3, ws2_4, ws2_5, ws2_6, ws2_7, ws2_8, ws2_9, ws2_10, ws2_11, ws2_12, ws2_13, ws2_14);
+		ney2_3 = neyron2(0, wsf3, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws3_1, ws3_2, ws3_3, ws3_4, ws3_5, ws3_6, ws3_7, ws3_8, ws3_9, ws3_10, ws3_11, ws3_12, ws3_13, ws3_14);
+		ney2_4 = neyron2(0, wsf4, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws4_1, ws4_2, ws4_3, ws4_4, ws4_5, ws4_6, ws4_7, ws4_8, ws4_9, ws4_10, ws4_11, ws4_12, ws4_13, ws4_14);
+		ney2_5 = neyron2(0, wsf5, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws5_1, ws5_2, ws5_3, ws5_4, ws5_5, ws5_6, ws5_7, ws5_8, ws5_9, ws5_10, ws5_11, ws5_12, ws5_13, ws5_14);
+		if (deb) {
+			debug_file(2, ney2_1);
+			debug_file(2, ney2_2);
+			debug_file(2, ney2_3);
+			debug_file(2, ney2_4);
+			debug_file(2, ney2_5);
+		}
+
 
 		ney3_1 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_1_1, ws2_1_2, ws2_1_3, ws2_1_4, ws2_1_5);
 		ney3_2 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_2_1, ws2_2_2, ws2_2_3, ws2_2_4, ws2_2_5);
@@ -792,7 +867,15 @@ int main(int argc, char* argv[]) {
 		ney3_5 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_5_1, ws2_5_2, ws2_5_3, ws2_5_4, ws2_5_5);
 		ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_6_1, ws2_6_2, ws2_6_3, ws2_6_4, ws2_6_5);
 		ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_7_1, ws2_7_2, ws2_7_3, ws2_7_4, ws2_7_5);
-
+		if (deb) {
+			debug_file(3, ney3_1);
+			debug_file(3, ney3_2);
+			debug_file(3, ney3_3);
+			debug_file(3, ney3_4);
+			debug_file(3, ney3_5);
+			debug_file(3, ney3_6);
+			debug_file(3, ney3_7);
+		}
 		neyr3_1 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ws3_1_1, ws3_1_2, ws3_1_3, ws3_1_4, ws3_1_5, ws3_1_6, ws3_1_7);
 		neyr3_2 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ws3_2_1, ws3_2_2, ws3_2_3, ws3_2_4, ws3_2_5, ws3_2_6, ws3_2_7);
 		neyr3_3 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ws3_3_1, ws3_3_2, ws3_3_3, ws3_3_4, ws3_3_5, ws3_3_6, ws3_3_7);
@@ -808,13 +891,33 @@ int main(int argc, char* argv[]) {
 		neyr3_13 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ws3_13_1, ws3_13_2, ws3_13_3, ws3_13_4, ws3_13_5, ws3_13_6, ws3_13_7);
 		neyr3_14 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ws3_14_1, ws3_14_2, ws3_14_3, ws3_14_4, ws3_14_5, ws3_14_6, ws3_14_7);
 
+		if (deb) {
+			debug_file(4, ney4_1);
+			debug_file(4, ney4_2);
+			debug_file(4, ney4_3);
+			debug_file(4, ney4_4);
+			debug_file(4, ney4_5);
+			debug_file(4, ney4_6);
+			debug_file(4, ney4_7);
+			debug_file(4, ney4_8);
+			debug_file(4, ney4_9);
+			debug_file(4, ney4_10);
+			debug_file(4, ney4_11);
+			debug_file(4, ney4_12);
+			debug_file(4, ney4_13);
+			debug_file(4, ney4_14);
+		}
+
 		do_correct();
 		correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
 		if (correct != 0) {
 			cout << "Number of winning command: " << correct << endl;
 
 		}
-		//dfdfsfs
+		if (deb) {
+			debug_file(5 , correct);
+		}
+		//Кінцевий вивід
 		else {
 			cout << ("Draw") << endl;
 		}
