@@ -7,10 +7,7 @@
 //				 // 
 //				 //
 ///////////////////
-//License
-//xgdgysygsysdf
-// vladik PRIVET
-//long license_value = -1;
+long license_value = -1;
 int days;
 float chance_win;
 int again;
@@ -531,20 +528,20 @@ int main(int argc, char* argv[]) {
 	fin >> lmasive;
 	fin.close();*/
 	//-----------------Ліцензія----------------------
-		/*time_t seconds;
-
+		time_t seconds;
 		seconds = time(NULL);
 		days = seconds / 60 / 60 /24;
+		license_value = 18629 + license_value;
 		if (days >= license_value && license_value != -1) {
 			cout<<("Please buy a new license")<<endl;
-			cout << ("Full Edition 24.99$ per mouth: ") << endl;
+			/*cout << ("Full Edition 24.99$ per mouth: ") << endl;
 			cout << ("Have big Data-Base, all updates is free") << endl << endl;
 			cout << ("Medium Edition  14.99$ per mouth") << endl;
 			cout << ("Have medium Data-Base, some updates are paid") << endl;
 			cout << ("Updates are cost 0.99$ - 4.99$") << endl << endl;
 			cout << ("Basic Edition 9.99$ per mouth") << endl;
 			cout << ("Have small Data-Base, all updates are paid") << endl;
-			cout << ("Updates are cost 0.99$ - 9.99$") << endl;
+			cout << ("Updates are cost 0.99$ - 9.99$") << endl;*/
 			goto end;
 		}
 		if (license_value != -1) {
@@ -552,7 +549,7 @@ int main(int argc, char* argv[]) {
 		}
 		else {
 			cout << ("You have unlimited license") << endl;
-		}*/
+		}
 
 		//-----------------Навчання----------------------
 
