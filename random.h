@@ -5,7 +5,7 @@ int chisla;
 int ran() {
 	while (1) {
 		chisla = rand();
-		if (chisla > -15 && chisla < 15) {
+		if (chisla > -12 && chisla < 12) {
 			return chisla;
 			break;
 		}

@@ -12,7 +12,7 @@ int days;
 float chance_win;
 int again;
 int stadium_number;
-int debbv;
+int debb;
 //База данних
 /* Alpha-Testing Data-Base
 int results_correct[] = {//Результати
@@ -107,8 +107,8 @@ int second_command_result_correct[] = {
 #include "first-second.h"
 #include "random.h"
 #include "provirka.h"
-#include "debug_save.h"
 #include <thread>
+#include <fstream>
 using namespace std;
 
 int correct;
@@ -222,6 +222,47 @@ double ws3_11_1; double ws3_11_2; double ws3_11_3; double ws3_11_4; double ws3_1
 double ws3_12_1; double ws3_12_2; double ws3_12_3; double ws3_12_4; double ws3_12_5; double ws3_12_6; double ws3_12_7;
 double ws3_13_1; double ws3_13_2; double ws3_13_3; double ws3_13_4; double ws3_13_5; double ws3_13_6; double ws3_13_7;
 double ws3_14_1; double ws3_14_2; double ws3_14_3; double ws3_14_4; double ws3_14_5; double ws3_14_6; double ws3_14_7;
+
+int* debug_arr = new int[1000];
+int debug_arr_inf;
+void debug_file(int debug_code, int debug_status) {
+	ofstream fout("debug_log.txt");
+	if (debug_code == 1) {
+		debug_arr[debug_arr_inf] = 111;
+		debug_arr_inf++;
+		debug_arr[debug_arr_inf] = debug_status;
+		debug_arr_inf++;
+	}
+	else if (debug_code == 2) {
+		debug_arr[debug_arr_inf] = 211;
+		debug_arr_inf++;
+		debug_arr[debug_arr_inf] = debug_status;
+		debug_arr_inf++;
+	}
+	else if (debug_code == 3) {
+		debug_arr[debug_arr_inf] = 311;
+		debug_arr_inf++;
+		debug_arr[debug_arr_inf] = debug_status;
+		debug_arr_inf++;
+	}
+	else if (debug_code == 4) {
+		debug_arr[debug_arr_inf] = 411;
+		debug_arr_inf++;
+		debug_arr[debug_arr_inf] = debug_status;
+		debug_arr_inf++;
+	}
+	else if (debug_code == 5) {
+		debug_arr[debug_arr_inf] = 511;
+		debug_arr_inf++;
+		debug_arr[debug_arr_inf] = debug_status;
+		debug_arr_inf++;
+	}
+	else {
+		fout << debug_arr;
+		fout.close();
+	}
+	
+}
 
 void neyro_start() {
 /*	neyron2_1(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w1_1, w1_2, w1_3, w1_4, w1_5, w1_6, w1_7, w1_8, w1_9, w1_10, w1_11, w1_12, w1_13, w1_14);
@@ -610,12 +651,13 @@ int main(int argc, char* argv[]) {
 		}
 		thread th(random1);
 		thread th1(random2);
-		random3();
-		thread th2(load_base);
+		thread th2(random3);
+		thread th3(load_base);
 		stadium();
 		th.join();
 		th1.join();
 		th2.join();
+		th3.join();
 		neyro_start();
 		do_correct();
 		correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -628,8 +670,10 @@ int main(int argc, char* argv[]) {
 		}
 		if (correct == real_correct && times_correct != 0) {
 			save1();
-			save2();
-			save3();
+			thread th(save2);
+			thread th1(save3);
+			th.join();
+			th1.join();
 		}
 		st++;
 	}
@@ -637,7 +681,7 @@ int main(int argc, char* argv[]) {
 	allClear();
 	//-----------------------------------------------------------Друга-Стадія-Навчання------------------------------------------------
 #pragma omp parallel for
-	for (int d = 0; d < 20; d++) {
+	for (int d = 1; d < 20; d++) {
 		cout << d + 40<< endl;
 		for (int a = 0; a < 100; a++) {
 			thread th(load_base);
@@ -730,11 +774,9 @@ int main(int argc, char* argv[]) {
 	for (int d = 0; d < 20; d++) {
 		cout << d + 80 << endl;
 		for (int a = 0; a < 100; a++) {
-			thread th(load_base);
-			thread th1(random3);
+			load_base();
+			random3();
 			stadium();
-			th.join();
-			th1.join();
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -794,8 +836,8 @@ int main(int argc, char* argv[]) {
 	//11 Мілан 
 	
 	for (int i = 0; i > -1; i++) {
-		cout << ("Debug? ");
-		cin >> debbv;
+		/*cout << ("Debug? ");
+		cin >> debb;*/
 		//-----------------------------------------------------------------Опитування-----------------------------------------------------
 		ney1_1 = 0;
 		ney1_2 = 0;
@@ -838,7 +880,7 @@ int main(int argc, char* argv[]) {
 			continue;
 		}
 		stadium();
-		if (debbv == 1) {
+		if (debb == 1) {
 			debug_file(1, command_choose1);
 			debug_file(1, command_choose2);
 			debug_file(1, stadiumn_choose);
@@ -884,7 +926,7 @@ int main(int argc, char* argv[]) {
 		ney2_3 = neyron2(0, wsf3, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws3_1, ws3_2, ws3_3, ws3_4, ws3_5, ws3_6, ws3_7, ws3_8, ws3_9, ws3_10, ws3_11, ws3_12, ws3_13, ws3_14);
 		ney2_4 = neyron2(0, wsf4, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws4_1, ws4_2, ws4_3, ws4_4, ws4_5, ws4_6, ws4_7, ws4_8, ws4_9, ws4_10, ws4_11, ws4_12, ws4_13, ws4_14);
 		ney2_5 = neyron2(0, wsf5, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws5_1, ws5_2, ws5_3, ws5_4, ws5_5, ws5_6, ws5_7, ws5_8, ws5_9, ws5_10, ws5_11, ws5_12, ws5_13, ws5_14);
-		if (debbv == 1) {
+		if (debb == 1) {
 			debug_file(2, ney2_1);
 			debug_file(2, ney2_2);
 			debug_file(2, ney2_3);
@@ -900,7 +942,7 @@ int main(int argc, char* argv[]) {
 		ney3_5 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_5_1, ws2_5_2, ws2_5_3, ws2_5_4, ws2_5_5);
 		ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_6_1, ws2_6_2, ws2_6_3, ws2_6_4, ws2_6_5);
 		ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_7_1, ws2_7_2, ws2_7_3, ws2_7_4, ws2_7_5);
-		if (debbv == 1) {
+		if (debb == 1) {
 			debug_file(3, ney3_1);
 			debug_file(3, ney3_2);
 			debug_file(3, ney3_3);
@@ -924,7 +966,7 @@ int main(int argc, char* argv[]) {
 		neyr3_13 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ws3_13_1, ws3_13_2, ws3_13_3, ws3_13_4, ws3_13_5, ws3_13_6, ws3_13_7);
 		neyr3_14 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ws3_14_1, ws3_14_2, ws3_14_3, ws3_14_4, ws3_14_5, ws3_14_6, ws3_14_7);
 
-		if (debbv == 1) {
+		if (debb == 1) {
 			debug_file(4, ney4_1);
 			debug_file(4, ney4_2);
 			debug_file(4, ney4_3);
@@ -947,7 +989,7 @@ int main(int argc, char* argv[]) {
 			cout << "Number of winning command: " << correct << endl;
 
 		}
-		if (debbv == 1) {
+		if (debb == 1) {
 			debug_file(5, correct);
 		}
 		//Кінцевий вивід
