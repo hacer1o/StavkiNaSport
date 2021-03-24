@@ -3,7 +3,7 @@
 //		by		 //
 //				 //
 // @viiiiiiiitya //
-//				 //
+// @HaceR tg	 //
 //				 // 
 //				 //
 ///////////////////
@@ -109,6 +109,9 @@ int second_command_result_correct[] = {
 #include "provirka.h"
 #include <thread>
 #include <fstream>
+#include <Windows.h>
+#include<Psapi.h>
+#include <intrin.h>
 using namespace std;
 
 int correct;
@@ -222,6 +225,75 @@ double ws3_11_1; double ws3_11_2; double ws3_11_3; double ws3_11_4; double ws3_1
 double ws3_12_1; double ws3_12_2; double ws3_12_3; double ws3_12_4; double ws3_12_5; double ws3_12_6; double ws3_12_7;
 double ws3_13_1; double ws3_13_2; double ws3_13_3; double ws3_13_4; double ws3_13_5; double ws3_13_6; double ws3_13_7;
 double ws3_14_1; double ws3_14_2; double ws3_14_3; double ws3_14_4; double ws3_14_5; double ws3_14_6; double ws3_14_7;
+
+namespace
+{
+
+	struct cpuid_regs
+	{
+		DWORD   Eax;
+		DWORD   Ebx;
+		DWORD   Ecx;
+		DWORD   Edx;
+	};
+
+	std::string SplitIntoChars(DWORD Value)
+	{
+		std::string Str;
+		char const* pCursor = (char const*)&Value;
+		for (int i = 0; i < sizeof(Value); ++i) {
+			Str += pCursor[i];
+		}
+		return Str;
+	}
+
+	std::string GetCpuVendorSubstring(DWORD Eax)
+	{
+		cpuid_regs Regs;
+		__cpuid((int*)&Regs, Eax);
+		std::string Str;
+		Str += SplitIntoChars(Regs.Eax);
+		Str += SplitIntoChars(Regs.Ebx);
+		Str += SplitIntoChars(Regs.Ecx);
+		Str += SplitIntoChars(Regs.Edx);
+		return Str;
+	}
+
+	std::string GetCpuVendorString()
+	{
+		std::string VendorString;
+		cpuid_regs Regs;
+		__cpuid((int*)&Regs, 0x80000000);
+		if (Regs.Eax >= 0x80000004)
+		{
+			VendorString =
+				GetCpuVendorSubstring(0x80000002) +
+				GetCpuVendorSubstring(0x80000003) +
+				GetCpuVendorSubstring(0x80000004)
+				;
+		}
+		return VendorString;
+	}
+
+} // namespace
+
+
+
+int _stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int fShow)
+{
+	UNREFERENCED_PARAMETER(hInstance);
+	UNREFERENCED_PARAMETER(hPrevInstance);
+	UNREFERENCED_PARAMETER(pCmdLine);
+	UNREFERENCED_PARAMETER(fShow);
+
+	MessageBoxA(
+		NULL,
+		GetCpuVendorString().c_str(),
+		"INFO - CPUID Vendor String",
+		MB_ICONINFORMATION
+	);
+	return EXIT_SUCCESS;
+}
 
 int* debug_arr = new int[1000];
 int debug_arr_inf;
@@ -611,7 +683,36 @@ void stadium() {
 	}
 }
 int main(int argc, char* argv[]) {
-	omp_set_num_threads(4);
+	cout << ("***************************************") << endl;
+	cout << ("****00000000****0********0***00000*****") << endl;
+	cout << ("***00***********0*******00***0****0****") << endl;
+	cout << ("****00**********0******000***0****00***") << endl;
+	cout << ("*****00*********0*****00*0***0*****0***") << endl;
+	cout << ("******0000******0****00**0***0*****0***") << endl;
+	cout << ("*********00*****0***00***0***0****0****") << endl;
+	cout << ("**********00****0**00****0***00000*****") << endl;
+	cout << ("***********00***0*00*****0***0*********") << endl;
+	cout << ("****00000000****000******0***0*********") << endl;
+	cout << ("***************************************") << endl;
+	cout << endl << endl;
+	cout << ("######################################") << endl;
+	cout << ("Stavki Na sPort Beta 1.0") << endl;
+	cout << ("######################################") << endl;
+	cout << ("Maded by HaceR") << endl;
+	cout << endl;
+	int cores_count = thread::hardware_concurrency(); //”знаем к-во €дер
+	string get_sys_info = GetCpuVendorString();
+	cout << get_sys_info << endl;
+	if (cores_count < 4) {
+		cout << ("Your cpu have ") << cores_count << (" cores. Need 4 or more cores") << endl;
+		goto end;
+	}
+	else {
+		cout << ("CPU cores: ") << cores_count << endl;
+	}
+	cout << endl << endl;
+	cout << endl << endl;
+	//omp_set_num_threads(4);
 	//#pragma omp parallel for
 	setlocale(LC_ALL, "rus");
 	/*ofstream fout("data_base", ios_base::trunc);
