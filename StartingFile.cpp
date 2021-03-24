@@ -11,6 +11,8 @@ long license_value = -1;
 int days;
 float chance_win;
 int again;
+int stadium_number;
+int debbv;
 //База данних
 /* Alpha-Testing Data-Base
 int results_correct[] = {//Результати
@@ -106,7 +108,9 @@ int second_command_result_correct[] = {
 #include "random.h"
 #include "provirka.h"
 #include "debug_save.h"
+#include <thread>
 using namespace std;
+
 int correct;
 int st;
 int real_correct;
@@ -574,7 +578,7 @@ int main(int argc, char* argv[]) {
 	fin >> lmasive;
 	fin.close();*/
 	//-----------------Ліцензія----------------------
-		time_t seconds;
+		/*time_t seconds;
 		seconds = time(NULL);
 		days = seconds / 60 / 60 /24;
 		license_value = 18629 + license_value;
@@ -588,23 +592,30 @@ int main(int argc, char* argv[]) {
 			cout << ("Basic Edition 9.99$ per mouth") << endl;
 			cout << ("Have small Data-Base, all updates are paid") << endl;
 			cout << ("Updates are cost 0.99$ - 9.99$") << endl;*/
-			goto end;
-		}
+		/*}
 		if (license_value != -1) {
 			cout << ("You can use this programe: ") << license_value - days << (" days") << endl;
 		}
 		else {
 			cout << ("You have unlimited license") << endl;
-		}
+		}*/
 
 		//-----------------Навчання----------------------
 
 	cout << "Programe is learning" << endl << "Please wait" << endl << endl;
-#pragma omp parallel for
-	for (int i = 0; i <= 1000000; i++) {
-		load_base();
+//#pragma omp parallel for
+	for (int i = 0; i <= 1000; i++) {
+		if (i % 25 == 0) {
+			cout << i / 25 << endl;
+		}
+		thread th(random1);
+		thread th1(random2);
+		random3();
+		thread th2(load_base);
 		stadium();
-		allRandom();
+		th.join();
+		th1.join();
+		th2.join();
 		neyro_start();
 		do_correct();
 		correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -626,11 +637,15 @@ int main(int argc, char* argv[]) {
 	allClear();
 	//-----------------------------------------------------------Друга-Стадія-Навчання------------------------------------------------
 #pragma omp parallel for
-	for (int d = 0; d < 2000; d++) {
-		for (int a = 0; a < 1000; a++) {
-			load_base();
-			random3();
-			stadium();
+	for (int d = 0; d < 20; d++) {
+		cout << d + 40<< endl;
+		for (int a = 0; a < 100; a++) {
+			thread th(load_base);
+			thread th1(random3);
+			thread th2(stadium);
+			th.join();
+			th1.join();
+			th2.join();
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -643,10 +658,13 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int b = 0; b < 1000; b++) {
-			random2();
-			load_base();
-			stadium()
+		for (int b = 0; b < 100; b++) {
+			thread th(random2);
+			thread th1(load_base);
+			thread th2(stadium);
+			th.join();
+			th1.join();
+			th2.join();
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -659,10 +677,12 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int c = 0; c < 1000; c++) {
-			random1();
-			load_base();
+		for (int c = 0; c < 100; c++) {
+			thread th(random1);
+			thread th1(load_base);
 			stadium();
+			th.join();
+			th1.join();
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -678,10 +698,19 @@ int main(int argc, char* argv[]) {
 	}
 	//-----------------------------------------------------------Третя-Стадія-Навчання------------------------------------------------
 
-	for (int c = 0; c < 50000; c++) {
-		allRandom();
-		load_base();
+	for (int c = 0; c < 500; c++) {
+		if (c % 25 == 0) {
+			cout << c / 25 + 60 << endl;
+		}
+
+		random1();
+		thread th(random2);
+		thread th1(random3);
+		thread th2(load_base);
 		stadium();
+		th.join();
+		th1.join();
+		th2.join();
 		neyro_start();
 		do_correct();
 		correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -698,11 +727,14 @@ int main(int argc, char* argv[]) {
 	}
 	//---------------------------------------------------------------Четверта-Стадія-Навчання---------------------------------------------
 
-	for (int d = 0; d < 1000; d++) {
-		for (int a = 0; a < 1000; a++) {
-			load_base();
-			random3();
+	for (int d = 0; d < 20; d++) {
+		cout << d + 80 << endl;
+		for (int a = 0; a < 100; a++) {
+			thread th(load_base);
+			thread th1(random3);
 			stadium();
+			th.join();
+			th1.join();
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -715,7 +747,7 @@ int main(int argc, char* argv[]) {
 				save3();
 			}
 		}
-		for (int b = 0; b < 1000; b++) {
+		for (int b = 0; b < 100; b++) {
 			random2();
 			load_base();
 			stadium();
@@ -731,7 +763,7 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int c = 0; c < 1000; c++) {
+		for (int c = 0; c < 100; c++) {
 			random1();
 			load_base();
 			stadium();
@@ -760,9 +792,10 @@ int main(int argc, char* argv[]) {
 	//9 Манчестер Сіті
 	//10 Челси
 	//11 Мілан 
+	
 	for (int i = 0; i > -1; i++) {
 		cout << ("Debug? ");
-		cin >> deb;
+		cin >> debbv;
 		//-----------------------------------------------------------------Опитування-----------------------------------------------------
 		ney1_1 = 0;
 		ney1_2 = 0;
@@ -800,17 +833,17 @@ int main(int argc, char* argv[]) {
 		cin >> command_choose2;
 		cout << ("Write number of command, whitch play home") << endl;
 		cin >> stadiumn_choose;
-		if (stadium_choose != command_choose1 && stadiumn_choose != command_choose2 && stadiumn_choose != 0) {
+		if (stadiumn_choose != command_choose1 && stadiumn_choose != command_choose2 && stadiumn_choose != 0) {
 			cout << "Error" << endl;
 			continue;
 		}
 		stadium();
-		if (deb) {
-			debug_file(1 , command_choose1);
-			debug_file(1 , command_choose2);
+		if (debbv == 1) {
+			debug_file(1, command_choose1);
+			debug_file(1, command_choose2);
 			debug_file(1, stadiumn_choose);
 		}
-		
+
 		if (command_choose1 == command_choose2 || command_choose1 > 14 || command_choose2 > 14 || command_choose1 < 1 || command_choose2 < 1) {
 			cout << "error" << endl;
 			goto end;
@@ -851,7 +884,7 @@ int main(int argc, char* argv[]) {
 		ney2_3 = neyron2(0, wsf3, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws3_1, ws3_2, ws3_3, ws3_4, ws3_5, ws3_6, ws3_7, ws3_8, ws3_9, ws3_10, ws3_11, ws3_12, ws3_13, ws3_14);
 		ney2_4 = neyron2(0, wsf4, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws4_1, ws4_2, ws4_3, ws4_4, ws4_5, ws4_6, ws4_7, ws4_8, ws4_9, ws4_10, ws4_11, ws4_12, ws4_13, ws4_14);
 		ney2_5 = neyron2(0, wsf5, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws5_1, ws5_2, ws5_3, ws5_4, ws5_5, ws5_6, ws5_7, ws5_8, ws5_9, ws5_10, ws5_11, ws5_12, ws5_13, ws5_14);
-		if (deb) {
+		if (debbv == 1) {
 			debug_file(2, ney2_1);
 			debug_file(2, ney2_2);
 			debug_file(2, ney2_3);
@@ -867,7 +900,7 @@ int main(int argc, char* argv[]) {
 		ney3_5 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_5_1, ws2_5_2, ws2_5_3, ws2_5_4, ws2_5_5);
 		ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_6_1, ws2_6_2, ws2_6_3, ws2_6_4, ws2_6_5);
 		ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_7_1, ws2_7_2, ws2_7_3, ws2_7_4, ws2_7_5);
-		if (deb) {
+		if (debbv == 1) {
 			debug_file(3, ney3_1);
 			debug_file(3, ney3_2);
 			debug_file(3, ney3_3);
@@ -891,7 +924,7 @@ int main(int argc, char* argv[]) {
 		neyr3_13 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ws3_13_1, ws3_13_2, ws3_13_3, ws3_13_4, ws3_13_5, ws3_13_6, ws3_13_7);
 		neyr3_14 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ws3_14_1, ws3_14_2, ws3_14_3, ws3_14_4, ws3_14_5, ws3_14_6, ws3_14_7);
 
-		if (deb) {
+		if (debbv == 1) {
 			debug_file(4, ney4_1);
 			debug_file(4, ney4_2);
 			debug_file(4, ney4_3);
@@ -914,8 +947,8 @@ int main(int argc, char* argv[]) {
 			cout << "Number of winning command: " << correct << endl;
 
 		}
-		if (deb) {
-			debug_file(5 , correct);
+		if (debbv == 1) {
+			debug_file(5, correct);
 		}
 		//Кінцевий вивід
 		else {
@@ -977,14 +1010,15 @@ int main(int argc, char* argv[]) {
 			cout << "Tottenham: " << neyr3_14 << " power points." << endl;
 			cout << "Chance of win Tottenham " << neyr3_14 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
-	end:
-		cout << "Press any key to continue" << endl;
-		_getch();
 		cout << ("Again") << endl;
 		cin >> again;
 		if (!again) {
 			break;
 		}
 	}
-	return 0;
+	end:
+		cout << "Press any key to continue" << endl;
+		_getch();
+		debug_file(6, 0);
+return 0;
 }
