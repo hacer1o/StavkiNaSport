@@ -2,10 +2,12 @@
 #define random_H_
 #include <random>
 int chisla;
+int first_value = -10;
+int last_value = 10;
 int ran() {
 	while (1) {
-		chisla = rand();
-		if (chisla > -12 && chisla < 12) {
+		chisla = first_value + rand() % last_value;
+		if (chisla > -10 && chisla < 10) {
 			return chisla;
 			break;
 		}
