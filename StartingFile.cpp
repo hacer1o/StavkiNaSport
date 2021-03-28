@@ -762,7 +762,8 @@ int main(int argc, char* argv[]) {
 	int cores_count = thread::hardware_concurrency(); //Узнаем к-во ядер
 	string get_sys_info = GetCpuVendorString();
 	cout << get_sys_info << endl;
-	bool is_multipotok;
+	bool is_multipotok = 1;
+	string multipotok;
 	cout << endl << endl;
 	cout << endl << endl;
 	setlocale(LC_ALL, "rus");
@@ -775,30 +776,29 @@ int main(int argc, char* argv[]) {
 			cout << ("To start write !start") << endl;
 			cout << ("To open settings write !settings") << endl;
 		}
-		if (com == "!setings") {
+		else if (com == "!settings") {
 			while (1) {
+				if (is_multipotok == 1) {
+					multipotok = "On";
+				}
+				else {
+					multipotok = "Off";
+				}
 				cin >> com;
 				if (com == "!help") {
 					//cout << ("To change languange write !lang") << endl;
-					cout << ("HyperThreading/SMT :") << is_multipotok<< endl;
-					cout << ("To on/off HyperThreading/SMT write !multithread") << endl;
+					cout << ("To check info write !info") << endl;
 					cout << ("To close settings write !exit") << endl;
-					cin >> com;
-					if (com == "!multithread") {
-						if (is_multipotok == 0) {
-							is_multipotok = 1;
-						}
-						else {
-							is_multipotok = 0;
-						}
-					}
 				}
-				else if (com == "exit") {
+				else if (com == "!exit") {
 					com == "";
 					break;
 				}
+				else if (com == "!info") {
+					cout << ("Cpu cores") << cores_count << endl;
+				}
 				else {
-					cout << ("Unknown command ") << com << (" . Write !help") << endl;
+					cout << ("Unknown command ") << com << (". Write !help") << endl;
 				}
 			}
 		}
@@ -806,15 +806,15 @@ int main(int argc, char* argv[]) {
 			break;
 		}
 		else {
-			cout << ("Unknown command ") << com << (" . Write !help") << endl;
+			cout << ("Unknown command ") << com << (". Write !help") << endl;
 		}
 	}
 		if (cores_count < 4 && is_multipotok == 1) {
 		cout << ("Your CPU have") << cores_count << ("cores. For working multithread must be at least 4 cores. Please turn off it in settings") << endl;
 		goto main_menu;
 	}
-	else {
-		cout << ("CPU cores: ") << cores_count << endl;
+		else {
+			cout << ("CPU cores: ") << cores_count << (" Multithread:")<< multipotok<<endl;
 	}/*ofstream fout("data_base", ios_base::trunc);
 	/*ifstream fin("data_base" , ios_base::in); // открыли файл для чтения
 	fin >> lmasive;
@@ -850,24 +850,27 @@ int main(int argc, char* argv[]) {
 		if (i % 50 == 0) {
 			cout << i / 50 << endl;
 		}
-		thread th(random1_1);
-		thread th1(random1_2);
-		thread th2(random2_1);
-		thread th3(random2_2);
-		thread th4(random3_1);
-		thread th5(random3_2);
-		thread th6(random3_3);
-		thread th7(load_base);
-		thread th8(stadium);
-		th.join();
-		th1.join();
-		th2.join();
-		th3.join();
-		th4.join();
-		th5.join();
-		th6.join();
-		th7.join();
-		th8.join();
+		if (is_multipotok == 1) {
+			thread th(random1_1);
+			thread th1(random1_2);
+			thread th2(random2_1);
+			thread th3(random2_2);
+			thread th4(random3_1);
+			thread th5(random3_2);
+			thread th6(random3_3);
+			thread th7(load_base);
+			thread th8(stadium);
+			th.join();
+			th1.join();
+			th2.join();
+			th3.join();
+			th4.join();
+			th5.join();
+			th6.join();
+			th7.join();
+			th8.join();
+		}
+		stadium();
 		neyro_start();
 		do_correct();
 		correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -880,17 +883,14 @@ int main(int argc, char* argv[]) {
 		}
 		if (correct == real_correct && times_correct != 0) {
 			save1();
-			thread th(save2);
-			thread th1(save3);
-			th.join();
-			th1.join();
+			save2();
+			save3();
 		}
 		st++;
 	}
 	times_correct = 0;
 	allClear();
 	//-----------------------------------------------------------Друга-Стадія-Навчання------------------------------------------------
-#pragma omp parallel for
 	for (int d = 1; d < 40; d++) {
 		if (d % 2 == 0) {
 		cout << d / 2 + 40<< endl;
@@ -898,13 +898,18 @@ int main(int argc, char* argv[]) {
 
 		for (int a = 0; a < 200; a++) {
 			load_base();
-			thread th(random3_1);
-			thread th1(random3_2);
-			thread th2(random3_3);
+			if (is_multipotok == 1) {
+				thread th(random3_1);
+				thread th1(random3_2);
+				thread th2(random3_3);
+				th.join();
+				th1.join();
+				th2.join();
+			}
+			else {
+				random3();
+			}
 			stadium();
-			th.join();
-			th1.join();
-			th2.join();
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -918,14 +923,21 @@ int main(int argc, char* argv[]) {
 			st++;
 		}
 		for (int b = 0; b < 200; b++) {
-			thread th(random2_1);
-			thread th3(random2_2);
-			thread th1(load_base);
-			thread th2(stadium);
-			th.join();
-			th1.join();
-			th2.join();
-			th3.join();
+			if (is_multipotok == 1) {
+				thread th(random2_1);
+				thread th3(random2_2);
+				thread th1(load_base);
+				thread th2(stadium);
+				th.join();
+				th1.join();
+				th2.join();
+				th3.join();
+			}
+			else {
+				random2();
+				load_base();
+				stadium();
+			}
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -939,13 +951,20 @@ int main(int argc, char* argv[]) {
 			st++;
 		}
 		for (int c = 0; c < 200; c++) {
-			thread th(random1_1);
-			thread th2(random1_2);
-			thread th1(load_base);
-			stadium();
-			th.join();
-			th1.join();
-			th2.join();
+			if (is_multipotok == 1) {
+				thread th(random1_1);
+				thread th2(random1_2);
+				thread th1(load_base);
+				stadium();
+				th.join();
+				th1.join();
+				th2.join();
+			}
+			else {
+				random1();
+				load_base();
+				stadium();
+			}
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -965,22 +984,28 @@ int main(int argc, char* argv[]) {
 		if (c % 250 == 0) {
 			cout << c / 250 + 60 << endl;
 		}
-
-		thread th(random1_1);
-		thread th1(random1_2);
-		thread th2(random2);
-		thread th3(random3_1);
-		thread th4(random3_2);
-		thread th5(random3_3);
-		thread th6(load_base);
-		stadium();
-		th.join();
-		th1.join();
-		th2.join();
-		th3.join();
-		th4.join();
-		th5.join();
-		th6.join();
+		if (is_multipotok == 1) {
+			thread th(random1_1);
+			thread th1(random1_2);
+			thread th2(random2);
+			thread th3(random3_1);
+			thread th4(random3_2);
+			thread th5(random3_3);
+			thread th6(load_base);
+			stadium();
+			th.join();
+			th1.join();
+			th2.join();
+			th3.join();
+			th4.join();
+			th5.join();
+			th6.join();
+		}
+		else {
+			allRandom();
+			load_base();
+			stadium();
+		}
 		neyro_start();
 		do_correct();
 		correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -1000,14 +1025,20 @@ int main(int argc, char* argv[]) {
 	for (int d = 0; d < 20; d++) {
 		cout << d + 80 << endl;
 		for (int a = 0; a < 100; a++) {
-			thread th(random3_1);
-			thread th1(random3_2);
-			thread th2(random3_3);
-			thread th3(load_base);
-			th.join();
-			th1.join();
-			th2.join();
-			th3.join();
+			if (is_multipotok == 1) {
+				thread th(random3_1);
+				thread th1(random3_2);
+				thread th2(random3_3);
+				thread th3(load_base);
+				th.join();
+				th1.join();
+				th2.join();
+				th3.join();
+			}
+			else {
+				random3();
+				load_base();
+			}
 			stadium();
 			neyro_start();
 			do_correct();
@@ -1022,14 +1053,21 @@ int main(int argc, char* argv[]) {
 			}
 		}
 		for (int b = 0; b < 100; b++) {
-			thread th(random2_1);
-			thread th1(random2_2);
-			thread th2(load_base);
-			thread th3(stadium);
-			th.join();
-			th1.join();
-			th2.join();
-			th3.join();
+			if (is_multipotok == 1) {
+				thread th(random2_1);
+				thread th1(random2_2);
+				thread th2(load_base);
+				thread th3(stadium);
+				th.join();
+				th1.join();
+				th2.join();
+				th3.join();
+			}
+			else {
+				random2();
+				load_base();
+				stadium();
+			}			
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
@@ -1043,14 +1081,21 @@ int main(int argc, char* argv[]) {
 			st++;
 		}
 		for (int c = 0; c < 100; c++) {
-			thread th(random1_1);
-			thread th1(random1_2);
-			thread th2(load_base);
-			thread th3(stadium);
-			th.join();
-			th1.join();
-			th2.join();
-			th3.join();
+			if (is_multipotok == 1) {
+				thread th(random1_1);
+				thread th1(random1_2);
+				thread th2(load_base);
+				thread th3(stadium);
+				th.join();
+				th1.join();
+				th2.join();
+				th3.join();
+			}
+			else {
+				random1();
+				load_base();
+				stadium();
+			}
 			neyro_start();
 			do_correct();
 			correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
