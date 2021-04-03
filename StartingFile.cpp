@@ -3,7 +3,7 @@
 //		by		 //
 //				 //
 // @viiiiiiiitya //
-// @HaceR tg	 //
+// @hacerio tg	 //
 //				 // 
 //				 //
 ///////////////////
@@ -312,7 +312,7 @@ int* debug_arr = new int[1000];
 int debug_arr_inf;
 void debug_file(int debug_code, int debug_status) {
 	ofstream fout("debug_log.txt");
-	if (debug_code == 1) {
+	/*if (debug_code == 1) {
 		debug_arr[debug_arr_inf] = 111;
 		debug_arr_inf++;
 		debug_arr[debug_arr_inf] = debug_status;
@@ -342,10 +342,10 @@ void debug_file(int debug_code, int debug_status) {
 		debug_arr[debug_arr_inf] = debug_status;
 		debug_arr_inf++;
 	}
-	else {
+	else{
 		fout << debug_arr;
 		fout.close();
-	}
+	}*/
 	
 }
 
@@ -697,7 +697,7 @@ void choose_command() {
 	else ney1_14 = 1;
 }
 void stadium() {
-	stadium_number = stadiumn_choose;
+	/*stadium_number = stadiumn_choose;
 	if (stadium_number == 1) {
 		ney1_1 = 2;
 	}
@@ -739,25 +739,25 @@ void stadium() {
 	}
 	else if (stadium_number == 11) {
 		ney1_14 = 2;
-	}
+	}*/
 }
 int main(int argc, char* argv[]) {
-	cout << ("***************************************") << endl;
-	cout << ("****00000000****0********0***00000*****") << endl;
-	cout << ("***00***********0*******00***0****0****") << endl;
-	cout << ("****00**********0******000***0****00***") << endl;
-	cout << ("*****00*********0*****00*0***0*****0***") << endl;
-	cout << ("******0000******0****00**0***0*****0***") << endl;
-	cout << ("*********00*****0***00***0***0****0****") << endl;
-	cout << ("**********00****0**00****0***00000*****") << endl;
-	cout << ("***********00***0*00*****0***0*********") << endl;
-	cout << ("****00000000****000******0***0*********") << endl;
-	cout << ("***************************************") << endl;
+	cout << ("******************************************") << endl;
+	cout << ("****000000000***000******0****000000000***") << endl;
+	cout << ("***00***********000******0***00***********") << endl;
+	cout << ("****00**********0*00*****0****00**********") << endl;
+	cout << ("*****00*********0**00****0*****00*********") << endl;
+	cout << ("******0000******0***00***0******0000******") << endl;
+	cout << ("*********00*****0****00**0*********00*****") << endl;
+	cout << ("**********00****0*****00*0**********00****") << endl;
+	cout << ("***********00***0******000***********00***") << endl;
+	cout << ("***000000000****0*******00***000000000****") << endl;
+	cout << ("******************************************") << endl;
 	cout << endl << endl;
 	cout << ("######################################") << endl;
-	cout << ("Stavki Na sPort Beta 1.0") << endl;
+	cout << ("Stavki Na Sport Beta 1.0") << endl;
 	cout << ("######################################") << endl;
-	cout << ("Maded by HaceR") << endl;
+	cout << ("Maded by @hacerio") << endl;
 	cout << endl;
 	int cores_count = thread::hardware_concurrency(); //Узнаем к-во ядер
 	string get_sys_info = GetCpuVendorString();
@@ -796,6 +796,7 @@ int main(int argc, char* argv[]) {
 				}
 				else if (com == "!info") {
 					cout << ("Cpu cores") << cores_count << endl;
+					cout << ("Author: @hacerio") << endl;
 				}
 				else {
 					cout << ("Unknown command ") << com << (". Write !help") << endl;
@@ -845,7 +846,6 @@ int main(int argc, char* argv[]) {
 		//-----------------Навчання----------------------
 
 	cout << "Programe is learning. Please wait"<< endl << endl;
-//#pragma omp parallel for
 	for (int i = 0; i <= 2000; i++) {
 		if (i % 50 == 0) {
 			cout << i / 50 << endl;
@@ -896,7 +896,7 @@ int main(int argc, char* argv[]) {
 		cout << d / 2 + 40<< endl;
 		}
 
-		for (int a = 0; a < 200; a++) {
+		for (int a = 0; a < 300; a++) {
 			load_base();
 			if (is_multipotok == 1) {
 				thread th(random3_1);
@@ -922,7 +922,7 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int b = 0; b < 200; b++) {
+		for (int b = 0; b < 300; b++) {
 			if (is_multipotok == 1) {
 				thread th(random2_1);
 				thread th3(random2_2);
@@ -950,7 +950,7 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int c = 0; c < 200; c++) {
+		for (int c = 0; c < 300; c++) {
 			if (is_multipotok == 1) {
 				thread th(random1_1);
 				thread th2(random1_2);
