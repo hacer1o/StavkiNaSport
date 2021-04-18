@@ -3,15 +3,20 @@
 #include <random>
 int chisla;
 int last_value = 10;
-bool plus_minus;
+int plus_minus[] = { 0 , 0 , 1 , 1 ,1 , 0 , 0, 1, 0 , 0 ,0 ,0 ,1 , 1 , 0 ,1 , 1 ,0 ,1 , 1, 1, 1, 1, 0, 1, 0 , 0, 1 ,1 , 0, 0 , 1 , 1 , 1 , 1 , 0 , 0 , 0 , 0, 0 , 1 , 0 ,1 , 0, 1, 1 ,1, 0 ,0 ,0 ,0 ,1 ,1, 0, 0 ,1 ,0, 1 ,0
+};
+int stt;
 int ran() {
 	while (1) {
 		chisla = rand() % last_value;
-		plus_minus = rand();
-		if (plus_minus == 0) {
-			chisla = chisla *-1;
-		}
 		if (chisla > -10 && chisla < 10) {
+			if (plus_minus[stt] == 1) {
+				chisla = chisla * -1;
+			}
+			stt++;
+			if (stt >= sizeof(plus_minus) / sizeof(plus_minus[0])) {
+				stt = 0;
+			}
 			return chisla;
 			break;
 		}

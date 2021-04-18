@@ -846,9 +846,9 @@ int main(int argc, char* argv[]) {
 		//-----------------Навчання----------------------
 
 	cout << "Programe is learning. Please wait"<< endl << endl;
-	for (int i = 0; i <= 2000; i++) {
-		if (i % 50 == 0) {
-			cout << i / 50 << endl;
+	for (int i = 0; i <= 200000; i++) {
+		if (i % 5000 == 0) {
+			cout << i / 5000 << endl;
 		}
 		if (is_multipotok == 1) {
 			thread th(random1_1);
@@ -896,7 +896,7 @@ int main(int argc, char* argv[]) {
 		cout << d / 2 + 40<< endl;
 		}
 
-		for (int a = 0; a < 300; a++) {
+		for (int a = 0; a < 1000; a++) {
 			load_base();
 			if (is_multipotok == 1) {
 				thread th(random3_1);
@@ -922,7 +922,7 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int b = 0; b < 300; b++) {
+		for (int b = 0; b < 1000; b++) {
 			if (is_multipotok == 1) {
 				thread th(random2_1);
 				thread th3(random2_2);
@@ -950,7 +950,7 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int c = 0; c < 300; c++) {
+		for (int c = 0; c < 1000; c++) {
 			if (is_multipotok == 1) {
 				thread th(random1_1);
 				thread th2(random1_2);
@@ -980,9 +980,9 @@ int main(int argc, char* argv[]) {
 	}
 	//-----------------------------------------------------------Третя-Стадія-Навчання------------------------------------------------
 
-	for (int c = 0; c < 5000; c++) {
-		if (c % 250 == 0) {
-			cout << c / 250 + 60 << endl;
+	for (int c = 0; c < 100000; c++) {
+		if (c % 5000 == 0) {
+			cout << c / 5000 + 60 << endl;
 		}
 		if (is_multipotok == 1) {
 			thread th(random1_1);
@@ -1024,7 +1024,7 @@ int main(int argc, char* argv[]) {
 
 	for (int d = 0; d < 20; d++) {
 		cout << d + 80 << endl;
-		for (int a = 0; a < 100; a++) {
+		for (int a = 0; a < 2000; a++) {
 			if (is_multipotok == 1) {
 				thread th(random3_1);
 				thread th1(random3_2);
@@ -1052,7 +1052,7 @@ int main(int argc, char* argv[]) {
 				save3();
 			}
 		}
-		for (int b = 0; b < 100; b++) {
+		for (int b = 0; b < 2000; b++) {
 			if (is_multipotok == 1) {
 				thread th(random2_1);
 				thread th1(random2_2);
@@ -1080,7 +1080,7 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int c = 0; c < 100; c++) {
+		for (int c = 0; c < 2000; c++) {
 			if (is_multipotok == 1) {
 				thread th(random1_1);
 				thread th1(random1_2);
@@ -1161,19 +1161,19 @@ int main(int argc, char* argv[]) {
 		cin >> command_choose1;
 		cout << ("Write number of second command") << endl;
 		cin >> command_choose2;
-		cout << ("Write number of command, whitch play home") << endl;
-		cin >> stadiumn_choose;
-		if (stadiumn_choose != command_choose1 && stadiumn_choose != command_choose2 && stadiumn_choose != 0) {
+		/*cout << ("Write number of command, whitch play home") << endl;
+		cin >> stadiumn_choose;*/
+		/*if (stadiumn_choose != command_choose1 && stadiumn_choose != command_choose2 && stadiumn_choose != 0) {
 			cout << "Error" << endl;
 			continue;
-		}
-		stadium();
+		}*/
+	/*	stadium();
 		if (debb == 1) {
 			debug_file(1, command_choose1);
 			debug_file(1, command_choose2);
 			debug_file(1, stadiumn_choose);
 		}
-
+		*/
 		if (command_choose1 == command_choose2 || command_choose1 > 14 || command_choose2 > 14 || command_choose1 < 1 || command_choose2 < 1) {
 			cout << "error" << endl;
 			continue;
@@ -1193,6 +1193,11 @@ int main(int argc, char* argv[]) {
 			debug_file(2, ney2_5);
 		}
 
+		cout << ws1_1 << " " << ws1_2 << " " << ws1_3 << " " << ws1_4 << " " << ws1_5 << " " << ws1_6 << " " << ws1_7 << " " << ws1_8 << " " << ws1_9 << " " << ws1_10 << " " << ws1_11 << " " << ws1_12 << " " << ws1_13 << " " << ws1_14 << endl;
+		cout << ws2_1 << " " << ws2_2 << " " << ws2_3 << " " << ws2_4 << " " << ws2_5 << " " << ws2_6 << " " << ws2_7 << " " << ws2_8 << " " << ws2_9 << " " << ws2_10 << " " << ws2_11 << " " << ws2_12 << " " << ws2_13 << " " << ws2_14 << endl;
+		cout << ws3_1 << " " << ws3_2 << " " << ws3_3 << " " << ws3_4 << " " << ws3_5 << " " << ws3_6 << " " << ws3_7 << " " << ws3_8 << " " << ws3_9 << " " << ws3_10 << " " << ws3_11 << " " << ws3_12 << " " << ws3_13 << " " << ws3_14 << endl;
+		cout << ws4_1 << " " << ws4_2 << " " << ws4_3 << " " << ws4_4 << " " << ws4_5 << " " << ws4_6 << " " << ws4_7 << " " << ws4_8 << " " << ws4_9 << " " << ws4_10 << " " << ws4_11 << " " << ws4_12 << " " << ws4_13 << " " << ws4_14 << endl;
+		cout << ws5_1 << " " << ws5_2 << " " << ws5_3 << " " << ws5_4 << " " << ws5_5 << " " << ws5_6 << " " << ws5_7 << " " << ws5_8 << " " << ws5_9 << " " << ws5_10 << " " << ws5_11 << " " << ws5_12 << " " << ws5_13 << " " << ws5_14 << endl << endl;
 
 		ney3_1 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_1_1, ws2_1_2, ws2_1_3, ws2_1_4, ws2_1_5);
 		ney3_2 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_2_1, ws2_2_2, ws2_2_3, ws2_2_4, ws2_2_5);
@@ -1201,6 +1206,15 @@ int main(int argc, char* argv[]) {
 		ney3_5 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_5_1, ws2_5_2, ws2_5_3, ws2_5_4, ws2_5_5);
 		ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_6_1, ws2_6_2, ws2_6_3, ws2_6_4, ws2_6_5);
 		ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_7_1, ws2_7_2, ws2_7_3, ws2_7_4, ws2_7_5);
+		ney3_8 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_8_1, ws2_8_2, ws2_8_3, ws2_8_4, ws2_8_5);
+
+		cout << ws2_1_1 << " " << ws2_1_2 << " " << ws2_1_3 << " " << ws2_1_4 << " " << ws2_1_5 <<endl;
+		cout << ws2_2_1 << " " << ws2_2_2 << " " << ws2_2_3 << " " << ws2_2_4 << " " << ws2_2_5 <<endl;
+		cout << ws2_3_1 << " " << ws2_3_2 << " " << ws2_3_3 << " " << ws2_3_4 << " " << ws2_3_5 <<endl;
+		cout << ws2_4_1 << " " << ws2_4_2 << " " << ws2_4_3 << " " << ws2_4_4 << " " << ws2_4_5 <<endl;
+		cout << ws2_5_1 << " " << ws2_5_2 << " " << ws2_5_3 << " " << ws2_5_4 << " " << ws2_5_5 <<endl;
+		cout << ws2_6_1 << " " << ws2_6_2 << " " << ws2_6_3 << " " << ws2_6_4 << " " << ws2_6_5 <<endl;
+		cout << ws2_7_1 << " " << ws2_7_2 << " " << ws2_7_3 << " " << ws2_7_4 << " " << ws2_7_5 <<endl << endl;
 		if (debb == 1) {
 			debug_file(3, ney3_1);
 			debug_file(3, ney3_2);
@@ -1224,6 +1238,21 @@ int main(int argc, char* argv[]) {
 		neyr3_12 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_12_1, ws3_12_2, ws3_12_3, ws3_12_4, ws3_12_5, ws3_12_6, ws3_12_7, ws3_12_8);
 		neyr3_13 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_13_1, ws3_13_2, ws3_13_3, ws3_13_4, ws3_13_5, ws3_13_6, ws3_13_7, ws3_13_8);
 		neyr3_14 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_14_1, ws3_14_2, ws3_14_3, ws3_14_4, ws3_14_5, ws3_14_6, ws3_14_7, ws3_14_8);
+
+		cout << ws3_1_1 << " " << ws3_1_2 << " " << ws3_1_3 << " " << ws3_1_4 << " " << ws3_1_5 << " " << ws3_1_6 << " " << ws3_1_7 << " " << ws3_1_8 << " " << endl;
+		cout << ws3_2_1 << " " << ws3_2_2 << " " << ws3_2_3 << " " << ws3_2_4 << " " << ws3_2_5 << " " << ws3_2_6 << " " << ws3_2_7 << " " << ws3_2_8 << " " << endl;
+		cout << ws3_3_1 << " " << ws3_3_2 << " " << ws3_3_3 << " " << ws3_3_4 << " " << ws3_3_5 << " " << ws3_3_6 << " " << ws3_3_7 << " " << ws3_3_8 << " " << endl;
+		cout << ws3_4_1 << " " << ws3_4_2 << " " << ws3_4_3 << " " << ws3_4_4 << " " << ws3_4_5 << " " << ws3_4_6 << " " << ws3_4_7 << " " << ws3_4_8 << " " << endl;
+		cout << ws3_5_1 << " " << ws3_5_2 << " " << ws3_5_3 << " " << ws3_5_4 << " " << ws3_5_5 << " " << ws3_5_6 << " " << ws3_5_7 << " " << ws3_5_8 << " " << endl;
+		cout << ws3_6_1 << " " << ws3_6_2 << " " << ws3_6_3 << " " << ws3_6_4 << " " << ws3_6_5 << " " << ws3_6_6 << " " << ws3_6_7 << " " << ws3_6_8 << " " << endl;
+		cout << ws3_7_1 << " " << ws3_7_2 << " " << ws3_7_3 << " " << ws3_7_4 << " " << ws3_7_5 << " " << ws3_7_6 << " " << ws3_7_7 << " " << ws3_7_8 << " " << endl;
+		cout << ws3_8_1 << " " << ws3_8_2 << " " << ws3_8_3 << " " << ws3_8_4 << " " << ws3_8_5 << " " << ws3_8_6 << " " << ws3_8_7 << " " << ws3_8_8 << " " << endl;
+		cout << ws3_9_1 << " " << ws3_9_2 << " " << ws3_9_3 << " " << ws3_9_4 << " " << ws3_9_5 << " " << ws3_9_6 << " " << ws3_9_7 << " " << ws3_9_8 << " " << endl;
+		cout << ws3_10_1 << " " << ws3_10_2 << " " << ws3_10_3 << " " << ws3_10_4 << " " << ws3_10_5 << " " << ws3_10_6 << " " << ws3_10_7 << " " << ws3_10_8 << " " << endl;
+		cout << ws3_11_1 << " " << ws3_11_2 << " " << ws3_11_3 << " " << ws3_11_4 << " " << ws3_11_5 << " " << ws3_11_6 << " " << ws3_11_7 << " " << ws3_11_8 << " " << endl;
+		cout << ws3_12_1 << " " << ws3_12_2 << " " << ws3_12_3 << " " << ws3_12_4 << " " << ws3_12_5 << " " << ws3_12_6 << " " << ws3_12_7 << " " << ws3_12_8 << " " << endl;
+		cout << ws3_13_1 << " " << ws3_13_2 << " " << ws3_13_3 << " " << ws3_13_4 << " " << ws3_13_5 << " " << ws3_13_6 << " " << ws3_13_7 << " " << ws3_13_8 << " " << endl;
+		cout << ws3_14_1 << " " << ws3_14_2 << " " << ws3_14_3 << " " << ws3_14_4 << " " << ws3_14_5 << " " << ws3_14_6 << " " << ws3_14_7 << " " << ws3_14_8 << " " << endl;
 
 		if (debb == 1) {
 			debug_file(4, ney4_1);
