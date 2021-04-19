@@ -70,7 +70,7 @@ int command_correct13[] = {//Команда 13 Лестер Сіті
 int command_correct14[] = {//Команда 14 Тоттенгем
 	0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 1 , 0 , 0 , 0 , 1 , 1 , 1 , 1 , 0 , 1 , 1 , 1 , 1 , 1 , 1 , 0
 };*/
-int results_correct[] = {
+/*int results_correct[] = {
 	14, 1 , 1 , 1 , 11 , 6 , 0 , 0 , 9 , 2 , 9 , 10, 0 , 3
 };
 int first_command_correct[] = {
@@ -81,7 +81,34 @@ int second_command_correct[] = {
 };
 int stadiumn_correct[] = {
 	1 , 1 , 1 , 1 , 11 , 6 , 2 , 3 , 2 , 2 , 9 , 3 , 8 , 3
+};*/
+
+int results_correct[] = {
+	2 , 2 , 2 , 2 , 2 , 2 , 4 , 2 , 2 , 3 , 10, 1 , 8 , 5 , 1 , 1 , 1 , 12, 3 , 3 , 3 , 3 , 3 , 3 , 7 , 12, 13, 4 , 4 , 4 , 5 , 5 , 5 , 5 , 5 , 7 , 13, 6 , 6 , 13, 6 , 6 , 10, 7 , 7 , 9 , 11, 10, 12, 10, 10, 10, 11, 14,
 };
+int first_command_correct[] = {
+	2 , 8 , 2 , 2 , 1 , 2 , 2 , 2 , 10, 3 , 1 , 1 , 8 , 5 , 1 , 5 , 9 , 1 , 7 , 6 , 3 , 14, 5 , 3 , 3 , 3 , 13, 4 , 4 , 4 , 10, 6 , 12, 7 , 5 , 7 , 13, 13, 6 , 6 , 14, 11, 10, 14, 7 , 13, 11, 14, 12, 14, 10, 10, 11, 11,
+};
+int second_command_correct[] = {
+	5 , 2 , 3 , 12, 2 , 10, 4 , 12, 2 , 1 , 10, 11, 1 , 1 , 7 , 1 , 1 , 12, 3 , 3 , 14, 3 , 3 , 12, 7 , 12, 3 , 13, 10, 12, 5 , 5 , 5 , 5 , 9 , 5 , 5 , 6 , 7 , 13, 6 , 6 , 6 , 7 , 9 , 9 , 9 , 10, 10, 10, 11, 13, 13, 14,
+};
+
+/*
+	1.Astralis *
+	2.Gambit *
+	3.Na`vi *
+	4.Heroic *
+	5.Virtus.pro *
+	6.Vitality *
+	7.Liquid *
+	8.Spirit *
+	9.fnatic *
+	10.NIP *
+	11.mousesport *
+	12.Furia *
+	13.Complexity *
+	4.Faze *
+*/
 /* -------------Future updates
 int first_command_result_correct[] = {
 	2 , 3 , 1 , 0 , 11, 1 , 2 , 2 , 0 , 2 , 1 , 1 , 0 , 1
@@ -648,7 +675,7 @@ void load_base() {
 	else if (command_choose2 == 12) ney1_12 = 1;
 	else if (command_choose2 == 13) ney1_13 = 1;
 	else ney1_14 = 1;
-	stadiumn_choose = stadiumn_correct[st];
+	//stadiumn_choose = stadiumn_correct[st];
 	
 	/*ney1_1 = command_correct1[st];
 	ney1_2 = command_correct2[st];
@@ -741,21 +768,22 @@ void stadium() {
 		ney1_14 = 2;
 	}*/
 }
+int is_autostart;
 int main(int argc, char* argv[]) {
 	cout << ("******************************************") << endl;
-	cout << ("****000000000***000******0****000000000***") << endl;
-	cout << ("***00***********000******0***00***********") << endl;
-	cout << ("****00**********0*00*****0****00**********") << endl;
-	cout << ("*****00*********0**00****0*****00*********") << endl;
-	cout << ("******0000******0***00***0******0000******") << endl;
-	cout << ("*********00*****0****00**0*********00*****") << endl;
-	cout << ("**********00****0*****00*0**********00****") << endl;
-	cout << ("***********00***0******000***********00***") << endl;
-	cout << ("***000000000****0*******00***000000000****") << endl;
+	cout << ("****         ***   ****** ****         ***") << endl;
+	cout << ("***  ***********   ****** ***  ***********") << endl;
+	cout << ("****  ********** *  ***** ****  **********") << endl;
+	cout << ("*****  ********* **  **** *****  *********") << endl;
+	cout << ("******    ****** ***  *** ******    ******") << endl;
+	cout << ("*********  ***** ****  ** *********  *****") << endl;
+	cout << ("**********  **** *****  * **********  ****") << endl;
+	cout << ("***********  *** ******   ***********  ***") << endl;
+	cout << ("***         **** *******  ***         ****") << endl;
 	cout << ("******************************************") << endl;
 	cout << endl << endl;
 	cout << ("######################################") << endl;
-	cout << ("Stavki Na Sport Beta 1.0") << endl;
+	cout << ("Stavki Na Sport Beta 1.1 (CyberSport edition)") << endl;
 	cout << ("######################################") << endl;
 	cout << ("Maded by @hacerio") << endl;
 	cout << endl;
@@ -765,16 +793,15 @@ int main(int argc, char* argv[]) {
 	bool is_multipotok = 1;
 	string multipotok;
 	cout << endl << endl;
-	cout << endl << endl;
 	setlocale(LC_ALL, "rus");
-	cout << ("Hello! Write command what you whant to do. To help write !help") << endl;
+	cout << ("Привет, напиши, что хочешь делать. Для помощи !help") << endl;
 	main_menu:
 	while (1) {
 
 		cin >> com;
 		if (com == "!help") {
-			cout << ("To start write !start") << endl;
-			cout << ("To open settings write !settings") << endl;
+			cout << ("Для запуска !start") << endl;
+			cout << ("Зайти в настройки !settings") << endl;
 		}
 		else if (com == "!settings") {
 			while (1) {
@@ -787,19 +814,63 @@ int main(int argc, char* argv[]) {
 				cin >> com;
 				if (com == "!help") {
 					//cout << ("To change languange write !lang") << endl;
-					cout << ("To check info write !info") << endl;
-					cout << ("To close settings write !exit") << endl;
+					cout << ("Посмотреть информацию !info") << endl;
+					cout << ("Язык !langulange") << endl;
+					cout << ("Автостарт после обучения !autostart") << endl;
+					cout << ("Для выхода из настроек !exit") << endl;
 				}
 				else if (com == "!exit") {
 					com == "";
 					break;
 				}
 				else if (com == "!info") {
-					cout << ("Cpu cores") << cores_count << endl;
-					cout << ("Author: @hacerio") << endl;
+					cout << ("Ядер процессора ") << cores_count << endl;
+					cout << ("Процессор: ")<< get_sys_info << endl;
+					cout << ("Язык: Русский") << endl;
+					cout << ("Автор: @hacerio") << endl;
+				}
+				else if (com == "!langulange") {
+					cout << ("На версии Beta 1.1 есть только русский язык. Все другое в разработке!") << endl;
+				}
+				else if (com == "!autostart") {
+					cout << "На некоторых системах обучение программы занимает некоторое время, и отлучится на время, то можете включить автостарт, который сразу же после обучения выдаст вам результат, и по приходу у вас будет готовый результат" << endl;
+					cout << "Чтобы запустить автостарт напишите !on , чтобы не запускать напишите любые символы" << endl;
+					cin >> com;
+					if (com == "!on") {
+						while (1) {
+							is_autostart = 1;
+							cout << "1.Astralis" << endl;
+							cout << "2.Gambit" << endl;
+							cout << "3.Na`vi" << endl;
+							cout << "4.Heroic" << endl;
+							cout << "5.Virtus.pro" << endl;
+							cout << "6.Vitality" << endl;
+							cout << "7.Liquid" << endl;
+							cout << "8.Spirit" << endl;
+							cout << "9.fnatic" << endl;
+							cout << "10.NIP" << endl;
+							cout << "11.mousesport" << endl;
+							cout << "12.Furia" << endl;
+							cout << "13.Complexity" << endl;
+							cout << "14.Faze" << endl;
+
+							cout << ("Напиши номер первой команды") << endl;
+							cin >> command_choose1;
+							cout << ("Напиши номер второй команды") << endl;
+							cin >> command_choose2;
+							if (command_choose1 == command_choose2 || command_choose1 > 14 || command_choose2 > 14 || command_choose1 < 1 || command_choose2 < 1) {
+								cout << "error" << endl;
+								continue;
+							}
+							else {
+								cout << "Автостарт успешно запущен. Теперь вийдите с настроек и запустите обучение командой !start" << endl;
+								break;
+							}
+						}
+					}			
 				}
 				else {
-					cout << ("Unknown command ") << com << (". Write !help") << endl;
+					cout << ("Неизвестная команда ") << com << (". Напиши !help") << endl;
 				}
 			}
 		}
@@ -807,15 +878,15 @@ int main(int argc, char* argv[]) {
 			break;
 		}
 		else {
-			cout << ("Unknown command ") << com << (". Write !help") << endl;
+			cout << ("Неизвестная команда ") << com << (". Напиши !help") << endl;
 		}
 	}
 		if (cores_count < 4 && is_multipotok == 1) {
-		cout << ("Your CPU have") << cores_count << ("cores. For working multithread must be at least 4 cores. Please turn off it in settings") << endl;
+		cout << ("У твоего процессора ") << cores_count << ("ядер. Для роботы нужно минимум 4 ядер. Если у вас должно быть больше 4, но тут отображается меньше, то обратитесь в сервисный центр") << endl;
 		goto main_menu;
 	}
 		else {
-			cout << ("CPU cores: ") << cores_count << (" Multithread:")<< multipotok<<endl;
+			cout << ("Ядер: ") << cores_count << (" Мультипоток: ")<< multipotok<<endl;
 	}/*ofstream fout("data_base", ios_base::trunc);
 	/*ifstream fin("data_base" , ios_base::in); // открыли файл для чтения
 	fin >> lmasive;
@@ -845,7 +916,7 @@ int main(int argc, char* argv[]) {
 
 		//-----------------Навчання----------------------
 
-	cout << "Programe is learning. Please wait"<< endl << endl;
+	cout << "Идет обучение програмы, ожидайте"<< endl << endl;
 	for (int i = 0; i <= 200000; i++) {
 		if (i % 5000 == 0) {
 			cout << i / 5000 << endl;
@@ -1142,25 +1213,42 @@ int main(int argc, char* argv[]) {
 		ney1_14 = 0;
 		allClear();
 
-		cout << ("1.Yuwentus") << endl;
-		cout << ("2.Real Madrid") << endl;
-		cout << ("3.Barselona") << endl;
-		cout << ("4.Manchester United") << endl;
-		cout << ("5.Arsenal") << endl;
-		cout << ("6.Bavaria") << endl;
-		cout << ("7.Liverpoul") << endl;
-		cout << ("8.Borussia D") << endl;
-		cout << ("9.Manchester City") << endl;
-		cout << ("10.Chelsi") << endl;
-		cout << ("11.Milan") << endl;
-		cout << ("12.Bayer") << endl;
-		cout << ("13.Lester") << endl;
-		cout << ("14.Tottenham") << endl;
+	/*	cout << ("1.Ювентус") << endl;
+		cout << ("2.Реал Мадрид") << endl;
+		cout << ("3.Барселона") << endl;
+		cout << ("4.Манчестер Юнайтед") << endl;
+		cout << ("5.Арсенал") << endl;
+		cout << ("6.Бавария") << endl;
+		cout << ("7.Ливерпуль") << endl;
+		cout << ("8.Борусия Д") << endl;
+		cout << ("9.Манчестер Сити") << endl;
+		cout << ("10.Челси") << endl;
+		cout << ("11.Милан") << endl;
+		cout << ("12.Байер") << endl;
+		cout << ("13.Лестер") << endl;
+		cout << ("14.Тоттенгем") << endl;
+*/
+		if (!is_autostart) {
+			cout << "1.Astralis" << endl;
+			cout << "2.Gambit" << endl;
+			cout << "3.Na`vi" << endl;
+			cout << "4.Heroic" << endl;
+			cout << "5.Virtus.pro" << endl;
+			cout << "6.Vitality" << endl;
+			cout << "7.Liquid" << endl;
+			cout << "8.Spirit" << endl;
+			cout << "9.fnatic" << endl;
+			cout << "10.NIP" << endl;
+			cout << "11.mousesport" << endl;
+			cout << "12.Furia" << endl;
+			cout << "13.Complexity" << endl;
+			cout << "14.Faze" << endl;
 
-		cout << ("Write number of first command") << endl;
-		cin >> command_choose1;
-		cout << ("Write number of second command") << endl;
-		cin >> command_choose2;
+			cout << ("Напиши номер первой команды") << endl;
+			cin >> command_choose1;
+			cout << ("Напиши номер второй команды") << endl;
+			cin >> command_choose2;
+		}
 		/*cout << ("Write number of command, whitch play home") << endl;
 		cin >> stadiumn_choose;*/
 		/*if (stadiumn_choose != command_choose1 && stadiumn_choose != command_choose2 && stadiumn_choose != 0) {
@@ -1193,12 +1281,12 @@ int main(int argc, char* argv[]) {
 			debug_file(2, ney2_5);
 		}
 
-		cout << ws1_1 << " " << ws1_2 << " " << ws1_3 << " " << ws1_4 << " " << ws1_5 << " " << ws1_6 << " " << ws1_7 << " " << ws1_8 << " " << ws1_9 << " " << ws1_10 << " " << ws1_11 << " " << ws1_12 << " " << ws1_13 << " " << ws1_14 << endl;
+		/*cout << ws1_1 << " " << ws1_2 << " " << ws1_3 << " " << ws1_4 << " " << ws1_5 << " " << ws1_6 << " " << ws1_7 << " " << ws1_8 << " " << ws1_9 << " " << ws1_10 << " " << ws1_11 << " " << ws1_12 << " " << ws1_13 << " " << ws1_14 << endl;
 		cout << ws2_1 << " " << ws2_2 << " " << ws2_3 << " " << ws2_4 << " " << ws2_5 << " " << ws2_6 << " " << ws2_7 << " " << ws2_8 << " " << ws2_9 << " " << ws2_10 << " " << ws2_11 << " " << ws2_12 << " " << ws2_13 << " " << ws2_14 << endl;
 		cout << ws3_1 << " " << ws3_2 << " " << ws3_3 << " " << ws3_4 << " " << ws3_5 << " " << ws3_6 << " " << ws3_7 << " " << ws3_8 << " " << ws3_9 << " " << ws3_10 << " " << ws3_11 << " " << ws3_12 << " " << ws3_13 << " " << ws3_14 << endl;
 		cout << ws4_1 << " " << ws4_2 << " " << ws4_3 << " " << ws4_4 << " " << ws4_5 << " " << ws4_6 << " " << ws4_7 << " " << ws4_8 << " " << ws4_9 << " " << ws4_10 << " " << ws4_11 << " " << ws4_12 << " " << ws4_13 << " " << ws4_14 << endl;
 		cout << ws5_1 << " " << ws5_2 << " " << ws5_3 << " " << ws5_4 << " " << ws5_5 << " " << ws5_6 << " " << ws5_7 << " " << ws5_8 << " " << ws5_9 << " " << ws5_10 << " " << ws5_11 << " " << ws5_12 << " " << ws5_13 << " " << ws5_14 << endl << endl;
-
+		*/
 		ney3_1 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_1_1, ws2_1_2, ws2_1_3, ws2_1_4, ws2_1_5);
 		ney3_2 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_2_1, ws2_2_2, ws2_2_3, ws2_2_4, ws2_2_5);
 		ney3_3 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_3_1, ws2_3_2, ws2_3_3, ws2_3_4, ws2_3_5);
@@ -1208,13 +1296,14 @@ int main(int argc, char* argv[]) {
 		ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_7_1, ws2_7_2, ws2_7_3, ws2_7_4, ws2_7_5);
 		ney3_8 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_8_1, ws2_8_2, ws2_8_3, ws2_8_4, ws2_8_5);
 
-		cout << ws2_1_1 << " " << ws2_1_2 << " " << ws2_1_3 << " " << ws2_1_4 << " " << ws2_1_5 <<endl;
+	/*	cout << ws2_1_1 << " " << ws2_1_2 << " " << ws2_1_3 << " " << ws2_1_4 << " " << ws2_1_5 <<endl;
 		cout << ws2_2_1 << " " << ws2_2_2 << " " << ws2_2_3 << " " << ws2_2_4 << " " << ws2_2_5 <<endl;
 		cout << ws2_3_1 << " " << ws2_3_2 << " " << ws2_3_3 << " " << ws2_3_4 << " " << ws2_3_5 <<endl;
 		cout << ws2_4_1 << " " << ws2_4_2 << " " << ws2_4_3 << " " << ws2_4_4 << " " << ws2_4_5 <<endl;
 		cout << ws2_5_1 << " " << ws2_5_2 << " " << ws2_5_3 << " " << ws2_5_4 << " " << ws2_5_5 <<endl;
 		cout << ws2_6_1 << " " << ws2_6_2 << " " << ws2_6_3 << " " << ws2_6_4 << " " << ws2_6_5 <<endl;
-		cout << ws2_7_1 << " " << ws2_7_2 << " " << ws2_7_3 << " " << ws2_7_4 << " " << ws2_7_5 <<endl << endl;
+		cout << ws2_7_1 << " " << ws2_7_2 << " " << ws2_7_3 << " " << ws2_7_4 << " " << ws2_7_5 <<endl;
+		cout << ws2_8_1 << " " << ws2_8_2 << " " << ws2_8_3 << " " << ws2_8_4 << " " << ws2_8_5 <<endl << endl;*/
 		if (debb == 1) {
 			debug_file(3, ney3_1);
 			debug_file(3, ney3_2);
@@ -1239,7 +1328,7 @@ int main(int argc, char* argv[]) {
 		neyr3_13 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_13_1, ws3_13_2, ws3_13_3, ws3_13_4, ws3_13_5, ws3_13_6, ws3_13_7, ws3_13_8);
 		neyr3_14 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_14_1, ws3_14_2, ws3_14_3, ws3_14_4, ws3_14_5, ws3_14_6, ws3_14_7, ws3_14_8);
 
-		cout << ws3_1_1 << " " << ws3_1_2 << " " << ws3_1_3 << " " << ws3_1_4 << " " << ws3_1_5 << " " << ws3_1_6 << " " << ws3_1_7 << " " << ws3_1_8 << " " << endl;
+		/*cout << ws3_1_1 << " " << ws3_1_2 << " " << ws3_1_3 << " " << ws3_1_4 << " " << ws3_1_5 << " " << ws3_1_6 << " " << ws3_1_7 << " " << ws3_1_8 << " " << endl;
 		cout << ws3_2_1 << " " << ws3_2_2 << " " << ws3_2_3 << " " << ws3_2_4 << " " << ws3_2_5 << " " << ws3_2_6 << " " << ws3_2_7 << " " << ws3_2_8 << " " << endl;
 		cout << ws3_3_1 << " " << ws3_3_2 << " " << ws3_3_3 << " " << ws3_3_4 << " " << ws3_3_5 << " " << ws3_3_6 << " " << ws3_3_7 << " " << ws3_3_8 << " " << endl;
 		cout << ws3_4_1 << " " << ws3_4_2 << " " << ws3_4_3 << " " << ws3_4_4 << " " << ws3_4_5 << " " << ws3_4_6 << " " << ws3_4_7 << " " << ws3_4_8 << " " << endl;
@@ -1252,7 +1341,7 @@ int main(int argc, char* argv[]) {
 		cout << ws3_11_1 << " " << ws3_11_2 << " " << ws3_11_3 << " " << ws3_11_4 << " " << ws3_11_5 << " " << ws3_11_6 << " " << ws3_11_7 << " " << ws3_11_8 << " " << endl;
 		cout << ws3_12_1 << " " << ws3_12_2 << " " << ws3_12_3 << " " << ws3_12_4 << " " << ws3_12_5 << " " << ws3_12_6 << " " << ws3_12_7 << " " << ws3_12_8 << " " << endl;
 		cout << ws3_13_1 << " " << ws3_13_2 << " " << ws3_13_3 << " " << ws3_13_4 << " " << ws3_13_5 << " " << ws3_13_6 << " " << ws3_13_7 << " " << ws3_13_8 << " " << endl;
-		cout << ws3_14_1 << " " << ws3_14_2 << " " << ws3_14_3 << " " << ws3_14_4 << " " << ws3_14_5 << " " << ws3_14_6 << " " << ws3_14_7 << " " << ws3_14_8 << " " << endl;
+		cout << ws3_14_1 << " " << ws3_14_2 << " " << ws3_14_3 << " " << ws3_14_4 << " " << ws3_14_5 << " " << ws3_14_6 << " " << ws3_14_7 << " " << ws3_14_8 << " " << endl;*/
 
 		if (debb == 1) {
 			debug_file(4, ney4_1);
@@ -1273,73 +1362,74 @@ int main(int argc, char* argv[]) {
 
 		do_correct();
 		correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
-		if (correct != 0) {
-			cout << "Number of winning command: " << correct << endl;
+		//if (correct != 0) {
+		cout << "Номер команды победителя: " << correct << endl;
 
-		}
-		if (debb == 1) {
+		//}
+		/*if (debb == 1) {
 			debug_file(5, correct);
-		}
+		}*/
 		//Кінцевий вивід
-		else {
-			cout << ("Draw") << endl;
-		}
+		/*else {
+			cout << ("") << endl;
+		}*/
 		if (ney1_1) {
-			cout << "Yuwentus: " << neyr3_1 << " power points." << endl;
-			cout << "Chance of win Yuwentus " << neyr3_1 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "Astralis: " << neyr3_1 << " power points." << endl;
+			cout << "Шанс победы Astralis " << neyr3_1 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_2) {
-			cout << "Real Madrid: " << neyr3_2 << "power points." << endl;
-			cout << "Chance of win Real Madrid " << neyr3_2 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + +neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "Gambit: " << neyr3_2 << "power points." << endl;
+			cout << "Шанс победы Gambit " << neyr3_2 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + +neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_3) {
-			cout << "Barselona: " << neyr3_3 << " power points." << endl;
-			cout << "Chance of win Barselona " << neyr3_3 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "Na`vi: " << neyr3_3 << " power points." << endl;
+			cout << "Шанс победы Na`vi " << neyr3_3 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_4) {
-			cout << "Manchester United: " << neyr3_4 << " power points." << endl;
-			cout << "Chance of win Manchester United " << neyr3_4 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "Heroic: " << neyr3_4 << " power points." << endl;
+			cout << "Шанс победы Heroic" << neyr3_4 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_5) {
-			cout << "Arsenal: " << neyr3_5 << " power points." << endl;
-			cout << "Chance of win Arsenal " << neyr3_5 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "Virtus.pro: " << neyr3_5 << " power points." << endl;
+			cout << "Шанс победы Virtus.pro " << neyr3_5 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_6) {
-			cout << "Bavaria: " << neyr3_6 << " power points." << endl;
-			cout << "Chance of win Bavaria " << neyr3_6 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "Vitality: " << neyr3_6 << " power points." << endl;
+			cout << "Шанс победы Vitality " << neyr3_6 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_7) {
-			cout << "Liverpoul: " << neyr3_7  << " power points." << endl;
-			cout << "Chance of win Liverpoul " << neyr3_7 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "Liquid: " << neyr3_7  << " power points." << endl;
+			cout << "Шанс победы Liquid " << neyr3_7 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_8) {
-			cout << "Borussia D: " << neyr3_8  << " power points." << endl;
-			cout << "Chance of win Borussia D " << neyr3_8 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "Spirit: " << neyr3_8  << " power points." << endl;
+			cout << "Шанс победы Spirit " << neyr3_8 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_9) {
-			cout << "Manchester City: " << neyr3_9  <<" power points." << endl;
-			cout << "Chance of win Manchester City " << neyr3_9 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "fnatic: " << neyr3_9  <<" power points." << endl;
+			cout << "Шанс победы fnatic " << neyr3_9 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_10) {
-			cout << "Chelsi: " << neyr3_10  << " power points." << endl;
-			cout << "Chance of win Chelsi " << neyr3_10 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "NIP: " << neyr3_10  << " power points." << endl;
+			cout << "Шанс победы NIP " << neyr3_10 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_11) {
-			cout << "Milan: " << neyr3_11  << " power points." << endl;
-			cout << "Chance of win Milan " << neyr3_11 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "mousesports: " << neyr3_11  << " power points." << endl;
+			cout << "Шанс победы mousesports " << neyr3_11 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_12) {
-			cout << "Bayer: " << neyr3_12 << " power points." << endl;
-			cout << "Chance of win Bayer " << neyr3_12 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "Furia: " << neyr3_12 << " power points." << endl;
+			cout << "Шанс победы Furia " << neyr3_12 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_13) {
-			cout << "Lester: " << neyr3_13  << " power points." << endl;
-			cout << "Chance of win Lester " << neyr3_13 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "Complexity: " << neyr3_13  << " power points." << endl;
+			cout << "Шанс победы Complexity " << neyr3_13 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_14) {
-			cout << "Tottenham: " << neyr3_14  << " power points." << endl;
-			cout << "Chance of win Tottenham " << neyr3_14 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "Faze: " << neyr3_14  << " power points." << endl;
+			cout << "Шанс победы Faze " << neyr3_14 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
+		is_autostart = 0;
 		again:
 		cout << ("Again") << endl;
 		cin >> again;
