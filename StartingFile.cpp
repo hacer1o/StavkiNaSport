@@ -375,7 +375,7 @@ void debug_file(int debug_code, int debug_status) {
 	}*/
 	
 }
-
+string user_input;
 void neyro_start() {
 /*	neyron2_1(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w1_1, w1_2, w1_3, w1_4, w1_5, w1_6, w1_7, w1_8, w1_9, w1_10, w1_11, w1_12, w1_13, w1_14);
 	neyron2_2(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w2_1, w2_2, w2_3, w2_4, w2_5, w2_6, w2_7, w2_8, w2_9, w2_10, w2_11, w2_12, w2_13, w2_14);
@@ -442,33 +442,33 @@ int arifmetic(double a, double b) {
 	return a;
 }
 void do_correct() {
-	if (ney1_1 == 0) neyr3_1 = 0;
+	//if (ney1_1 == 0) neyr3_1 = 0;
 	if (neyr3_1 < 0) neyr3_1 = neyr3_1 * -1;
-	if (ney1_2 == 0) neyr3_2 = 0;
+	//if (ney1_2 == 0) neyr3_2 = 0;
 	if (neyr3_2 < 0) neyr3_2 = neyr3_2 * -1;
-	if (ney1_3 == 0) neyr3_3 = 0;
+	//if (ney1_3 == 0) neyr3_3 = 0;
 	if (neyr3_3 < 0) neyr3_3 = neyr3_3 * -1;
-	if (ney1_4 == 0) neyr3_4 = 0;
+	//if (ney1_4 == 0) neyr3_4 = 0;
 	if (neyr3_4 < 0) neyr3_4 = neyr3_4 * -1;
-	if (ney1_5 == 0) neyr3_5 = 0;
+	//if (ney1_5 == 0) neyr3_5 = 0;
 	if (neyr3_5 < 0) neyr3_5 = neyr3_5 * -1;
-	if (ney1_6 == 0) neyr3_6 = 0;
+	//if (ney1_6 == 0) neyr3_6 = 0;
 	if (neyr3_6 < 0) neyr3_6 = neyr3_6 * -1;
-	if (ney1_7 == 0) neyr3_7 = 0;
+	//if (ney1_7 == 0) neyr3_7 = 0;
 	if (neyr3_7 < 0) neyr3_7 = neyr3_7 * -1;
-	if (ney1_8 == 0) neyr3_8 = 0;
+	//if (ney1_8 == 0) neyr3_8 = 0;
 	if (neyr3_8 < 0) neyr3_8 = neyr3_8 * -1;
-	if (ney1_9 == 0) neyr3_9 = 0;
+	//if (ney1_9 == 0) neyr3_9 = 0;
 	if (neyr3_9 < 0) neyr3_9 = neyr3_9 * -1;
-	if (ney1_10 == 0) neyr3_10 = 0;
+	//if (ney1_10 == 0) neyr3_10 = 0;
 	if (neyr3_10 < 0) neyr3_10 = neyr3_10 * -1;
-	if (ney1_11 == 0) neyr3_11 = 0;
+	//if (ney1_11 == 0) neyr3_11 = 0;
 	if (neyr3_11 < 0) neyr3_11 = neyr3_11 * -1;
-	if (ney1_12 == 0) neyr3_12 = 0;
+	//if (ney1_12 == 0) neyr3_12 = 0;
 	if (neyr3_12 < 0) neyr3_12 = neyr3_12 * -1;
-	if (ney1_13 == 0) neyr3_13 = 0;
+	//if (ney1_13 == 0) neyr3_13 = 0;
 	if (neyr3_13 < 0) neyr3_13 = neyr3_13 * -1;
-	if (ney1_14 == 0) neyr3_14 = 0;
+	//if (ney1_14 == 0) neyr3_14 = 0;
 	if (neyr3_14 < 0) neyr3_14 = neyr3_14 * -1;
 }
 void allRandom() {
@@ -516,6 +516,9 @@ void random1_1() {
 void random1_2() {
 	wf3 = ran(); w3_1 = ran(); w3_2 = ran(); w3_3 = ran(); w3_4 = ran(); w3_5 = ran(); w3_6 = ran(); w3_7 = ran(); w3_8 = ran(); w3_9 = ran(); w3_10 = ran(); w3_11 = ran(); w3_12 = ran(); w3_13 = ran(); w3_14 = ran();
 	wf4 = ran(); w4_1 = ran(); w4_2 = ran(); w4_3 = ran(); w4_4 = ran(); w4_5 = ran(); w4_6 = ran(); w4_7 = ran(); w4_8 = ran(); w4_9 = ran(); w4_10 = ran(); w4_11 = ran(); w4_12 = ran(); w4_13 = ran(); w4_14 = ran();
+	
+}
+void random1_3() {
 	wf5 = ran(); w5_1 = ran(); w5_2 = ran(); w5_3 = ran(); w5_4 = ran(); w5_5 = ran(); w5_6 = ran(); w5_7 = ran(); w5_8 = ran(); w5_9 = ran(); w5_10 = ran(); w5_11 = ran(); w5_12 = ran(); w5_13 = ran(); w5_14 = ran();
 }
 void random2() {
@@ -532,11 +535,14 @@ void random2_1() {
 	w2_1_1 = ran(); w2_1_2 = ran(); w2_1_3 = ran(); w2_1_4 = ran();  w2_1_5 = ran();
 	w2_2_1 = ran(); w2_2_2 = ran(); w2_2_3 = ran(); w2_2_4 = ran();  w2_2_5 = ran();
 	w2_3_1 = ran(); w2_3_2 = ran(); w2_3_3 = ran(); w2_3_4 = ran();  w2_3_5 = ran();
-	w2_4_1 = ran(); w2_4_2 = ran(); w2_4_3 = ran(); w2_4_4 = ran();  w2_4_5 = ran();
 }
 void random2_2() {
+	w2_4_1 = ran(); w2_4_2 = ran(); w2_4_3 = ran(); w2_4_4 = ran();  w2_4_5 = ran();
 	w2_5_1 = ran(); w2_5_2 = ran(); w2_5_3 = ran(); w2_5_4 = ran();  w2_5_5 = ran();
 	w2_6_1 = ran(); w2_6_2 = ran(); w2_6_3 = ran(); w2_6_4 = ran();  w2_6_5 = ran();
+	
+}
+void random2_3() {
 	w2_7_1 = ran(); w2_7_2 = ran(); w2_7_3 = ran(); w2_7_4 = ran();  w2_7_5 = ran();
 	w2_8_1 = ran(); w2_8_2 = ran(); w2_8_3 = ran(); w2_8_4 = ran();  w2_8_5 = ran();
 }
@@ -561,19 +567,25 @@ void random3_1() {
 	w3_1_1 = ran(); w3_1_2 = ran(); w3_1_3 = ran(); w3_1_4 = ran(); w3_1_5 = ran(); w3_1_6 = ran(); w3_1_7 = ran(); w3_1_8 = ran();
 	w3_2_1 = ran(); w3_2_2 = ran(); w3_2_3 = ran(); w3_2_4 = ran(); w3_2_5 = ran(); w3_2_6 = ran(); w3_2_7 = ran(); w3_2_8 = ran();
 	w3_3_1 = ran(); w3_3_2 = ran(); w3_3_3 = ran(); w3_3_4 = ran(); w3_2_5 = ran(); w3_3_6 = ran(); w3_3_7 = ran(); w3_3_8 = ran();
-	w3_4_1 = ran(); w3_4_2 = ran(); w3_4_3 = ran(); w3_4_4 = ran(); w3_4_5 = ran(); w3_4_6 = ran(); w3_4_7 = ran(); w3_4_8 = ran();
-	w3_5_1 = ran(); w3_5_2 = ran(); w3_5_3 = ran(); w3_5_4 = ran(); w3_5_5 = ran(); w3_5_6 = ran(); w3_5_7 = ran(); w3_5_8 = ran();
+	
 }
 void random3_2() {
 	w3_6_1 = ran(); w3_6_2 = ran(); w3_6_3 = ran(); w3_6_4 = ran(); w3_6_5 = ran(); w3_6_6 = ran(); w3_6_7 = ran(); w3_6_8 = ran();
+	w3_4_1 = ran(); w3_4_2 = ran(); w3_4_3 = ran(); w3_4_4 = ran(); w3_4_5 = ran(); w3_4_6 = ran(); w3_4_7 = ran(); w3_4_8 = ran();
+	w3_5_1 = ran(); w3_5_2 = ran(); w3_5_3 = ran(); w3_5_4 = ran(); w3_5_5 = ran(); w3_5_6 = ran(); w3_5_7 = ran(); w3_5_8 = ran();
+}
+void random3_3() {
 	w3_7_1 = ran(); w3_7_2 = ran(); w3_7_3 = ran(); w3_7_4 = ran(); w3_7_5 = ran(); w3_7_6 = ran(); w3_7_7 = ran(); w3_7_8 = ran();
 	w3_8_1 = ran(); w3_8_2 = ran(); w3_8_3 = ran(); w3_8_4 = ran(); w3_8_5 = ran(); w3_8_6 = ran(); w3_8_7 = ran(); w3_8_8 = ran();
 	w3_9_1 = ran(); w3_9_2 = ran(); w3_9_3 = ran(); w3_9_4 = ran(); w3_9_5 = ran(); w3_9_6 = ran(); w3_9_7 = ran(); w3_9_8 = ran();
-	w3_10_1 = ran(); w3_10_2 = ran(); w3_10_3 = ran(); w3_10_4 = ran(); w3_10_5 = ran(); w3_10_6 = ran(); w3_10_7 = ran(); w3_10_8 = ran();
+	
 }
-void random3_3() {
+void random3_4() {
+	w3_10_1 = ran(); w3_10_2 = ran(); w3_10_3 = ran(); w3_10_4 = ran(); w3_10_5 = ran(); w3_10_6 = ran(); w3_10_7 = ran(); w3_10_8 = ran();
 	w3_11_1 = ran(); w3_11_2 = ran(); w3_11_3 = ran(); w3_11_4 = ran(); w3_11_5 = ran(); w3_11_6 = ran(); w3_11_7 = ran(); w3_11_8 = ran();
 	w3_12_1 = ran(); w3_12_2 = ran(); w3_12_3 = ran(); w3_12_4 = ran(); w3_12_5 = ran(); w3_12_6 = ran(); w3_12_7 = ran(); w3_12_8 = ran();
+}
+void random3_5() {
 	w3_13_1 = ran(); w3_13_2 = ran(); w3_13_3 = ran(); w3_13_4 = ran(); w3_13_5 = ran(); w3_13_6 = ran(); w3_13_7 = ran(); w3_13_8 = ran();
 	w3_14_1 = ran(); w3_14_2 = ran(); w3_14_3 = ran(); w3_14_4 = ran(); w3_14_5 = ran(); w3_14_6 = ran(); w3_14_7 = ran(); w3_14_8 = ran();
 }
@@ -837,33 +849,124 @@ int main(int argc, char* argv[]) {
 					cout << "Чтобы запустить автостарт напишите !on , чтобы не запускать напишите любые символы" << endl;
 					cin >> com;
 					if (com == "!on") {
+						cout << "1.Astralis" << endl;
+						cout << "2.Gambit" << endl;
+						cout << "3.Na`vi" << endl;
+						cout << "4.Heroic" << endl;
+						cout << "5.Virtus.pro" << endl;
+						cout << "6.Vitality" << endl;
+						cout << "7.Liquid" << endl;
+						cout << "8.Spirit" << endl;
+						cout << "9.fnatic" << endl;
+						cout << "10.NIP" << endl;
+						cout << "11.mousesport" << endl;
+						cout << "12.Furia" << endl;
+						cout << "13.Complexity" << endl;
+						cout << "14.Faze" << endl;
 						while (1) {
-							is_autostart = 1;
-							cout << "1.Astralis" << endl;
-							cout << "2.Gambit" << endl;
-							cout << "3.Na`vi" << endl;
-							cout << "4.Heroic" << endl;
-							cout << "5.Virtus.pro" << endl;
-							cout << "6.Vitality" << endl;
-							cout << "7.Liquid" << endl;
-							cout << "8.Spirit" << endl;
-							cout << "9.fnatic" << endl;
-							cout << "10.NIP" << endl;
-							cout << "11.mousesport" << endl;
-							cout << "12.Furia" << endl;
-							cout << "13.Complexity" << endl;
-							cout << "14.Faze" << endl;
-
 							cout << ("Напиши номер первой команды") << endl;
-							cin >> command_choose1;
+							cin >> user_input;
+							if (user_input == "1") {
+								command_choose1 = 1;
+							}
+							else if (user_input == "2") {
+								command_choose1 = 2;
+							}
+							else if (user_input == "3") {
+								command_choose1 = 3;
+							}
+							else if (user_input == "4") {
+								command_choose1 = 4;
+							}
+							else if (user_input == "5") {
+								command_choose1 = 5;
+							}
+							else if (user_input == "6") {
+								command_choose1 = 6;
+							}
+							else if (user_input == "7") {
+								command_choose1 = 7;
+							}
+							else if (user_input == "8") {
+								command_choose1 = 8;
+							}
+							else if (user_input == "9") {
+								command_choose1 = 9;
+							}
+							else if (user_input == "10") {
+								command_choose1 = 10;
+							}
+							else if (user_input == "11") {
+								command_choose1 = 11;
+							}
+							else if (user_input == "12") {
+								command_choose1 = 12;
+							}
+							else if (user_input == "13") {
+								command_choose1 = 13;
+							}
+							else if (user_input == "14") {
+								command_choose1 = 14;
+							}
+							else {
+								cout << "error" << endl;
+								continue;
+							}
 							cout << ("Напиши номер второй команды") << endl;
-							cin >> command_choose2;
+							cin >> user_input;
+							if (user_input == "1") {
+								command_choose2 = 1;
+							}
+							else if (user_input == "2") {
+								command_choose2 = 2;
+							}
+							else if (user_input == "3") {
+								command_choose2 = 3;
+							}
+							else if (user_input == "4") {
+								command_choose2 = 4;
+							}
+							else if (user_input == "5") {
+								command_choose2 = 5;
+							}
+							else if (user_input == "6") {
+								command_choose2 = 6;
+							}
+							else if (user_input == "7") {
+								command_choose2 = 7;
+							}
+							else if (user_input == "8") {
+								command_choose2 = 8;
+							}
+							else if (user_input == "9") {
+								command_choose2 = 9;
+							}
+							else if (user_input == "10") {
+								command_choose2 = 10;
+							}
+							else if (user_input == "11") {
+								command_choose2 = 11;
+							}
+							else if (user_input == "12") {
+								command_choose2 = 12;
+							}
+							else if (user_input == "13") {
+								command_choose2 = 13;
+							}
+							else if (user_input == "14") {
+								command_choose2 = 14;
+							}
+							else {
+								cout << "error" << endl;
+								continue;
+							}
 							if (command_choose1 == command_choose2 || command_choose1 > 14 || command_choose2 > 14 || command_choose1 < 1 || command_choose2 < 1) {
 								cout << "error" << endl;
 								continue;
 							}
 							else {
-								cout << "Автостарт успешно запущен. Теперь вийдите с настроек и запустите обучение командой !start" << endl;
+								cout << "Автостарт успешно запущен. Можете запускать программу" << endl;
+								is_autostart = 1;
 								break;
 							}
 						}
@@ -924,13 +1027,17 @@ int main(int argc, char* argv[]) {
 		if (is_multipotok == 1) {
 			thread th(random1_1);
 			thread th1(random1_2);
+			thread th12(random1_3);
 			thread th2(random2_1);
 			thread th3(random2_2);
+			thread th11(random2_3);
 			thread th4(random3_1);
 			thread th5(random3_2);
 			thread th6(random3_3);
-			thread th7(load_base);
-			thread th8(stadium);
+			thread th7(random3_4);
+			thread th8(random3_5);
+			thread th9(load_base);
+			thread th10(stadium);
 			th.join();
 			th1.join();
 			th2.join();
@@ -940,6 +1047,10 @@ int main(int argc, char* argv[]) {
 			th6.join();
 			th7.join();
 			th8.join();
+			th9.join();
+			th10.join();
+			th11.join();
+			th12.join();
 		}
 		stadium();
 		neyro_start();
@@ -973,9 +1084,13 @@ int main(int argc, char* argv[]) {
 				thread th(random3_1);
 				thread th1(random3_2);
 				thread th2(random3_3);
+				thread th3(random3_4);
+				thread th4(random3_5);
 				th.join();
 				th1.join();
 				th2.join();
+				th3.join();
+				th4.join();
 			}
 			else {
 				random3();
@@ -997,12 +1112,14 @@ int main(int argc, char* argv[]) {
 			if (is_multipotok == 1) {
 				thread th(random2_1);
 				thread th3(random2_2);
+				thread th4(random2_3);
 				thread th1(load_base);
 				thread th2(stadium);
 				th.join();
 				th1.join();
 				th2.join();
 				th3.join();
+				th4.join();
 			}
 			else {
 				random2();
@@ -1025,11 +1142,13 @@ int main(int argc, char* argv[]) {
 			if (is_multipotok == 1) {
 				thread th(random1_1);
 				thread th2(random1_2);
+				thread th3(random1_3);
 				thread th1(load_base);
 				stadium();
 				th.join();
 				th1.join();
 				th2.join();
+				th3.join();
 			}
 			else {
 				random1();
@@ -1056,7 +1175,7 @@ int main(int argc, char* argv[]) {
 			cout << c / 5000 + 60 << endl;
 		}
 		if (is_multipotok == 1) {
-			thread th(random1_1);
+			/*thread th(random1_1);
 			thread th1(random1_2);
 			thread th2(random2);
 			thread th3(random3_1);
@@ -1070,7 +1189,33 @@ int main(int argc, char* argv[]) {
 			th3.join();
 			th4.join();
 			th5.join();
+			th6.join();*/
+			thread th(random1_1);
+			thread th1(random1_2);
+			thread th12(random1_3);
+			thread th2(random2_1);
+			thread th3(random2_2);
+			thread th11(random2_3);
+			thread th4(random3_1);
+			thread th5(random3_2);
+			thread th6(random3_3);
+			thread th7(random3_4);
+			thread th8(random3_5);
+			thread th9(load_base);
+			thread th10(stadium);
+			th.join();
+			th1.join();
+			th2.join();
+			th3.join();
+			th4.join();
+			th5.join();
 			th6.join();
+			th7.join();
+			th8.join();
+			th9.join();
+			th10.join();
+			th11.join();
+			th12.join();
 		}
 		else {
 			allRandom();
@@ -1100,7 +1245,8 @@ int main(int argc, char* argv[]) {
 				thread th(random3_1);
 				thread th1(random3_2);
 				thread th2(random3_3);
-				thread th3(load_base);
+				thread th3(random3_4);
+				thread th4(random3_5);
 				th.join();
 				th1.join();
 				th2.join();
@@ -1127,12 +1273,14 @@ int main(int argc, char* argv[]) {
 			if (is_multipotok == 1) {
 				thread th(random2_1);
 				thread th1(random2_2);
+				thread th4(random2_3);
 				thread th2(load_base);
 				thread th3(stadium);
 				th.join();
 				th1.join();
 				th2.join();
 				th3.join();
+				th4.join();
 			}
 			else {
 				random2();
@@ -1155,12 +1303,14 @@ int main(int argc, char* argv[]) {
 			if (is_multipotok == 1) {
 				thread th(random1_1);
 				thread th1(random1_2);
+				thread th4(random1_3);
 				thread th2(load_base);
 				thread th3(stadium);
 				th.join();
 				th1.join();
 				th2.join();
 				th3.join();
+				th4.join();
 			}
 			else {
 				random1();
@@ -1243,11 +1393,105 @@ int main(int argc, char* argv[]) {
 			cout << "12.Furia" << endl;
 			cout << "13.Complexity" << endl;
 			cout << "14.Faze" << endl;
-
-			cout << ("Напиши номер первой команды") << endl;
-			cin >> command_choose1;
-			cout << ("Напиши номер второй команды") << endl;
-			cin >> command_choose2;
+			while (1) {
+				cout << ("Напиши номер первой команды") << endl;
+				cin >> user_input;
+				if (user_input == "1") {
+					command_choose1 = 1;
+				}
+				else if (user_input == "2") {
+					command_choose1 = 2;
+				}
+				else if (user_input == "3") {
+					command_choose1 = 3;
+				}
+				else if (user_input == "4") {
+					command_choose1 = 4;
+				}
+				else if (user_input == "5") {
+					command_choose1 = 5;
+				}
+				else if (user_input == "6") {
+					command_choose1 = 6;
+				}
+				else if (user_input == "7") {
+					command_choose1 = 7;
+				}
+				else if (user_input == "8") {
+					command_choose1 = 8;
+				}
+				else if (user_input == "9") {
+					command_choose1 = 9;
+				}
+				else if (user_input == "10") {
+					command_choose1 = 10;
+				}
+				else if (user_input == "11") {
+					command_choose1 = 11;
+				}
+				else if (user_input == "12") {
+					command_choose1 = 12;
+				}
+				else if (user_input == "13") {
+					command_choose1 = 13;
+				}
+				else if (user_input == "14") {
+					command_choose1 = 14;
+				}
+				else {
+					cout << "error" << endl;
+					continue;
+				}
+				cout << ("Напиши номер второй команды") << endl;
+				cin >> user_input;
+				if (user_input == "1") {
+					command_choose2 = 1;
+				}
+				else if (user_input == "2") {
+					command_choose2 = 2;
+				}
+				else if (user_input == "3") {
+					command_choose2 = 3;
+				}
+				else if (user_input == "4") {
+					command_choose2 = 4;
+				}
+				else if (user_input == "5") {
+					command_choose2 = 5;
+				}
+				else if (user_input == "6") {
+					command_choose2 = 6;
+				}
+				else if (user_input == "7") {
+					command_choose2 = 7;
+				}
+				else if (user_input == "8") {
+					command_choose2 = 8;
+				}
+				else if (user_input == "9") {
+					command_choose2 = 9;
+				}
+				else if (user_input == "10") {
+					command_choose2 = 10;
+				}
+				else if (user_input == "11") {
+					command_choose2 = 11;
+				}
+				else if (user_input == "12") {
+					command_choose2 = 12;
+				}
+				else if (user_input == "13") {
+					command_choose2 = 13;
+				}
+				else if (user_input == "14") {
+					command_choose2 = 14;
+				}
+				else {
+					cout << "error" << endl;
+					continue;
+				}
+				break;
+			}
 		}
 		/*cout << ("Write number of command, whitch play home") << endl;
 		cin >> stadiumn_choose;*/
