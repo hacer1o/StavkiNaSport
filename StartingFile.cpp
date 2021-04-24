@@ -82,7 +82,7 @@ int second_command_correct[] = {
 int stadiumn_correct[] = {
 	1 , 1 , 1 , 1 , 11 , 6 , 2 , 3 , 2 , 2 , 9 , 3 , 8 , 3
 };*/
-
+int is_learning_complete;
 int results_correct[] = {
 	2 , 2 , 2 , 2 , 2 , 2 , 4 , 2 , 2 , 3 , 10, 1 , 8 , 5 , 1 , 1 , 1 , 12, 3 , 3 , 3 , 3 , 3 , 3 , 7 , 12, 13, 4 , 4 , 4 , 5 , 5 , 5 , 5 , 5 , 7 , 13, 6 , 6 , 13, 6 , 6 , 10, 7 , 7 , 9 , 11, 10, 12, 10, 10, 10, 11, 14,
 };
@@ -782,6 +782,7 @@ void stadium() {
 }
 int is_autostart;
 int langulange;
+string check_lang;
 string file_data;
 int main(int argc, char* argv[]) {
 	setlocale(LC_ALL, "rus");
@@ -803,6 +804,7 @@ int main(int argc, char* argv[]) {
 				cout << "error" << endl;
 			}
 		}
+		file.close();
 		ofstream out("config");
 		out << langulange;
 		out.close();
@@ -835,6 +837,9 @@ int main(int argc, char* argv[]) {
 	else {
 		cout << "There are some errors with config file, now langulange is English" << endl;
 		langulange = 2;
+		ofstream out("config");
+		out << langulange;
+		out.close();
 	}
 	int cores_count = thread::hardware_concurrency(); //Узнаем к-во ядер
 	string get_sys_info = GetCpuVendorString();
@@ -906,7 +911,45 @@ int main(int argc, char* argv[]) {
 					}
 				}
 				else if (com == "!langulange") {
-
+					cout << "1. Русский" << endl << "2. English" << endl;
+					while (1) {
+						cin >> com;
+						if (com == "1") {
+							langulange = 1;
+							break;
+						}
+						else if (com == "2") {
+							langulange = 2;
+							break;
+						}
+						else {
+							cout << "error" << endl;
+						}
+					}
+					ofstream out("config");
+					out << langulange;
+					out.close();
+					ifstream file("config");
+					if (file.is_open()) {
+						file >> check_lang;
+						if (langulange == 1) {
+							if (check_lang == "1") {
+								cout << "All OK" << endl;
+							}
+							else {
+								cout << "Error. config file is dead :(" << endl;
+							}
+						}
+						else if (langulange == 2) {
+							if (check_lang == "2") {
+								cout << "All OK" << endl;
+							}
+							else {
+								cout << "Error. config file is dead :(" << endl;
+							}
+						}
+					}
+					file.close();
 				}
 				else if (com == "!autostart") {
 					if (langulange == 1) {
@@ -1083,11 +1126,17 @@ int main(int argc, char* argv[]) {
 		}
 	}
 		if (cores_count < 4 && is_multipotok == 1) {
-			cout << ("У твоего процессора ") << cores_count << ("ядер. Для роботы нужно минимум 4 ядер. Если у вас должно быть больше 4, но тут отображается меньше, то обратитесь в сервисный центр") << endl;
+			if(langulange == 1){
+				cout << ("У твоего процессора ") << cores_count << ("ядер. Для роботы нужно минимум 4 ядер. Если у вас должно быть больше 4, но тут отображается меньше, то обратитесь в сервисный центр") << endl;
+
+			}
+			else if (langulange == 2) {
+				cout << ("CPU cores ") << cores_count << (". Need min 4") << endl;
+			}
 			goto main_menu;
 		}
 		else {
-			cout << ("Ядер: ") << cores_count << (" Мультипоток: ")<< multipotok<<endl;
+			cout << ("CPU cores: ") << cores_count <<endl;
 	}/*ofstream fout("data_base", ios_base::trunc);
 	/*ifstream fin("data_base" , ios_base::in); // открыли файл для чтения
 	fin >> lmasive;
@@ -1116,7 +1165,9 @@ int main(int argc, char* argv[]) {
 		}*/
 
 		//-----------------Навчання----------------------
-
+		if (is_learning_complete == 1) {
+			goto programe;
+	}
 	cout << "Идет обучение програмы, ожидайте"<< endl << endl;
 	for (int i = 0; i <= 200000; i++) {
 		if (i % 5000 == 0) {
@@ -1440,7 +1491,7 @@ int main(int argc, char* argv[]) {
 	//9 Манчестер Сіті
 	//10 Челси
 	//11 Мілан 
-	
+		programe:
 	for (int i = 0; i > -1; i++) {
 		/*cout << ("Debug? ");
 		cin >> debb;*/
@@ -1492,7 +1543,12 @@ int main(int argc, char* argv[]) {
 			cout << "13.Complexity" << endl;
 			cout << "14.Faze" << endl;
 			while (1) {
-				cout << ("Напиши номер первой команды") << endl;
+				if (langulange == 1) {
+					cout << ("Напиши номер первой команды") << endl;
+				}
+				else if (langulange == 2) {
+					cout << ("Write number of first command") << endl;
+				}
 				cin >> user_input;
 				if (user_input == "1") {
 					command_choose1 = 1;
@@ -1540,7 +1596,12 @@ int main(int argc, char* argv[]) {
 					cout << "error" << endl;
 					continue;
 				}
-				cout << ("Напиши номер второй команды") << endl;
+				if (langulange == 1) {
+					cout << ("Напиши номер второй команды") << endl;
+				}
+				else if (langulange == 2) {
+					cout << "Write number of second command" << endl;
+				}
 				cin >> user_input;
 				if (user_input == "1") {
 					command_choose2 = 1;
@@ -1705,7 +1766,12 @@ int main(int argc, char* argv[]) {
 		do_correct();
 		correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
 		//if (correct != 0) {
-		cout << "Номер команды победителя: " << correct << endl;
+		if (langulange == 1) {
+			cout << "Номер команды победителя: " << correct << endl;
+		}
+		else if (langulange == 2) {
+			cout << "Number of winning command: " << correct << endl;
+		}
 
 		//}
 		/*if (debb == 1) {
@@ -1772,12 +1838,9 @@ int main(int argc, char* argv[]) {
 			cout << "Шанс победы Faze " << neyr3_14 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		is_autostart = 0;
+		is_learning_complete = 1;
 		again:
-		cout << ("Again") << endl;
-		cin >> again;
-		if (!again) {
-			break;
-		}
+		goto main_menu;
 	}
 	end:
 		cout << "Press any key to continue" << endl;
