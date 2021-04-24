@@ -791,7 +791,7 @@ string file_data;
 int is_opened;
 int main(int argc, char* argv[]) {
 	setlocale(LC_ALL, "rus");
-	ifstream file("config.txt");
+	/*ifstream file("config.txt");
 	is_opened = file.is_open();
 	file.close();
 	if (!is_opened) {
@@ -802,7 +802,7 @@ int main(int argc, char* argv[]) {
 	}
 	ifstream file1("config.txt");
 	file1 >> file_data;
-	file1.close();
+	file1.close();*/
 	if (file_data == "" || file_data == "0") {
 		cout << "Welcome to Stavki Na Sport! Choose your langulange" << endl;
 		cout << "1. Русский" << endl << "2. English" << endl;
@@ -821,9 +821,9 @@ int main(int argc, char* argv[]) {
 			}
 
 		}
-		ofstream out("config.txt");
+		/*ofstream out("config.txt");
 		out << langulange;
-		out.close();
+		out.close();*/
 	}
 	cout << ("******************************************") << endl;
 	cout << ("****         ***   ****** ****         ***") << endl;
@@ -842,8 +842,8 @@ int main(int argc, char* argv[]) {
 	cout << ("######################################") << endl;
 	cout << ("Maded by @hacerio") << endl;
 	cout << endl;
-	file >> file_data;
-	if (file_data == "1") {
+	//file >> file_data;
+	/*if (file_data == "1") {
 		langulange = 1;
 	}
 	else if (file_data == "2") {
@@ -855,7 +855,7 @@ int main(int argc, char* argv[]) {
 		ofstream out("config.txt");
 		out << langulange;
 		out.close();
-	}
+	}*/
 	int cores_count = thread::hardware_concurrency(); //Узнаем к-во ядер
 	string get_sys_info = GetCpuVendorString();
 	cout << get_sys_info << endl;
@@ -863,10 +863,10 @@ int main(int argc, char* argv[]) {
 	string multipotok;
 	cout << endl << endl;
 	if (langulange == 1) {
-		cout << ("Привет, напиши, что хочешь делать. Для помощи !help") << endl;
+		cout << ("Привет, напиши, что хочешь делать. Для помощи !help . Для выхода !exit") << endl;
 	}
 	else if (langulange == 2) {
-		cout << ("Hello! Write a command. For help !help") << endl;
+		cout << ("Hello! Write a command. For help !help . For exit ! exit") << endl;
 	}
 	main_menu:
 	while (1) {
@@ -896,13 +896,13 @@ int main(int argc, char* argv[]) {
 				if (com == "!help") {
 					if (langulange == 1) {
 						cout << ("Посмотреть информацию !info") << endl;
-						cout << ("Язык !langulange") << endl;
+						//cout << ("Язык !langulange") << endl;
 						cout << ("Автостарт после обучения !autostart") << endl;
 						cout << ("Для выхода из настроек !exit") << endl;
 					}
 					else if (langulange == 2) {
 						cout << ("Information!info") << endl;
-						cout << ("Langulange !langulange") << endl;
+						//cout << ("Langulange !langulange") << endl;
 						cout << ("Autostart after learning !autostart") << endl;
 						cout << ("Close settings !exit") << endl;
 					}
@@ -925,7 +925,7 @@ int main(int argc, char* argv[]) {
 						cout << ("Author: hacerio") << endl;
 					}
 				}
-				else if (com == "!langulange") {
+				/*else if (com == "!langulange") {
 					cout << "1. Русский" << endl << "2. English" << endl;
 					while (1) {
 						cin >> com;
@@ -968,7 +968,7 @@ int main(int argc, char* argv[]) {
 					else {
 						cout << "File is not open" << endl;
 					}
-				}
+				}*/
 				else if (com == "!autostart") {
 					if (langulange == 1) {
 						cout << "На некоторых системах обучение программы занимает некоторое время, если нужно отлучится на время, то можете включить автостарт, который сразу же после обучения выдаст вам результат, и по приходу у вас будет готовый результат" << endl;
