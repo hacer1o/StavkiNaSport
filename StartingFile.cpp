@@ -781,7 +781,33 @@ void stadium() {
 	}*/
 }
 int is_autostart;
+int langulange;
+string file_data;
 int main(int argc, char* argv[]) {
+	setlocale(LC_ALL, "rus");
+	ifstream file("config");
+	if (!file.is_open()) {
+		cout << "Welcome to Stavki Na Sport! Choose your langulange" << endl;
+		cout << "1. Русский" << endl << "2. English" << endl;
+		while(1){
+			cin >> com;
+			if (com == "1") {
+				langulange = 1;
+				break;
+			}
+			else if (com == "2") {
+				langulange = 2;
+				break;
+			}
+			else {
+				cout << "error" << endl;
+			}
+		}
+		ofstream out("config");
+		out << langulange;
+		out.close();
+		return 0;
+	}
 	cout << ("******************************************") << endl;
 	cout << ("****         ***   ****** ****         ***") << endl;
 	cout << ("***  ***********   ****** ***  ***********") << endl;
@@ -795,25 +821,48 @@ int main(int argc, char* argv[]) {
 	cout << ("******************************************") << endl;
 	cout << endl << endl;
 	cout << ("######################################") << endl;
-	cout << ("Stavki Na Sport Beta 1.1 (CyberSport edition)") << endl;
+	cout << ("Stavki Na Sport (CyberSport edition)") << endl;
 	cout << ("######################################") << endl;
 	cout << ("Maded by @hacerio") << endl;
 	cout << endl;
+	file >> file_data;
+	if (file_data == "1") {
+		langulange = 1;
+	}
+	else if (file_data == "2") {
+		langulange = 2;
+	}
+	else {
+		cout << "There are some errors with config file, now langulange is English" << endl;
+		langulange = 2;
+	}
 	int cores_count = thread::hardware_concurrency(); //Узнаем к-во ядер
 	string get_sys_info = GetCpuVendorString();
 	cout << get_sys_info << endl;
 	bool is_multipotok = 1;
 	string multipotok;
 	cout << endl << endl;
-	setlocale(LC_ALL, "rus");
-	cout << ("Привет, напиши, что хочешь делать. Для помощи !help") << endl;
+	if (langulange == 1) {
+		cout << ("Привет, напиши, что хочешь делать. Для помощи !help") << endl;
+	}
+	else if (langulange == 2) {
+		cout << ("Hello! Write a command. For help !help") << endl;
+	}
 	main_menu:
 	while (1) {
 
 		cin >> com;
 		if (com == "!help") {
-			cout << ("Для запуска !start") << endl;
-			cout << ("Зайти в настройки !settings") << endl;
+			if (langulange == 1) {
+				cout << ("Запуск !start") << endl;
+				cout << ("Настройки !settings") << endl;
+				cout << ("Для выхода с программы !exit") << endl;
+			}
+			else if (langulange == 2) {
+				cout << ("For start !start") << endl;
+				cout << ("Settings !settings") << endl;
+				cout << ("Exit !exit") << endl;
+			}
 		}
 		else if (com == "!settings") {
 			while (1) {
@@ -825,28 +874,49 @@ int main(int argc, char* argv[]) {
 				}
 				cin >> com;
 				if (com == "!help") {
-					//cout << ("To change languange write !lang") << endl;
-					cout << ("Посмотреть информацию !info") << endl;
-					cout << ("Язык !langulange") << endl;
-					cout << ("Автостарт после обучения !autostart") << endl;
-					cout << ("Для выхода из настроек !exit") << endl;
+					if (langulange == 1) {
+						cout << ("Посмотреть информацию !info") << endl;
+						cout << ("Язык !langulange") << endl;
+						cout << ("Автостарт после обучения !autostart") << endl;
+						cout << ("Для выхода из настроек !exit") << endl;
+					}
+					else if (langulange == 2) {
+						cout << ("Information!info") << endl;
+						cout << ("Langulange !langulange") << endl;
+						cout << ("Autostart after learning !autostart") << endl;
+						cout << ("Close settings !exit") << endl;
+					}
 				}
 				else if (com == "!exit") {
 					com == "";
 					break;
 				}
 				else if (com == "!info") {
-					cout << ("Ядер процессора ") << cores_count << endl;
-					cout << ("Процессор: ")<< get_sys_info << endl;
-					cout << ("Язык: Русский") << endl;
-					cout << ("Автор: @hacerio") << endl;
+					if (langulange == 1) {
+						cout << ("Ядер процессора ") << cores_count << endl;
+						cout << ("Процессор: ") << get_sys_info << endl;
+						cout << ("Язык: Русский") << endl;
+						cout << ("Автор: hacerio") << endl;
+					}
+					else if (langulange == 2) {
+						cout << ("CPU cores ") << cores_count << endl;
+						cout << ("CPU: ") << get_sys_info << endl;
+						cout << ("Langulange: English") << endl;
+						cout << ("Author: hacerio") << endl;
+					}
 				}
 				else if (com == "!langulange") {
-					cout << ("На версии Beta 1.1 есть только русский язык. Все другое в разработке!") << endl;
+
 				}
 				else if (com == "!autostart") {
-					cout << "На некоторых системах обучение программы занимает некоторое время, и отлучится на время, то можете включить автостарт, который сразу же после обучения выдаст вам результат, и по приходу у вас будет готовый результат" << endl;
-					cout << "Чтобы запустить автостарт напишите !on , чтобы не запускать напишите любые символы" << endl;
+					if (langulange == 1) {
+						cout << "На некоторых системах обучение программы занимает некоторое время, если нужно отлучится на время, то можете включить автостарт, который сразу же после обучения выдаст вам результат, и по приходу у вас будет готовый результат" << endl;
+						cout << "Чтобы запустить автостарт напишите !on , чтобы не запускать напишите любые символы" << endl;
+					}
+					else if (langulange == 2) {
+						cout << "In the some systems learning spend some time, you can on autostart and you can go do your affairs, and when you return result will be" << endl;
+						cout << "To on autostart !on , to not on it press any key" << endl;
+					}
 					cin >> com;
 					if (com == "!on") {
 						cout << "1.Astralis" << endl;
@@ -864,7 +934,12 @@ int main(int argc, char* argv[]) {
 						cout << "13.Complexity" << endl;
 						cout << "14.Faze" << endl;
 						while (1) {
-							cout << ("Напиши номер первой команды") << endl;
+							if (langulange == 1) {
+								cout << ("Напиши номер первой команды") << endl;
+							}
+							else if (langulange == 2) {
+								cout << ("Number of first command") << endl;
+							}
 							cin >> user_input;
 							if (user_input == "1") {
 								command_choose1 = 1;
@@ -912,7 +987,12 @@ int main(int argc, char* argv[]) {
 								cout << "error" << endl;
 								continue;
 							}
-							cout << ("Напиши номер второй команды") << endl;
+							if (langulange == 1) {
+								cout << ("Напиши номер второй команды") << endl;
+							}
+							else if (langulange == 2) {
+								cout << ("Number of second command") << endl;
+							}
 							cin >> user_input;
 							if (user_input == "1") {
 								command_choose2 = 1;
@@ -965,7 +1045,12 @@ int main(int argc, char* argv[]) {
 								continue;
 							}
 							else {
-								cout << "Автостарт успешно запущен. Можете запускать программу" << endl;
+								if (langulange == 1) {
+									cout << "Автостарт успешно запущен. Можете запускать программу" << endl;
+								}
+								else if (langulange == 2) {
+									cout << "Autostart is on" << endl;
+								}
 								is_autostart = 1;
 								break;
 							}
@@ -973,21 +1058,34 @@ int main(int argc, char* argv[]) {
 					}			
 				}
 				else {
-					cout << ("Неизвестная команда ") << com << (". Напиши !help") << endl;
+					if (langulange == 1) {
+						cout << ("Неизвестная команда ") << com << (". Напиши !help") << endl;
+					}
+					else if (langulange == 1) {
+						cout << ("Unknown command ") << com << (". To help !help") << endl;
+					}
 				}
 			}
 		}
 		else if (com == "!start") {
 			break;
 		}
+		else if (com == "!exit") {
+		return 0;
+		}
 		else {
-			cout << ("Неизвестная команда ") << com << (". Напиши !help") << endl;
+			if (langulange == 1) {
+				cout << ("Неизвестная команда ") << com << (". Напиши !help") << endl;
+			}
+			else if (langulange == 1) {
+				cout << ("Unknown command ") << com << (". To help !help") << endl;
+			}
 		}
 	}
 		if (cores_count < 4 && is_multipotok == 1) {
-		cout << ("У твоего процессора ") << cores_count << ("ядер. Для роботы нужно минимум 4 ядер. Если у вас должно быть больше 4, но тут отображается меньше, то обратитесь в сервисный центр") << endl;
-		goto main_menu;
-	}
+			cout << ("У твоего процессора ") << cores_count << ("ядер. Для роботы нужно минимум 4 ядер. Если у вас должно быть больше 4, но тут отображается меньше, то обратитесь в сервисный центр") << endl;
+			goto main_menu;
+		}
 		else {
 			cout << ("Ядер: ") << cores_count << (" Мультипоток: ")<< multipotok<<endl;
 	}/*ofstream fout("data_base", ios_base::trunc);
