@@ -444,33 +444,33 @@ int arifmetic(double a, double b) {
 	return a;
 }
 void do_correct() {
-	//if (ney1_1 == 0) neyr3_1 = 0;
+	if (ney1_1 == 0) neyr3_1 = 0;
 	if (neyr3_1 < 0) neyr3_1 = neyr3_1 * -1;
-	//if (ney1_2 == 0) neyr3_2 = 0;
+	if (ney1_2 == 0) neyr3_2 = 0;
 	if (neyr3_2 < 0) neyr3_2 = neyr3_2 * -1;
-	//if (ney1_3 == 0) neyr3_3 = 0;
+	if (ney1_3 == 0) neyr3_3 = 0;
 	if (neyr3_3 < 0) neyr3_3 = neyr3_3 * -1;
-	//if (ney1_4 == 0) neyr3_4 = 0;
+	if (ney1_4 == 0) neyr3_4 = 0;
 	if (neyr3_4 < 0) neyr3_4 = neyr3_4 * -1;
-	//if (ney1_5 == 0) neyr3_5 = 0;
+	if (ney1_5 == 0) neyr3_5 = 0;
 	if (neyr3_5 < 0) neyr3_5 = neyr3_5 * -1;
-	//if (ney1_6 == 0) neyr3_6 = 0;
+	if (ney1_6 == 0) neyr3_6 = 0;
 	if (neyr3_6 < 0) neyr3_6 = neyr3_6 * -1;
-	//if (ney1_7 == 0) neyr3_7 = 0;
+	if (ney1_7 == 0) neyr3_7 = 0;
 	if (neyr3_7 < 0) neyr3_7 = neyr3_7 * -1;
-	//if (ney1_8 == 0) neyr3_8 = 0;
+	if (ney1_8 == 0) neyr3_8 = 0;
 	if (neyr3_8 < 0) neyr3_8 = neyr3_8 * -1;
-	//if (ney1_9 == 0) neyr3_9 = 0;
+	if (ney1_9 == 0) neyr3_9 = 0;
 	if (neyr3_9 < 0) neyr3_9 = neyr3_9 * -1;
-	//if (ney1_10 == 0) neyr3_10 = 0;
+	if (ney1_10 == 0) neyr3_10 = 0;
 	if (neyr3_10 < 0) neyr3_10 = neyr3_10 * -1;
-	//if (ney1_11 == 0) neyr3_11 = 0;
+	if (ney1_11 == 0) neyr3_11 = 0;
 	if (neyr3_11 < 0) neyr3_11 = neyr3_11 * -1;
-	//if (ney1_12 == 0) neyr3_12 = 0;
+	if (ney1_12 == 0) neyr3_12 = 0;
 	if (neyr3_12 < 0) neyr3_12 = neyr3_12 * -1;
-	//if (ney1_13 == 0) neyr3_13 = 0;
+	if (ney1_13 == 0) neyr3_13 = 0;
 	if (neyr3_13 < 0) neyr3_13 = neyr3_13 * -1;
-	//if (ney1_14 == 0) neyr3_14 = 0;
+	if (ney1_14 == 0) neyr3_14 = 0;
 	if (neyr3_14 < 0) neyr3_14 = neyr3_14 * -1;
 }
 void allRandom() {
@@ -513,14 +513,17 @@ void random1() {
 }
 void random1_1() {
 	wf1 = ran(); w1_1 = ran(); w1_2 = ran(); w1_3 = ran(); w1_4 = ran(); w1_5 = ran(); w1_6 = ran(); w1_7 = ran(); w1_8 = ran(); w1_9 = ran(); w1_10 = ran(); w1_11 = ran(); w1_12 = ran(); w1_13 = ran(); w1_14 = ran();
-	wf2 = ran(); w2_1 = ran(); w2_2 = ran(); w2_3 = ran(); w2_4 = ran(); w2_5 = ran(); w2_6 = ran(); w2_7 = ran(); w2_8 = ran(); w2_9 = ran(); w2_10 = ran(); w2_11 = ran(); w2_12 = ran(); w2_13 = ran(); w2_14 = ran();
 }
 void random1_2() {
-	wf3 = ran(); w3_1 = ran(); w3_2 = ran(); w3_3 = ran(); w3_4 = ran(); w3_5 = ran(); w3_6 = ran(); w3_7 = ran(); w3_8 = ran(); w3_9 = ran(); w3_10 = ran(); w3_11 = ran(); w3_12 = ran(); w3_13 = ran(); w3_14 = ran();
-	wf4 = ran(); w4_1 = ran(); w4_2 = ran(); w4_3 = ran(); w4_4 = ran(); w4_5 = ran(); w4_6 = ran(); w4_7 = ran(); w4_8 = ran(); w4_9 = ran(); w4_10 = ran(); w4_11 = ran(); w4_12 = ran(); w4_13 = ran(); w4_14 = ran();
-	
+	wf2 = ran(); w2_1 = ran(); w2_2 = ran(); w2_3 = ran(); w2_4 = ran(); w2_5 = ran(); w2_6 = ran(); w2_7 = ran(); w2_8 = ran(); w2_9 = ran(); w2_10 = ran(); w2_11 = ran(); w2_12 = ran(); w2_13 = ran(); w2_14 = ran();
 }
 void random1_3() {
+	wf3 = ran(); w3_1 = ran(); w3_2 = ran(); w3_3 = ran(); w3_4 = ran(); w3_5 = ran(); w3_6 = ran(); w3_7 = ran(); w3_8 = ran(); w3_9 = ran(); w3_10 = ran(); w3_11 = ran(); w3_12 = ran(); w3_13 = ran(); w3_14 = ran();
+}
+void random1_4() {
+	wf4 = ran(); w4_1 = ran(); w4_2 = ran(); w4_3 = ran(); w4_4 = ran(); w4_5 = ran(); w4_6 = ran(); w4_7 = ran(); w4_8 = ran(); w4_9 = ran(); w4_10 = ran(); w4_11 = ran(); w4_12 = ran(); w4_13 = ran(); w4_14 = ran();
+}
+void random1_5() {
 	wf5 = ran(); w5_1 = ran(); w5_2 = ran(); w5_3 = ran(); w5_4 = ran(); w5_5 = ran(); w5_6 = ran(); w5_7 = ran(); w5_8 = ran(); w5_9 = ran(); w5_10 = ran(); w5_11 = ran(); w5_12 = ran(); w5_13 = ran(); w5_14 = ran();
 }
 void random2() {
@@ -567,29 +570,29 @@ void random3() {
 }
 void random3_1() {
 	w3_1_1 = ran(); w3_1_2 = ran(); w3_1_3 = ran(); w3_1_4 = ran(); w3_1_5 = ran(); w3_1_6 = ran(); w3_1_7 = ran(); w3_1_8 = ran();
-	w3_2_1 = ran(); w3_2_2 = ran(); w3_2_3 = ran(); w3_2_4 = ran(); w3_2_5 = ran(); w3_2_6 = ran(); w3_2_7 = ran(); w3_2_8 = ran();
-	w3_3_1 = ran(); w3_3_2 = ran(); w3_3_3 = ran(); w3_3_4 = ran(); w3_2_5 = ran(); w3_3_6 = ran(); w3_3_7 = ran(); w3_3_8 = ran();
-	
+	w3_2_1 = ran(); w3_2_2 = ran(); w3_2_3 = ran(); w3_2_4 = ran(); w3_2_5 = ran(); w3_2_6 = ran(); w3_2_7 = ran(); w3_2_8 = ran();	
 }
 void random3_2() {
-	w3_6_1 = ran(); w3_6_2 = ran(); w3_6_3 = ran(); w3_6_4 = ran(); w3_6_5 = ran(); w3_6_6 = ran(); w3_6_7 = ran(); w3_6_8 = ran();
+	w3_3_1 = ran(); w3_3_2 = ran(); w3_3_3 = ran(); w3_3_4 = ran(); w3_2_5 = ran(); w3_3_6 = ran(); w3_3_7 = ran(); w3_3_8 = ran();
 	w3_4_1 = ran(); w3_4_2 = ran(); w3_4_3 = ran(); w3_4_4 = ran(); w3_4_5 = ran(); w3_4_6 = ran(); w3_4_7 = ran(); w3_4_8 = ran();
-	w3_5_1 = ran(); w3_5_2 = ran(); w3_5_3 = ran(); w3_5_4 = ran(); w3_5_5 = ran(); w3_5_6 = ran(); w3_5_7 = ran(); w3_5_8 = ran();
 }
 void random3_3() {
+	w3_5_1 = ran(); w3_5_2 = ran(); w3_5_3 = ran(); w3_5_4 = ran(); w3_5_5 = ran(); w3_5_6 = ran(); w3_5_7 = ran(); w3_5_8 = ran();
+	w3_6_1 = ran(); w3_6_2 = ran(); w3_6_3 = ran(); w3_6_4 = ran(); w3_6_5 = ran(); w3_6_6 = ran(); w3_6_7 = ran(); w3_6_8 = ran();
+}
+void random3_4() {
 	w3_7_1 = ran(); w3_7_2 = ran(); w3_7_3 = ran(); w3_7_4 = ran(); w3_7_5 = ran(); w3_7_6 = ran(); w3_7_7 = ran(); w3_7_8 = ran();
 	w3_8_1 = ran(); w3_8_2 = ran(); w3_8_3 = ran(); w3_8_4 = ran(); w3_8_5 = ran(); w3_8_6 = ran(); w3_8_7 = ran(); w3_8_8 = ran();
 }
-void random3_4() {
+void random3_5() {
 	w3_9_1 = ran(); w3_9_2 = ran(); w3_9_3 = ran(); w3_9_4 = ran(); w3_9_5 = ran(); w3_9_6 = ran(); w3_9_7 = ran(); w3_9_8 = ran();
 	w3_10_1 = ran(); w3_10_2 = ran(); w3_10_3 = ran(); w3_10_4 = ran(); w3_10_5 = ran(); w3_10_6 = ran(); w3_10_7 = ran(); w3_10_8 = ran();
-
 }
-void random3_5() {
+void random3_6() {
 	w3_11_1 = ran(); w3_11_2 = ran(); w3_11_3 = ran(); w3_11_4 = ran(); w3_11_5 = ran(); w3_11_6 = ran(); w3_11_7 = ran(); w3_11_8 = ran();
 	w3_12_1 = ran(); w3_12_2 = ran(); w3_12_3 = ran(); w3_12_4 = ran(); w3_12_5 = ran(); w3_12_6 = ran(); w3_12_7 = ran(); w3_12_8 = ran();
 }
-void random3_6() {
+void random3_7() {
 	w3_13_1 = ran(); w3_13_2 = ran(); w3_13_3 = ran(); w3_13_4 = ran(); w3_13_5 = ran(); w3_13_6 = ran(); w3_13_7 = ran(); w3_13_8 = ran();
 	w3_14_1 = ran(); w3_14_2 = ran(); w3_14_3 = ran(); w3_14_4 = ran(); w3_14_5 = ran(); w3_14_6 = ran(); w3_14_7 = ran(); w3_14_8 = ran();
 }
@@ -1186,15 +1189,22 @@ int main(int argc, char* argv[]) {
 		if (is_learning_complete == 1) {
 			goto programe;
 	}
-	cout << "Идет обучение програмы, ожидайте"<< endl << endl;
-	for (int i = 0; i <= 200000; i++) {
-		if (i % 5000 == 0) {
-			cout << i / 5000 << endl;
+		if (langulange == 1) {
+			cout << "Идет обучение програмы, ожидайте" << endl << endl;
+	}
+		else {
+			cout << "Programe is learning, please wait" << endl << endl;
+		}
+	for (int i = 0; i <= 20000; i++) {
+		if (i % 500 == 0) {
+			cout << i / 500 << endl;
 		}
 		if (is_multipotok == 1) {
 			thread th(random1_1);
 			thread th1(random1_2);
 			thread th12(random1_3);
+			thread th14(random1_4);
+			thread th15(random1_5);
 			thread th2(random2_1);
 			thread th3(random2_2);
 			thread th11(random2_3);
@@ -1204,6 +1214,7 @@ int main(int argc, char* argv[]) {
 			thread th7(random3_4);
 			thread th8(random3_5);
 			thread th13(random3_6);
+			thread th16(random3_7);
 			thread th9(load_base);
 			thread th10(stadium);
 			th8.join();
@@ -1212,6 +1223,9 @@ int main(int argc, char* argv[]) {
 			th11.join();
 			th12.join();
 			th13.join();
+			th14.join();
+			th15.join();
+			th16.join();
 			th.join();
 			th1.join();
 			th2.join();
@@ -1247,7 +1261,7 @@ int main(int argc, char* argv[]) {
 		cout << d / 2 + 40<< endl;
 		}
 
-		for (int a = 0; a < 1000; a++) {
+		for (int a = 0; a < 500; a++) {
 			load_base();
 			if (is_multipotok == 1) {
 				thread th(random3_1);
@@ -1256,12 +1270,14 @@ int main(int argc, char* argv[]) {
 				thread th3(random3_4);
 				thread th4(random3_5);
 				thread th5(random3_6);
+				thread th6(random3_7);
 				th.join();
 				th5.join();
 				th1.join();
 				th2.join();
 				th3.join();
 				th4.join();
+				th6.join();
 			}
 			else {
 				random3();
@@ -1279,7 +1295,7 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int b = 0; b < 1000; b++) {
+		for (int b = 0; b < 500; b++) {
 			if (is_multipotok == 1) {
 				thread th(random2_1);
 				thread th3(random2_2);
@@ -1309,17 +1325,21 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int c = 0; c < 1000; c++) {
+		for (int c = 0; c < 500; c++) {
 			if (is_multipotok == 1) {
 				thread th(random1_1);
 				thread th2(random1_2);
 				thread th3(random1_3);
+				thread th4(random1_4);
+				thread th5(random1_5);
 				thread th1(load_base);
 				stadium();
 				th.join();
 				th1.join();
 				th2.join();
 				th3.join();
+				th4.join();
+				th5.join();
 			}
 			else {
 				random1();
@@ -1341,29 +1361,16 @@ int main(int argc, char* argv[]) {
 	}
 	//-----------------------------------------------------------Третя-Стадія-Навчання------------------------------------------------
 
-	for (int c = 0; c < 100000; c++) {
-		if (c % 5000 == 0) {
-			cout << c / 5000 + 60 << endl;
+	for (int c = 0; c < 10000; c++) {
+		if (c % 500 == 0) {
+			cout << c / 500 + 60 << endl;
 		}
 		if (is_multipotok == 1) {
-			/*thread th(random1_1);
-			thread th1(random1_2);
-			thread th2(random2);
-			thread th3(random3_1);
-			thread th4(random3_2);
-			thread th5(random3_3);
-			thread th6(load_base);
-			stadium();
-			th.join();
-			th1.join();
-			th2.join();
-			th3.join();
-			th4.join();
-			th5.join();
-			th6.join();*/
 			thread th(random1_1);
 			thread th1(random1_2);
 			thread th12(random1_3);
+			thread th14(random1_4);
+			thread th15(random1_5);
 			thread th2(random2_1);
 			thread th3(random2_2);
 			thread th11(random2_3);
@@ -1373,6 +1380,7 @@ int main(int argc, char* argv[]) {
 			thread th7(random3_4);
 			thread th8(random3_5);
 			thread th13(random3_6);
+			thread th16(random3_7);
 			thread th9(load_base);
 			thread th10(stadium);
 			th8.join();
@@ -1381,6 +1389,9 @@ int main(int argc, char* argv[]) {
 			th11.join();
 			th12.join();
 			th13.join();
+			th14.join();
+			th15.join();
+			th16.join();
 			th.join();
 			th1.join();
 			th2.join();
@@ -1413,7 +1424,7 @@ int main(int argc, char* argv[]) {
 
 	for (int d = 0; d < 20; d++) {
 		cout << d + 80 << endl;
-		for (int a = 0; a < 2000; a++) {
+		for (int a = 0; a < 500; a++) {
 			if (is_multipotok == 1) {
 				thread th(random3_1);
 				thread th1(random3_2);
@@ -1421,12 +1432,14 @@ int main(int argc, char* argv[]) {
 				thread th3(random3_4);
 				thread th4(random3_5);
 				thread th5(random3_6);
+				thread th6(random3_6);
 				th.join();
 				th1.join();
 				th2.join();
 				th3.join();
 				th4.join();
 				th5.join();
+				th6.join();
 			}
 			else {
 				random3();
@@ -1445,7 +1458,7 @@ int main(int argc, char* argv[]) {
 				save3();
 			}
 		}
-		for (int b = 0; b < 2000; b++) {
+		for (int b = 0; b < 500; b++) {
 			if (is_multipotok == 1) {
 				thread th(random2_1);
 				thread th1(random2_2);
@@ -1475,11 +1488,13 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int c = 0; c < 2000; c++) {
+		for (int c = 0; c < 500; c++) {
 			if (is_multipotok == 1) {
 				thread th(random1_1);
 				thread th1(random1_2);
 				thread th4(random1_3);
+				thread th5(random1_4);
+				thread th6(random1_5);
 				thread th2(load_base);
 				thread th3(stadium);
 				th.join();
@@ -1487,6 +1502,8 @@ int main(int argc, char* argv[]) {
 				th2.join();
 				th3.join();
 				th4.join();
+				th5.join();
+				th6.join();
 			}
 			else {
 				random1();
@@ -1810,7 +1827,7 @@ int main(int argc, char* argv[]) {
 		}*/
 		if (ney1_1 == 0) neyr3_1 = 0;
 		if (ney1_2 == 0) neyr3_2 = 0;
-		if (ney1_3 == 0) neyr3_3 = 0;;
+		if (ney1_3 == 0) neyr3_3 = 0;
 		if (ney1_4 == 0) neyr3_4 = 0;
 		if (ney1_5 == 0) neyr3_5 = 0;
 		if (ney1_6 == 0) neyr3_6 = 0;
