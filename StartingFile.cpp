@@ -1808,6 +1808,20 @@ int main(int argc, char* argv[]) {
 		/*else {
 			cout << ("") << endl;
 		}*/
+		if (ney1_1 == 0) neyr3_1 = 0;
+		if (ney1_2 == 0) neyr3_2 = 0;
+		if (ney1_3 == 0) neyr3_3 = 0;;
+		if (ney1_4 == 0) neyr3_4 = 0;
+		if (ney1_5 == 0) neyr3_5 = 0;
+		if (ney1_6 == 0) neyr3_6 = 0;
+		if (ney1_7 == 0) neyr3_7 = 0;
+		if (ney1_8 == 0) neyr3_8 = 0;
+		if (ney1_9 == 0) neyr3_9 = 0;
+		if (ney1_10 == 0) neyr3_10 = 0;
+		if (ney1_11 == 0) neyr3_11 = 0;
+		if (ney1_12 == 0) neyr3_12 = 0;
+		if (ney1_13 == 0) neyr3_13 = 0;
+		if (ney1_14 == 0) neyr3_14 = 0;
 		if (ney1_1) {
 			cout << "Astralis: " << neyr3_1 << " power points." << endl;
 			cout << "Шанс победы Astralis " << neyr3_1 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
