@@ -13,10 +13,8 @@ int ran() {
 			if (plus_minus[stt] == 1) {
 				chisla = chisla * -1;
 			}
-			stt++;
-			if (stt >= sizeof(plus_minus) / sizeof(plus_minus[0])) {
-				stt = 0;
-			}
+			stt = 0 + rand() % sizeof(plus_minus) / sizeof(plus_minus[0]);
+			if ((stt < 0) || stt > sizeof(plus_minus) / sizeof(plus_minus[0]))
 			if (chisla == 0) {
 				continue;
 			}
