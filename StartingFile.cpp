@@ -101,6 +101,7 @@ int st;
 int real_correct;
 int times_correct;
 string com;
+int stepin_navchania = 2;
 //Нова механіка вибору команд
 int command_choose1;
 int command_choose2;
@@ -134,6 +135,7 @@ int ney3_5;
 int ney3_6;
 int ney3_7;
 int ney3_8;
+int ney3_9;
 double neyr3_1;
 double neyr3_2;
 double neyr3_3;
@@ -344,21 +346,22 @@ void neyro_start() {
 	ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_6_1, w2_6_2, w2_6_3, w2_6_4, w2_6_5);
 	ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_7_1, w2_7_2, w2_7_3, w2_7_4, w2_7_5);
 	ney3_8 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_8_1, w2_8_2, w2_8_3, w2_8_4, w2_8_5);
+	ney3_9 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_9_1, w2_9_2, w2_9_3, w2_9_4, w2_9_5);
 
-	neyr3_1 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_1_1, w3_1_2, w3_1_3, w3_1_4, w3_1_5, w3_1_6, w3_1_7, w3_1_8);
-	neyr3_2 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_2_1, w3_2_2, w3_2_3, w3_2_4, w3_2_5, w3_2_6, w3_2_7, w3_2_8);
-	neyr3_3 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_3_1, w3_3_2, w3_3_3, w3_3_4, w3_3_5, w3_3_6, w3_3_7, w3_3_8);
-	neyr3_4 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_4_1, w3_4_2, w3_4_3, w3_4_4, w3_4_5, w3_4_6, w3_4_7, w3_4_8);
-	neyr3_5 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_5_1, w3_5_2, w3_5_3, w3_5_4, w3_5_5, w3_5_6, w3_5_7, w3_5_8);
-	neyr3_6 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_6_1, w3_6_2, w3_6_3, w3_6_4, w3_6_5, w3_6_6, w3_6_7, w3_6_8);
-	neyr3_7 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_7_1, w3_7_2, w3_7_3, w3_7_4, w3_7_5, w3_7_6, w3_7_7, w3_7_8);
-	neyr3_8 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_8_1, w3_8_2, w3_8_3, w3_8_4, w3_8_5, w3_8_6, w3_8_7, w3_8_8);
-	neyr3_9 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_9_1, w3_9_2, w3_9_3, w3_9_4, w3_9_5, w3_9_6, w3_9_7, w3_9_8);
-	neyr3_10 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_10_1, w3_10_2, w3_10_3, w3_10_4, w3_10_5, w3_10_6, w3_10_7, w3_10_8);
-	neyr3_11 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_11_1, w3_11_2, w3_11_3, w3_11_4, w3_11_5, w3_11_6, w3_11_7, w3_11_8);
-	neyr3_12 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_12_1, w3_12_2, w3_12_3, w3_12_4, w3_12_5, w3_12_6, w3_12_7, w3_12_8);
-	neyr3_13 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_13_1, w3_13_2, w3_13_3, w3_13_4, w3_13_5, w3_13_6, w3_13_7, w3_13_8);
-	neyr3_14 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, w3_14_1, w3_14_2, w3_14_3, w3_14_4, w3_14_5, w3_14_6, w3_14_7, w3_14_8);
+	neyr3_1 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_1_1, w3_1_2, w3_1_3, w3_1_4, w3_1_5, w3_1_6, w3_1_7, w3_1_8, w3_1_9);
+	neyr3_2 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_2_1, w3_2_2, w3_2_3, w3_2_4, w3_2_5, w3_2_6, w3_2_7, w3_2_8, w3_2_9);
+	neyr3_3 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_3_1, w3_3_2, w3_3_3, w3_3_4, w3_3_5, w3_3_6, w3_3_7, w3_3_8, w3_3_9);
+	neyr3_4 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_4_1, w3_4_2, w3_4_3, w3_4_4, w3_4_5, w3_4_6, w3_4_7, w3_4_8, w3_4_9);
+	neyr3_5 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_5_1, w3_5_2, w3_5_3, w3_5_4, w3_5_5, w3_5_6, w3_5_7, w3_5_8, w3_5_9);
+	neyr3_6 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_6_1, w3_6_2, w3_6_3, w3_6_4, w3_6_5, w3_6_6, w3_6_7, w3_6_8, w3_6_9);
+	neyr3_7 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_7_1, w3_7_2, w3_7_3, w3_7_4, w3_7_5, w3_7_6, w3_7_7, w3_7_8, w3_7_9);
+	neyr3_8 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_8_1, w3_8_2, w3_8_3, w3_8_4, w3_8_5, w3_8_6, w3_8_7, w3_8_8, w3_8_9);
+	neyr3_9 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_9_1, w3_9_2, w3_9_3, w3_9_4, w3_9_5, w3_9_6, w3_9_7, w3_9_8, w3_9_9);
+	neyr3_10 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_10_1, w3_10_2, w3_10_3, w3_10_4, w3_10_5, w3_10_6, w3_10_7, w3_10_8, w3_10_9);
+	neyr3_11 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_11_1, w3_11_2, w3_11_3, w3_11_4, w3_11_5, w3_11_6, w3_11_7, w3_11_8, w3_11_9);
+	neyr3_12 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_12_1, w3_12_2, w3_12_3, w3_12_4, w3_12_5, w3_12_6, w3_12_7, w3_12_8, w3_12_9);
+	neyr3_13 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_13_1, w3_13_2, w3_13_3, w3_13_4, w3_13_5, w3_13_6, w3_13_7, w3_13_8, w3_13_9);
+	neyr3_14 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_14_1, w3_14_2, w3_14_3, w3_14_4, w3_14_5, w3_14_6, w3_14_7, w3_14_8, w3_14_9);
 
 	/*neyron3_1(w2_1_1, w2_1_2, w2_1_3, w2_1_4, w2_1_5);
 	neyron3_2(w2_2_1, w2_2_2, w2_2_3, w2_2_4, w2_2_5);
@@ -863,12 +866,14 @@ int main(int argc, char* argv[]) {
 						//cout << ("Язык !langulange") << endl;
 						cout << ("Автостарт после обучения !autostart") << endl;
 						cout << ("Для выхода из настроек !exit") << endl;
+						cout << ("Настройка степени обучения !learning") << endl;
 					}
 					else if (langulange == 2) {
 						cout << ("Information!info") << endl;
 						//cout << ("Langulange !langulange") << endl;
 						cout << ("Autostart after learning !autostart") << endl;
 						cout << ("Close settings !exit") << endl;
+						cout << ("How many program must learn !learning") << endl;
 					}
 				}
 				else if (com == "!exit") {
@@ -880,13 +885,51 @@ int main(int argc, char* argv[]) {
 						cout << ("Ядер процессора ") << cores_count << endl;
 						cout << ("Процессор: ") << get_sys_info << endl;
 						cout << ("Язык: Русский") << endl;
+						cout << ("Степпень обучения: ") << stepin_navchania << endl;
+						cout << ("-----------------------") << endl;
 						cout << ("Автор: hacerio") << endl;
 					}
 					else if (langulange == 2) {
 						cout << ("CPU cores ") << cores_count << endl;
 						cout << ("CPU: ") << get_sys_info << endl;
 						cout << ("Langulange: English") << endl;
+						cout << ("Degree of the learning: ") << stepin_navchania << endl;
+						cout << ("-----------------------") << endl;
 						cout << ("Author: hacerio") << endl;
+					}
+				}
+				else if (com == "!learning") {
+					if (langulange == 1) {
+						cout << "Вкажите степпень обучения програмы. 1. Слабый 2. Средний 3. Сильный . Чем больше степень обучения, тем точнее результаты, но это может занять больше времени. Standart - 2" << endl;
+						cout << "Сейчас: " << stepin_navchania << endl;
+					}
+					else if (langulange == 2) {
+						cout << "Indicate the degree of learning of the program. 1. Weak 2. Medium 3. Strong. The greater the degree of training, the more accurate the results, but this may take longer. Standart - 2 " << endl;
+						cout << "Now: " << stepin_navchania << endl;
+					}
+					while (1) {
+						cin >> com;
+						if (com == "1") {
+							stepin_navchania = 1;
+							break;
+						}
+						else if (com == "2") {
+							stepin_navchania = 2;
+							break;
+						}
+						else if (com == "3") {
+							stepin_navchania = 3;
+							break;
+						}
+						else {
+							cout << "error" << endl;
+						}
+					}
+					if (langulange == 1) {
+						cout << "Установлено на: " << stepin_navchania << endl;
+					}
+					else if (langulange == 2) {
+						cout << "Changed to: " << stepin_navchania << endl;
 					}
 				}
 				/*else if (com == "!langulange") {
@@ -1156,9 +1199,9 @@ int main(int argc, char* argv[]) {
 		else {
 			cout << "Programe is learning, please wait" << endl << endl;
 		}
-	for (int i = 0; i <= 20000; i++) {
-		if (i % 500 == 0) {
-			cout << i / 500 << endl;
+	for (int i = 0; i <= 20000 * stepin_navchania; i++) {
+		if (i % 500 * stepin_navchania == 0) {
+			cout << i / 500 * stepin_navchania << endl;
 		}
 		if (is_multipotok == 1) {
 			thread th(random1_1);
@@ -1222,7 +1265,7 @@ int main(int argc, char* argv[]) {
 		cout << d / 2 + 40<< endl;
 		}
 
-		for (int a = 0; a < 500; a++) {
+		for (int a = 0; a < 500 * stepin_navchania; a++) {
 			load_base();
 			if (is_multipotok == 1) {
 				thread th(random3_1);
@@ -1256,7 +1299,7 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int b = 0; b < 500; b++) {
+		for (int b = 0; b < 500 * stepin_navchania; b++) {
 			if (is_multipotok == 1) {
 				thread th(random2_1);
 				thread th3(random2_2);
@@ -1286,7 +1329,7 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int c = 0; c < 500; c++) {
+		for (int c = 0; c < 500 * stepin_navchania; c++) {
 			if (is_multipotok == 1) {
 				thread th(random1_1);
 				thread th2(random1_2);
@@ -1322,9 +1365,9 @@ int main(int argc, char* argv[]) {
 	}
 	//-----------------------------------------------------------Третя-Стадія-Навчання------------------------------------------------
 
-	for (int c = 0; c < 10000; c++) {
-		if (c % 500 == 0) {
-			cout << c / 500 + 60 << endl;
+	for (int c = 0; c < 10000 * stepin_navchania; c++) {
+		if (c % 500 * stepin_navchania == 0) {
+			cout << c / 500 * stepin_navchania + 60 << endl;
 		}
 		if (is_multipotok == 1) {
 			thread th(random1_1);
@@ -1385,7 +1428,7 @@ int main(int argc, char* argv[]) {
 
 	for (int d = 0; d < 20; d++) {
 		cout << d + 80 << endl;
-		for (int a = 0; a < 500; a++) {
+		for (int a = 0; a < 500 * stepin_navchania; a++) {
 			if (is_multipotok == 1) {
 				thread th(random3_1);
 				thread th1(random3_2);
@@ -1419,7 +1462,7 @@ int main(int argc, char* argv[]) {
 				save3();
 			}
 		}
-		for (int b = 0; b < 500; b++) {
+		for (int b = 0; b < 500 * stepin_navchania; b++) {
 			if (is_multipotok == 1) {
 				thread th(random2_1);
 				thread th1(random2_2);
@@ -1449,7 +1492,7 @@ int main(int argc, char* argv[]) {
 			}
 			st++;
 		}
-		for (int c = 0; c < 500; c++) {
+		for (int c = 0; c < 500 * stepin_navchania; c++) {
 			if (is_multipotok == 1) {
 				thread th(random1_1);
 				thread th1(random1_2);
@@ -1703,6 +1746,7 @@ int main(int argc, char* argv[]) {
 		ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_6_1, ws2_6_2, ws2_6_3, ws2_6_4, ws2_6_5);
 		ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_7_1, ws2_7_2, ws2_7_3, ws2_7_4, ws2_7_5);
 		ney3_8 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_8_1, ws2_8_2, ws2_8_3, ws2_8_4, ws2_8_5);
+		ney3_9 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_9_1, ws2_9_2, ws2_9_3, ws2_9_4, ws2_9_5);
 
 	/*	cout << ws2_1_1 << " " << ws2_1_2 << " " << ws2_1_3 << " " << ws2_1_4 << " " << ws2_1_5 <<endl;
 		cout << ws2_2_1 << " " << ws2_2_2 << " " << ws2_2_3 << " " << ws2_2_4 << " " << ws2_2_5 <<endl;
@@ -1721,20 +1765,20 @@ int main(int argc, char* argv[]) {
 			debug_file(3, ney3_6);
 			debug_file(3, ney3_7);
 		}
-		neyr3_1 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_1_1, ws3_1_2, ws3_1_3, ws3_1_4, ws3_1_5, ws3_1_6, ws3_1_7, ws3_1_8);
-		neyr3_2 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_2_1, ws3_2_2, ws3_2_3, ws3_2_4, ws3_2_5, ws3_2_6, ws3_2_7, ws3_2_8);
-		neyr3_3 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_3_1, ws3_3_2, ws3_3_3, ws3_3_4, ws3_3_5, ws3_3_6, ws3_3_7, ws3_3_8);
-		neyr3_4 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_4_1, ws3_4_2, ws3_4_3, ws3_4_4, ws3_4_5, ws3_4_6, ws3_4_7, ws3_4_8);
-		neyr3_5 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_5_1, ws3_5_2, ws3_5_3, ws3_5_4, ws3_5_5, ws3_5_6, ws3_5_7, ws3_5_8);
-		neyr3_6 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_6_1, ws3_6_2, ws3_6_3, ws3_6_4, ws3_6_5, ws3_6_6, ws3_6_7, ws3_6_8);
-		neyr3_7 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_7_1, ws3_7_2, ws3_7_3, ws3_7_4, ws3_7_5, ws3_7_6, ws3_7_7, ws3_7_8);
-		neyr3_8 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_8_1, ws3_8_2, ws3_8_3, ws3_8_4, ws3_8_5, ws3_8_6, ws3_8_7, ws3_8_8);
-		neyr3_9 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_9_1, ws3_9_2, ws3_9_3, ws3_9_4, ws3_9_5, ws3_9_6, ws3_9_7, ws3_9_8);
-		neyr3_10 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_10_1, ws3_10_2, ws3_10_3, ws3_10_4, ws3_10_5, ws3_10_6, ws3_10_7, ws3_10_8);
-		neyr3_11 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_11_1, ws3_11_2, ws3_11_3, ws3_11_4, ws3_11_5, ws3_11_6, ws3_11_7, ws3_11_8);
-		neyr3_12 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_12_1, ws3_12_2, ws3_12_3, ws3_12_4, ws3_12_5, ws3_12_6, ws3_12_7, ws3_12_8);
-		neyr3_13 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_13_1, ws3_13_2, ws3_13_3, ws3_13_4, ws3_13_5, ws3_13_6, ws3_13_7, ws3_13_8);
-		neyr3_14 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ws3_14_1, ws3_14_2, ws3_14_3, ws3_14_4, ws3_14_5, ws3_14_6, ws3_14_7, ws3_14_8);
+		neyr3_1 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_1_1, ws3_1_2, ws3_1_3, ws3_1_4, ws3_1_5, ws3_1_6, ws3_1_7, ws3_1_8, ws3_1_9);
+		neyr3_2 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_2_1, ws3_2_2, ws3_2_3, ws3_2_4, ws3_2_5, ws3_2_6, ws3_2_7, ws3_2_8, ws3_2_9);
+		neyr3_3 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_3_1, ws3_3_2, ws3_3_3, ws3_3_4, ws3_3_5, ws3_3_6, ws3_3_7, ws3_3_8, ws3_3_9);
+		neyr3_4 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_4_1, ws3_4_2, ws3_4_3, ws3_4_4, ws3_4_5, ws3_4_6, ws3_4_7, ws3_4_8, ws3_4_9);
+		neyr3_5 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_5_1, ws3_5_2, ws3_5_3, ws3_5_4, ws3_5_5, ws3_5_6, ws3_5_7, ws3_5_8, ws3_5_9);
+		neyr3_6 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_6_1, ws3_6_2, ws3_6_3, ws3_6_4, ws3_6_5, ws3_6_6, ws3_6_7, ws3_6_8, ws3_6_9);
+		neyr3_7 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_7_1, ws3_7_2, ws3_7_3, ws3_7_4, ws3_7_5, ws3_7_6, ws3_7_7, ws3_7_8, ws3_7_9);
+		neyr3_8 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_8_1, ws3_8_2, ws3_8_3, ws3_8_4, ws3_8_5, ws3_8_6, ws3_8_7, ws3_8_8, ws3_8_9);
+		neyr3_9 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_9_1, ws3_9_2, ws3_9_3, ws3_9_4, ws3_9_5, ws3_9_6, ws3_9_7, ws3_9_8, ws3_9_9);
+		neyr3_10 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_10_1, ws3_10_2, ws3_10_3, ws3_10_4, ws3_10_5, ws3_10_6, ws3_10_7, ws3_10_8, ws3_10_9);
+		neyr3_11 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_11_1, ws3_11_2, ws3_11_3, ws3_11_4, ws3_11_5, ws3_11_6, ws3_11_7, ws3_11_8, ws3_11_9);
+		neyr3_12 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_12_1, ws3_12_2, ws3_12_3, ws3_12_4, ws3_12_5, ws3_12_6, ws3_12_7, ws3_12_8, ws3_12_9);
+		neyr3_13 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_13_1, ws3_13_2, ws3_13_3, ws3_13_4, ws3_13_5, ws3_13_6, ws3_13_7, ws3_13_8, ws3_13_9);
+		neyr3_14 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_14_1, ws3_14_2, ws3_14_3, ws3_14_4, ws3_14_5, ws3_14_6, ws3_14_7, ws3_14_8, ws3_14_9);
 
 		/*cout << ws3_1_1 << " " << ws3_1_2 << " " << ws3_1_3 << " " << ws3_1_4 << " " << ws3_1_5 << " " << ws3_1_6 << " " << ws3_1_7 << " " << ws3_1_8 << " " << endl;
 		cout << ws3_2_1 << " " << ws3_2_2 << " " << ws3_2_3 << " " << ws3_2_4 << " " << ws3_2_5 << " " << ws3_2_6 << " " << ws3_2_7 << " " << ws3_2_8 << " " << endl;
