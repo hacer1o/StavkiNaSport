@@ -1139,6 +1139,8 @@ int main(int argc, char* argv[]) {
 			break;
 		}
 		else if (com == "!exit") {
+		cout << "Bye" << endl;
+		Sleep(500);
 		return 0;
 		}
 		else {
@@ -1724,13 +1726,13 @@ int main(int argc, char* argv[]) {
 		ney2_3 = neyron2(0, wsf3, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws3_1, ws3_2, ws3_3, ws3_4, ws3_5, ws3_6, ws3_7, ws3_8, ws3_9, ws3_10, ws3_11, ws3_12, ws3_13, ws3_14);
 		ney2_4 = neyron2(0, wsf4, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws4_1, ws4_2, ws4_3, ws4_4, ws4_5, ws4_6, ws4_7, ws4_8, ws4_9, ws4_10, ws4_11, ws4_12, ws4_13, ws4_14);
 		ney2_5 = neyron2(0, wsf5, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws5_1, ws5_2, ws5_3, ws5_4, ws5_5, ws5_6, ws5_7, ws5_8, ws5_9, ws5_10, ws5_11, ws5_12, ws5_13, ws5_14);
-		if (debb == 1) {
+		/*if (debb == 1) {
 			debug_file(2, ney2_1);
 			debug_file(2, ney2_2);
 			debug_file(2, ney2_3);
 			debug_file(2, ney2_4);
 			debug_file(2, ney2_5);
-		}
+		}*/
 
 		/*cout << ws1_1 << " " << ws1_2 << " " << ws1_3 << " " << ws1_4 << " " << ws1_5 << " " << ws1_6 << " " << ws1_7 << " " << ws1_8 << " " << ws1_9 << " " << ws1_10 << " " << ws1_11 << " " << ws1_12 << " " << ws1_13 << " " << ws1_14 << endl;
 		cout << ws2_1 << " " << ws2_2 << " " << ws2_3 << " " << ws2_4 << " " << ws2_5 << " " << ws2_6 << " " << ws2_7 << " " << ws2_8 << " " << ws2_9 << " " << ws2_10 << " " << ws2_11 << " " << ws2_12 << " " << ws2_13 << " " << ws2_14 << endl;
@@ -1756,7 +1758,7 @@ int main(int argc, char* argv[]) {
 		cout << ws2_6_1 << " " << ws2_6_2 << " " << ws2_6_3 << " " << ws2_6_4 << " " << ws2_6_5 <<endl;
 		cout << ws2_7_1 << " " << ws2_7_2 << " " << ws2_7_3 << " " << ws2_7_4 << " " << ws2_7_5 <<endl;
 		cout << ws2_8_1 << " " << ws2_8_2 << " " << ws2_8_3 << " " << ws2_8_4 << " " << ws2_8_5 <<endl << endl;*/
-		if (debb == 1) {
+		/*if (debb == 1) {
 			debug_file(3, ney3_1);
 			debug_file(3, ney3_2);
 			debug_file(3, ney3_3);
@@ -1764,7 +1766,7 @@ int main(int argc, char* argv[]) {
 			debug_file(3, ney3_5);
 			debug_file(3, ney3_6);
 			debug_file(3, ney3_7);
-		}
+		}*/
 		neyr3_1 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_1_1, ws3_1_2, ws3_1_3, ws3_1_4, ws3_1_5, ws3_1_6, ws3_1_7, ws3_1_8, ws3_1_9);
 		neyr3_2 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_2_1, ws3_2_2, ws3_2_3, ws3_2_4, ws3_2_5, ws3_2_6, ws3_2_7, ws3_2_8, ws3_2_9);
 		neyr3_3 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, ws3_3_1, ws3_3_2, ws3_3_3, ws3_3_4, ws3_3_5, ws3_3_6, ws3_3_7, ws3_3_8, ws3_3_9);
@@ -1795,7 +1797,7 @@ int main(int argc, char* argv[]) {
 		cout << ws3_13_1 << " " << ws3_13_2 << " " << ws3_13_3 << " " << ws3_13_4 << " " << ws3_13_5 << " " << ws3_13_6 << " " << ws3_13_7 << " " << ws3_13_8 << " " << endl;
 		cout << ws3_14_1 << " " << ws3_14_2 << " " << ws3_14_3 << " " << ws3_14_4 << " " << ws3_14_5 << " " << ws3_14_6 << " " << ws3_14_7 << " " << ws3_14_8 << " " << endl;*/
 
-		if (debb == 1) {
+		/*if (debb == 1) {
 			debug_file(4, ney4_1);
 			debug_file(4, ney4_2);
 			debug_file(4, ney4_3);
@@ -1810,7 +1812,7 @@ int main(int argc, char* argv[]) {
 			debug_file(4, ney4_12);
 			debug_file(4, ney4_13);
 			debug_file(4, ney4_14);
-		}
+		}*/
 
 		do_correct();
 		correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
