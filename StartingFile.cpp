@@ -857,6 +857,7 @@ int main(int argc, char* argv[]) {
 						cout << ("Автостарт после обучения !autostart") << endl;
 						cout << ("Для выхода из настроек !exit") << endl;
 						cout << ("Настройка степени обучения !learning") << endl;
+						cout << ("Глубокое обучение !deeplearning") << endl;
 					}
 					else if (langulange == 2) {
 						cout << ("Information!info") << endl;
@@ -864,11 +865,20 @@ int main(int argc, char* argv[]) {
 						cout << ("Autostart after learning !autostart") << endl;
 						cout << ("Close settings !exit") << endl;
 						cout << ("How many program must learn !learning") << endl;
+						cout << ("Deep learning !deeplearning") << endl;
 					}
 				}
 				else if (com == "!exit") {
 					com == "";
 					break;
+				}
+				else if (com == "!deeplearning") {
+					if (langulange == 1) {
+						cout << ("В разработке... Ожидайте") << endl;
+					}
+					else if (langulange == 2) {
+						cout << ("In development.. Please wait") << endl;
+					}
 				}
 				else if (com == "!info") {
 					if (langulange == 1) {
