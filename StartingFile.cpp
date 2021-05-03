@@ -13,16 +13,6 @@ float chance_win;
 int again;
 int stadium_number;
 int debb;
-/*string main_langulange[] = {
-	"Your CPU have","cores.Need 4 or more cores","CPU cores: ","Hello! Write command what you whant to do. To help write !help","To start write !start","To open settings write !settings","To change languange write !lang","To close settings write !exit","Programe is learning. Please wait","Write number of first command","Write number of second command","Write number of command, whitch play home","Number of winning command: "
-};
-string english_langulange[] = {
-	"Your CPU have","cores.Need 4 or more cores","CPU cores: ","Hello! Write command what you whant to do. To help write !help","To start write !start","To open settings write !settings","To change languange write !lang","To close settings write !exit","Programe is learning. Please wait","Write number of first command","Write number of second command","Write number of command, whitch play home","Number of winning command: "
-};
-string russian_langulange[] = {
-	"У твоего CPU","ядер. Надо минимум 4","Ядер процесора: ","Здраствуй! Введи что ты хочешь делать. Для помощи напиши !help","Для начала напишите !start","Для открытия настроек напиши !settings","Для выбора языка нипиши !lang","Чтобы закрыть настройки напиши !exit","Програма учится, подождите","Напиши номер первой команды","Напиши номер второй команды","Напиши номер команды, которая и грает дома","Номер команды, которая выиграла"
-};*/
-
 //База данних
 int is_learning_complete;
 int results_correct[] = {
@@ -495,7 +485,6 @@ void random2_2() {
 	w2_4_1 = ran(); w2_4_2 = ran(); w2_4_3 = ran(); w2_4_4 = ran();  w2_4_5 = ran();
 	w2_5_1 = ran(); w2_5_2 = ran(); w2_5_3 = ran(); w2_5_4 = ran();  w2_5_5 = ran();
 	w2_6_1 = ran(); w2_6_2 = ran(); w2_6_3 = ran(); w2_6_4 = ran();  w2_6_5 = ran();
-	
 }
 void random2_3() {
 	w2_7_1 = ran(); w2_7_2 = ran(); w2_7_3 = ran(); w2_7_4 = ran();  w2_7_5 = ran();
@@ -745,6 +734,7 @@ int langulange;
 string check_lang;
 string file_data;
 int is_opened;
+
 int main(int argc, char* argv[]) {
 	setlocale(LC_ALL, "rus");
 	/*ifstream file("config.txt");
@@ -1202,8 +1192,8 @@ int main(int argc, char* argv[]) {
 			cout << "Programe is learning, please wait" << endl << endl;
 		}
 	for (int i = 0; i <= 20000 * stepin_navchania; i++) {
-		if (i % 500 * stepin_navchania == 0) {
-			cout << i / 500 * stepin_navchania << endl;
+		if (i % (500 * stepin_navchania) == 0) {
+			cout << i / (500 * stepin_navchania)<< endl;
 		}
 		if (is_multipotok == 1) {
 			thread th(random1_1);
@@ -1368,8 +1358,8 @@ int main(int argc, char* argv[]) {
 	//-----------------------------------------------------------Третя-Стадія-Навчання------------------------------------------------
 
 	for (int c = 0; c < 10000 * stepin_navchania; c++) {
-		if (c % 500 * stepin_navchania == 0) {
-			cout << c / 500 * stepin_navchania + 60 << endl;
+		if (c % (500 * stepin_navchania) == 0) {
+			cout << c / (500 * stepin_navchania) + 60 << endl;
 		}
 		if (is_multipotok == 1) {
 			thread th(random1_1);
