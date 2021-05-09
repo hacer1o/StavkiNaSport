@@ -16,13 +16,13 @@ int debb;
 //База данних
 int is_learning_complete;
 int results_correct[] = {
-	2 , 2 , 2 , 2 , 2 , 2 , 4 , 2 , 2 , 3 , 10, 1 , 8 , 5 , 1 , 1 , 1 , 12, 3 , 3 , 3 , 3 , 3 , 3 , 7 , 12, 13, 4 , 4 , 4 , 5 , 5 , 5 , 5 , 5 , 7 , 13, 6 , 6 , 13, 6 , 6 , 10, 7 , 7 , 9 , 11, 10, 12, 10, 10, 10, 11, 14, 3 , 3 , 5 , 7 , 1 , 13
+	2 , 2 , 2 , 2 , 2 , 2 , 4 , 2 , 2 , 3 , 10, 1 , 8 , 5 , 1 , 1 , 1 , 12, 3 , 3 , 3 , 3 , 3 , 3 , 7 , 12, 13, 4 , 4 , 4 , 5 , 5 , 5 , 5 , 5 , 7 , 13, 6 , 6 , 13, 6 , 6 , 10, 7 , 7 , 9 , 11, 10, 12, 10, 10, 10, 13, 14, 3 , 3 , 5 , 7 , 1 , 13, 3 , 3
 };
 int first_command_correct[] = {
-	2 , 8 , 2 , 2 , 1 , 2 , 2 , 2 , 10, 3 , 1 , 1 , 8 , 5 , 1 , 5 , 9 , 1 , 7 , 6 , 3 , 14, 5 , 3 , 3 , 3 , 13, 4 , 4 , 4 , 10, 6 , 12, 7 , 5 , 7 , 13, 13, 6 , 6 , 14, 11, 10, 14, 7 , 13, 11, 14, 12, 14, 10, 10, 11, 11, 3 , 3 , 14, 7 , 7 , 13
+	2 , 8 , 2 , 2 , 1 , 2 , 2 , 2 , 10, 3 , 1 , 1 , 8 , 5 , 1 , 5 , 9 , 1 , 7 , 6 , 3 , 14, 5 , 3 , 3 , 3 , 13, 4 , 4 , 4 , 10, 6 , 12, 7 , 5 , 7 , 13, 13, 6 , 6 , 14, 11, 10, 14, 7 , 13, 11, 14, 12, 14, 10, 10, 11, 11, 3 , 3 , 14, 7 , 7 , 13, 3 , 2
 };
 int second_command_correct[] = {
-	5 , 2 , 3 , 12, 2 , 10, 4 , 12, 2 , 1 , 10, 11, 1 , 1 , 7 , 1 , 1 , 12, 3 , 3 , 14, 3 , 3 , 12, 7 , 12, 3 , 13, 10, 12, 5 , 5 , 5 , 5 , 9 , 5 , 5 , 6 , 7 , 13, 6 , 6 , 6 , 7 , 9 , 9 , 9 , 10, 10, 10, 11, 13, 13, 14, 11, 5 , 5 , 5 , 1 , 6
+	5 , 2 , 3 , 12, 2 , 10, 4 , 12, 2 , 1 , 10, 11, 1 , 1 , 7 , 1 , 1 , 12, 3 , 3 , 14, 3 , 3 , 12, 7 , 12, 3 , 13, 10, 12, 5 , 5 , 5 , 5 , 9 , 5 , 5 , 6 , 7 , 13, 6 , 6 , 6 , 7 , 9 , 9 , 9 , 10, 10, 10, 11, 13, 13, 14, 11, 5 , 5 , 5 , 1 , 6 , 4 , 3
 };
 
 /*
@@ -41,14 +41,6 @@ int second_command_correct[] = {
 	13.Complexity *
 	14.Faze *
 */
-/* -------------Future updates
-int first_command_result_correct[] = {
-	2 , 3 , 1 , 0 , 11, 1 , 2 , 2 , 0 , 2 , 1 , 1 , 0 , 1
-};
-int second_command_result_correct[] = {
-	3 , 0 , 0 , 2 , 1 , 3 , 2 , 1 , 0 , 0 , 2 , 2 , 0 , 3
-};*/
-
 	//1 Ювентус
 	//2 Реал Мадрид
 	//3 Барселона
@@ -79,6 +71,7 @@ int second_command_result_correct[] = {
 #include "provirka.h"
 #include <thread>
 #include <fstream>
+#include <Windows.h>
 #include <Windows.h>
 #include<Psapi.h>
 #include <intrin.h>
@@ -116,6 +109,7 @@ int ney2_2;
 int ney2_3;
 int ney2_4;
 int ney2_5;
+int ney2_6;
 
 int ney3_1;
 int ney3_2;
@@ -147,16 +141,17 @@ double wf2; double w2_1; double w2_2; double w2_3; double w2_4; double w2_5; dou
 double wf3; double w3_1; double w3_2; double w3_3; double w3_4; double w3_5; double w3_6; double w3_7; double w3_8; double w3_9; double w3_10; double w3_11; double w3_12; double w3_13; double w3_14;
 double wf4; double w4_1; double w4_2; double w4_3; double w4_4; double w4_5; double w4_6; double w4_7; double w4_8; double w4_9; double w4_10; double w4_11; double w4_12; double w4_13; double w4_14;
 double wf5; double w5_1; double w5_2; double w5_3; double w5_4; double w5_5; double w5_6; double w5_7; double w5_8; double w5_9; double w5_10; double w5_11; double w5_12; double w5_13; double w5_14;
+double wf6; double w6_1; double w6_2; double w6_3; double w6_4; double w6_5; double w6_6; double w6_7; double w6_8; double w6_9; double w6_10; double w6_11; double w6_12; double w6_13; double w6_14;
 
-double w2_1_1; double w2_1_2; double w2_1_3; double w2_1_4; double w2_1_5;
-double w2_2_1; double w2_2_2; double w2_2_3; double w2_2_4; double w2_2_5;
-double w2_3_1; double w2_3_2; double w2_3_3; double w2_3_4; double w2_3_5;
-double w2_4_1; double w2_4_2; double w2_4_3; double w2_4_4; double w2_4_5;
-double w2_5_1; double w2_5_2; double w2_5_3; double w2_5_4; double w2_5_5;
-double w2_6_1; double w2_6_2; double w2_6_3; double w2_6_4; double w2_6_5;
-double w2_7_1; double w2_7_2; double w2_7_3; double w2_7_4; double w2_7_5;
-double w2_8_1; double w2_8_2; double w2_8_3; double w2_8_4; double w2_8_5;
-double w2_9_1; double w2_9_2; double w2_9_3; double w2_9_4; double w2_9_5;
+double w2_1_1; double w2_1_2; double w2_1_3; double w2_1_4; double w2_1_5; double w2_1_6;
+double w2_2_1; double w2_2_2; double w2_2_3; double w2_2_4; double w2_2_5; double w2_2_6;
+double w2_3_1; double w2_3_2; double w2_3_3; double w2_3_4; double w2_3_5; double w2_3_6;
+double w2_4_1; double w2_4_2; double w2_4_3; double w2_4_4; double w2_4_5; double w2_4_6;
+double w2_5_1; double w2_5_2; double w2_5_3; double w2_5_4; double w2_5_5; double w2_5_6;
+double w2_6_1; double w2_6_2; double w2_6_3; double w2_6_4; double w2_6_5; double w2_6_6;
+double w2_7_1; double w2_7_2; double w2_7_3; double w2_7_4; double w2_7_5; double w2_7_6;
+double w2_8_1; double w2_8_2; double w2_8_3; double w2_8_4; double w2_8_5; double w2_8_6;
+double w2_9_1; double w2_9_2; double w2_9_3; double w2_9_4; double w2_9_5; double w2_9_6;
 
 double w3_1_1; double w3_1_2; double w3_1_3; double w3_1_4; double w3_1_5; double w3_1_6; double w3_1_7; double w3_1_8; double w3_1_9;
 double w3_2_1; double w3_2_2; double w3_2_3; double w3_2_4; double w3_2_5; double w3_2_6; double w3_2_7; double w3_2_8; double w3_2_9;
@@ -179,16 +174,17 @@ double wsf2; double ws2_1; double ws2_2; double ws2_3; double ws2_4; double ws2_
 double wsf3; double ws3_1; double ws3_2; double ws3_3; double ws3_4; double ws3_5; double ws3_6; double ws3_7; double ws3_8; double ws3_9; double ws3_10; double ws3_11; double ws3_12; double ws3_13; double ws3_14;
 double wsf4; double ws4_1; double ws4_2; double ws4_3; double ws4_4; double ws4_5; double ws4_6; double ws4_7; double ws4_8; double ws4_9; double ws4_10; double ws4_11; double ws4_12; double ws4_13; double ws4_14;
 double wsf5; double ws5_1; double ws5_2; double ws5_3; double ws5_4; double ws5_5; double ws5_6; double ws5_7; double ws5_8; double ws5_9; double ws5_10; double ws5_11; double ws5_12; double ws5_13; double ws5_14;
+double wsf6; double ws6_1; double ws6_2; double ws6_3; double ws6_4; double ws6_5; double ws6_6; double ws6_7; double ws6_8; double ws6_9; double ws6_10; double ws6_11; double ws6_12; double ws6_13; double ws6_14;
 
-double ws2_1_1; double ws2_1_2; double ws2_1_3; double ws2_1_4; double ws2_1_5;
-double ws2_2_1; double ws2_2_2; double ws2_2_3; double ws2_2_4; double ws2_2_5;
-double ws2_3_1; double ws2_3_2; double ws2_3_3; double ws2_3_4; double ws2_3_5;
-double ws2_4_1; double ws2_4_2; double ws2_4_3; double ws2_4_4; double ws2_4_5;
-double ws2_5_1; double ws2_5_2; double ws2_5_3; double ws2_5_4; double ws2_5_5;
-double ws2_6_1; double ws2_6_2; double ws2_6_3; double ws2_6_4; double ws2_6_5;
-double ws2_7_1; double ws2_7_2; double ws2_7_3; double ws2_7_4; double ws2_7_5;
-double ws2_8_1; double ws2_8_2; double ws2_8_3; double ws2_8_4; double ws2_8_5;
-double ws2_9_1; double ws2_9_2; double ws2_9_3; double ws2_9_4; double ws2_9_5;
+double ws2_1_1; double ws2_1_2; double ws2_1_3; double ws2_1_4; double ws2_1_5; double ws2_1_6;
+double ws2_2_1; double ws2_2_2; double ws2_2_3; double ws2_2_4; double ws2_2_5; double ws2_2_6;
+double ws2_3_1; double ws2_3_2; double ws2_3_3; double ws2_3_4; double ws2_3_5; double ws2_3_6;
+double ws2_4_1; double ws2_4_2; double ws2_4_3; double ws2_4_4; double ws2_4_5; double ws2_4_6;
+double ws2_5_1; double ws2_5_2; double ws2_5_3; double ws2_5_4; double ws2_5_5; double ws2_5_6;
+double ws2_6_1; double ws2_6_2; double ws2_6_3; double ws2_6_4; double ws2_6_5; double ws2_6_6;
+double ws2_7_1; double ws2_7_2; double ws2_7_3; double ws2_7_4; double ws2_7_5; double ws2_7_6;
+double ws2_8_1; double ws2_8_2; double ws2_8_3; double ws2_8_4; double ws2_8_5; double ws2_8_6;
+double ws2_9_1; double ws2_9_2; double ws2_9_3; double ws2_9_4; double ws2_9_5; double ws2_9_6;
 
 double ws3_1_1; double ws3_1_2; double ws3_1_3; double ws3_1_4; double ws3_1_5; double ws3_1_6; double ws3_1_7; double ws3_1_8; double ws3_1_9;
 double ws3_2_1; double ws3_2_2; double ws3_2_3; double ws3_2_4; double ws3_2_5; double ws3_2_6; double ws3_2_7; double ws3_2_8; double ws3_2_9;
@@ -327,16 +323,17 @@ void neyro_start() {
 	ney2_3 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w3_1, w3_2, w3_3, w3_4, w3_5, w3_6, w3_7, w3_8, w3_9, w3_10, w3_11, w3_12, w3_13, w3_14);
 	ney2_4 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w4_1, w4_2, w4_3, w4_4, w4_5, w4_6, w4_7, w4_8, w4_9, w4_10, w4_11, w4_12, w4_13, w4_14);
 	ney2_5 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w5_1, w5_2, w5_3, w5_4, w5_5, w5_6, w5_7, w5_8, w5_9, w5_10, w5_11, w5_12, w5_13, w5_14);
-	
-	ney3_1 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_1_1, w2_1_2, w2_1_3, w2_1_4, w2_1_5);
-	ney3_2 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_2_1, w2_2_2, w2_2_3, w2_2_4, w2_2_5);
-	ney3_3 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_3_1, w2_3_2, w2_3_3, w2_3_4, w2_3_5);
-	ney3_4 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_4_1, w2_4_2, w2_4_3, w2_4_4, w2_4_5);
-	ney3_5 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_5_1, w2_5_2, w2_5_3, w2_5_4, w2_5_5);
-	ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_6_1, w2_6_2, w2_6_3, w2_6_4, w2_6_5);
-	ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_7_1, w2_7_2, w2_7_3, w2_7_4, w2_7_5);
-	ney3_8 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_8_1, w2_8_2, w2_8_3, w2_8_4, w2_8_5);
-	ney3_9 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, w2_9_1, w2_9_2, w2_9_3, w2_9_4, w2_9_5);
+	ney2_6 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w6_1, w6_2, w6_3, w6_4, w6_5, w6_6, w6_7, w6_8, w6_9, w6_10, w6_11, w6_12, w6_13, w6_14);
+
+	ney3_1 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_1_1, w2_1_2, w2_1_3, w2_1_4, w2_1_5, w2_1_5);
+	ney3_2 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_2_1, w2_2_2, w2_2_3, w2_2_4, w2_2_5, w2_2_5);
+	ney3_3 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_3_1, w2_3_2, w2_3_3, w2_3_4, w2_3_5, w2_3_5);
+	ney3_4 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_4_1, w2_4_2, w2_4_3, w2_4_4, w2_4_5, w2_4_5);
+	ney3_5 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_5_1, w2_5_2, w2_5_3, w2_5_4, w2_5_5, w2_5_5);
+	ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_6_1, w2_6_2, w2_6_3, w2_6_4, w2_6_5, w2_6_5);
+	ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_7_1, w2_7_2, w2_7_3, w2_7_4, w2_7_5, w2_7_5);
+	ney3_8 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_8_1, w2_8_2, w2_8_3, w2_8_4, w2_8_5, w2_8_5);
+	ney3_9 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_9_1, w2_9_2, w2_9_3, w2_9_4, w2_9_5, w2_9_5);
 
 	neyr3_1 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_1_1, w3_1_2, w3_1_3, w3_1_4, w3_1_5, w3_1_6, w3_1_7, w3_1_8, w3_1_9);
 	neyr3_2 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_2_1, w3_2_2, w3_2_3, w3_2_4, w3_2_5, w3_2_6, w3_2_7, w3_2_8, w3_2_9);
@@ -377,8 +374,10 @@ void neyro_start() {
 	neyr3_14 = neyron4_14(w3_14_1, w3_14_2, w3_14_3, w3_14_4, w3_14_5, w3_14_6, w3_14_7);*/
 }
 int arifmetic(double a, double b) {
+	a = a * 5;
+	b = b * 4;
 	a = a + b;
-	a = a / 2;
+	a / 9;
 	return a;
 }
 void do_correct() {
@@ -417,16 +416,17 @@ void allRandom() {
 	wf3 = ran(); w3_1 = ran(); w3_2 = ran(); w3_3 = ran(); w3_4 = ran(); w3_5 = ran(); w3_6 = ran(); w3_7 = ran(); w3_8 = ran(); w3_9 = ran(); w3_10 = ran(); w3_11 = ran(); w3_12 = ran(); w3_13 = ran(); w3_14 = ran();
 	wf4 = ran(); w4_1 = ran(); w4_2 = ran(); w4_3 = ran(); w4_4 = ran(); w4_5 = ran(); w4_6 = ran(); w4_7 = ran(); w4_8 = ran(); w4_9 = ran(); w4_10 = ran(); w4_11 = ran(); w4_12 = ran(); w4_13 = ran(); w4_14 = ran();
 	wf5 = ran(); w5_1 = ran(); w5_2 = ran(); w5_3 = ran(); w5_4 = ran(); w5_5 = ran(); w5_6 = ran(); w5_7 = ran(); w5_8 = ran(); w5_9 = ran(); w5_10 = ran(); w5_11 = ran(); w5_12 = ran(); w5_13 = ran(); w5_14 = ran();
+	wf6 = ran(); w6_1 = ran(); w6_2 = ran(); w6_3 = ran(); w6_4 = ran(); w6_5 = ran(); w6_6 = ran(); w6_7 = ran(); w6_8 = ran(); w6_9 = ran(); w6_10 = ran(); w6_11 = ran(); w6_12 = ran(); w6_13 = ran(); w6_14 = ran();
 
-	w2_1_1 = ran(); w2_1_2 = ran(); w2_1_3 = ran(); w2_1_4 = ran();  w2_1_5 = ran();
-	w2_2_1 = ran(); w2_2_2 = ran(); w2_2_3 = ran(); w2_2_4 = ran();  w2_2_5 = ran();
-	w2_3_1 = ran(); w2_3_2 = ran(); w2_3_3 = ran(); w2_3_4 = ran();  w2_3_5 = ran();
-	w2_4_1 = ran(); w2_4_2 = ran(); w2_4_3 = ran(); w2_4_4 = ran();  w2_4_5 = ran();
-	w2_5_1 = ran(); w2_5_2 = ran(); w2_5_3 = ran(); w2_5_4 = ran();  w2_5_5 = ran();
-	w2_6_1 = ran(); w2_6_2 = ran(); w2_6_3 = ran(); w2_6_4 = ran();  w2_6_5 = ran();
-	w2_7_1 = ran(); w2_7_2 = ran(); w2_7_3 = ran(); w2_7_4 = ran();  w2_7_5 = ran();
-	w2_8_1 = ran(); w2_8_2 = ran(); w2_8_3 = ran(); w2_8_4 = ran();  w2_8_5 = ran();
-	w2_9_1 = ran(); w2_9_2 = ran(); w2_9_3 = ran(); w2_9_4 = ran();  w2_9_5 = ran();
+	w2_1_1 = ran(); w2_1_2 = ran(); w2_1_3 = ran(); w2_1_4 = ran();  w2_1_5 = ran(); w2_1_6 = ran();
+	w2_2_1 = ran(); w2_2_2 = ran(); w2_2_3 = ran(); w2_2_4 = ran();  w2_2_5 = ran(); w2_2_6 = ran();
+	w2_3_1 = ran(); w2_3_2 = ran(); w2_3_3 = ran(); w2_3_4 = ran();  w2_3_5 = ran(); w2_3_6 = ran();
+	w2_4_1 = ran(); w2_4_2 = ran(); w2_4_3 = ran(); w2_4_4 = ran();  w2_4_5 = ran(); w2_4_6 = ran();
+	w2_5_1 = ran(); w2_5_2 = ran(); w2_5_3 = ran(); w2_5_4 = ran();  w2_5_5 = ran(); w2_5_6 = ran();
+	w2_6_1 = ran(); w2_6_2 = ran(); w2_6_3 = ran(); w2_6_4 = ran();  w2_6_5 = ran(); w2_6_6 = ran();
+	w2_7_1 = ran(); w2_7_2 = ran(); w2_7_3 = ran(); w2_7_4 = ran();  w2_7_5 = ran(); w2_7_6 = ran();
+	w2_8_1 = ran(); w2_8_2 = ran(); w2_8_3 = ran(); w2_8_4 = ran();  w2_8_5 = ran(); w2_8_6 = ran();
+	w2_9_1 = ran(); w2_9_2 = ran(); w2_9_3 = ran(); w2_9_4 = ran();  w2_9_5 = ran(); w2_9_6 = ran();
 
 	w3_1_1 = ran(); w3_1_2 = ran(); w3_1_3 = ran(); w3_1_4 = ran(); w3_1_5 = ran(); w3_1_6 = ran(); w3_1_7 = ran(); w3_1_8 = ran(); w3_1_9 = ran();
 	w3_2_1 = ran(); w3_2_2 = ran(); w3_2_3 = ran(); w3_2_4 = ran(); w3_2_5 = ran(); w3_2_6 = ran(); w3_2_7 = ran(); w3_2_8 = ran(); w3_2_9 = ran();
@@ -464,32 +464,35 @@ void random1_4() {
 }
 void random1_5() {
 	wf5 = ran(); w5_1 = ran(); w5_2 = ran(); w5_3 = ran(); w5_4 = ran(); w5_5 = ran(); w5_6 = ran(); w5_7 = ran(); w5_8 = ran(); w5_9 = ran(); w5_10 = ran(); w5_11 = ran(); w5_12 = ran(); w5_13 = ran(); w5_14 = ran();
+	wf6 = ran(); w6_1 = ran(); w6_2 = ran(); w6_3 = ran(); w6_4 = ran(); w6_5 = ran(); w6_6 = ran(); w6_7 = ran(); w6_8 = ran(); w6_9 = ran(); w6_10 = ran(); w6_11 = ran(); w6_12 = ran(); w6_13 = ran(); w6_14 = ran();
 }
 void random2() {
-	w2_1_1 = ran(); w2_1_2 = ran(); w2_1_3 = ran(); w2_1_4 = ran();  w2_1_5 = ran();
-	w2_2_1 = ran(); w2_2_2 = ran(); w2_2_3 = ran(); w2_2_4 = ran();  w2_2_5 = ran();
-	w2_3_1 = ran(); w2_3_2 = ran(); w2_3_3 = ran(); w2_3_4 = ran();  w2_3_5 = ran();
-	w2_4_1 = ran(); w2_4_2 = ran(); w2_4_3 = ran(); w2_4_4 = ran();  w2_4_5 = ran();
-	w2_5_1 = ran(); w2_5_2 = ran(); w2_5_3 = ran(); w2_5_4 = ran();  w2_5_5 = ran();
-	w2_6_1 = ran(); w2_6_2 = ran(); w2_6_3 = ran(); w2_6_4 = ran();  w2_6_5 = ran();
-	w2_7_1 = ran(); w2_7_2 = ran(); w2_7_3 = ran(); w2_7_4 = ran();  w2_7_5 = ran();
-	w2_8_1 = ran(); w2_8_2 = ran(); w2_8_3 = ran(); w2_8_4 = ran();  w2_8_5 = ran();
-	w2_9_1 = ran(); w2_9_2 = ran(); w2_9_3 = ran(); w2_9_4 = ran();  w2_9_5 = ran();
+	w2_1_1 = ran(); w2_1_2 = ran(); w2_1_3 = ran(); w2_1_4 = ran();  w2_1_5 = ran(); w2_1_6 = ran();
+	w2_2_1 = ran(); w2_2_2 = ran(); w2_2_3 = ran(); w2_2_4 = ran();  w2_2_5 = ran(); w2_2_6 = ran();
+	w2_3_1 = ran(); w2_3_2 = ran(); w2_3_3 = ran(); w2_3_4 = ran();  w2_3_5 = ran(); w2_3_6 = ran();
+	w2_4_1 = ran(); w2_4_2 = ran(); w2_4_3 = ran(); w2_4_4 = ran();  w2_4_5 = ran(); w2_4_6 = ran();
+	w2_5_1 = ran(); w2_5_2 = ran(); w2_5_3 = ran(); w2_5_4 = ran();  w2_5_5 = ran(); w2_5_6 = ran();
+	w2_6_1 = ran(); w2_6_2 = ran(); w2_6_3 = ran(); w2_6_4 = ran();  w2_6_5 = ran(); w2_6_6 = ran();
+	w2_7_1 = ran(); w2_7_2 = ran(); w2_7_3 = ran(); w2_7_4 = ran();  w2_7_5 = ran(); w2_7_6 = ran();
+	w2_8_1 = ran(); w2_8_2 = ran(); w2_8_3 = ran(); w2_8_4 = ran();  w2_8_5 = ran(); w2_8_6 = ran();
+	w2_9_1 = ran(); w2_9_2 = ran(); w2_9_3 = ran(); w2_9_4 = ran();  w2_9_5 = ran(); w2_9_6 = ran();
 }
 void random2_1() {
-	w2_1_1 = ran(); w2_1_2 = ran(); w2_1_3 = ran(); w2_1_4 = ran();  w2_1_5 = ran();
-	w2_2_1 = ran(); w2_2_2 = ran(); w2_2_3 = ran(); w2_2_4 = ran();  w2_2_5 = ran();
-	w2_3_1 = ran(); w2_3_2 = ran(); w2_3_3 = ran(); w2_3_4 = ran();  w2_3_5 = ran();
+	w2_1_1 = ran(); w2_1_2 = ran(); w2_1_3 = ran(); w2_1_4 = ran();  w2_1_5 = ran(); w2_1_6 = ran();
+	w2_2_1 = ran(); w2_2_2 = ran(); w2_2_3 = ran(); w2_2_4 = ran();  w2_2_5 = ran(); w2_2_6 = ran();
+	w2_3_1 = ran(); w2_3_2 = ran(); w2_3_3 = ran(); w2_3_4 = ran();  w2_3_5 = ran(); w2_3_6 = ran();
 }
 void random2_2() {
-	w2_4_1 = ran(); w2_4_2 = ran(); w2_4_3 = ran(); w2_4_4 = ran();  w2_4_5 = ran();
-	w2_5_1 = ran(); w2_5_2 = ran(); w2_5_3 = ran(); w2_5_4 = ran();  w2_5_5 = ran();
-	w2_6_1 = ran(); w2_6_2 = ran(); w2_6_3 = ran(); w2_6_4 = ran();  w2_6_5 = ran();
+	w2_4_1 = ran(); w2_4_2 = ran(); w2_4_3 = ran(); w2_4_4 = ran();  w2_4_5 = ran(); w2_4_6 = ran();
+	w2_5_1 = ran(); w2_5_2 = ran(); w2_5_3 = ran(); w2_5_4 = ran();  w2_5_5 = ran(); w2_5_6 = ran();
 }
 void random2_3() {
-	w2_7_1 = ran(); w2_7_2 = ran(); w2_7_3 = ran(); w2_7_4 = ran();  w2_7_5 = ran();
-	w2_8_1 = ran(); w2_8_2 = ran(); w2_8_3 = ran(); w2_8_4 = ran();  w2_8_5 = ran();
-	w2_9_1 = ran(); w2_9_2 = ran(); w2_9_3 = ran(); w2_9_4 = ran();  w2_9_5 = ran();
+	w2_6_1 = ran(); w2_6_2 = ran(); w2_6_3 = ran(); w2_6_4 = ran();  w2_6_5 = ran(); w2_6_6 = ran();
+	w2_7_1 = ran(); w2_7_2 = ran(); w2_7_3 = ran(); w2_7_4 = ran();  w2_7_5 = ran(); w2_7_6 = ran();
+}
+void random2_4() {
+	w2_8_1 = ran(); w2_8_2 = ran(); w2_8_3 = ran(); w2_8_4 = ran();  w2_8_5 = ran(); w2_8_6 = ran();
+	w2_9_1 = ran(); w2_9_2 = ran(); w2_9_3 = ran(); w2_9_4 = ran();  w2_9_5 = ran(); w2_9_6 = ran();
 }
 void random3() {
 	w3_1_1 = ran(); w3_1_2 = ran(); w3_1_3 = ran(); w3_1_4 = ran(); w3_1_5 = ran(); w3_1_6 = ran(); w3_1_7 = ran(); w3_1_8 = ran(); w3_1_9 = ran();
@@ -542,16 +545,17 @@ void save_first() {
 	wsf3 = wf3; ws3_1 = w3_1; ws3_2 = w3_2; ws3_3 = w3_3; ws3_4 = w3_4; ws3_5 = w3_5; ws3_6 = w3_6; ws3_7 = w3_7; ws3_8 = w3_8; ws3_9 = w3_9; ws3_10 = w3_10; ws3_11 = w3_11; ws3_12 = w3_12; ws3_13 = w3_13; ws3_14 = w3_14;
 	wsf4 = wf4; ws4_1 = w4_1; ws4_2 = w4_2; ws4_3 = w4_3; ws4_4 = w4_4; ws4_5 = w4_5; ws4_6 = w4_6; ws4_7 = w4_7; ws4_8 = w4_8; ws4_9 = w4_9; ws4_10 = w4_10; ws4_11 = w4_11; ws4_12 = w4_12; ws4_13 = w4_13; ws4_14 = w4_14;
 	wsf5 = wf5; ws5_1 = w5_1; ws5_2 = w5_2; ws5_3 = w5_3; ws5_4 = w5_4; ws5_5 = w5_5; ws5_6 = w5_6; ws5_7 = w5_7; ws5_8 = w5_8; ws5_9 = w5_9; ws5_10 = w5_10; ws5_11 = w5_11; ws5_12 = w5_12; ws5_13 = w5_13; ws5_14 = w5_14;
+	wsf6 = wf6; ws6_1 = w6_1; ws6_2 = w6_2; ws6_3 = w6_3; ws6_4 = w6_4; ws6_5 = w6_5; ws6_6 = w6_6; ws6_7 = w6_7; ws6_8 = w6_8; ws6_9 = w6_9; ws6_10 = w6_10; ws6_11 = w6_11; ws6_12 = w6_12; ws6_13 = w6_13; ws6_14 = w6_14;
 
-	ws2_1_1 = w2_1_1; ws2_1_2 = w2_1_2; ws2_1_3 = w2_1_3; ws2_1_4 = w2_1_4; ws2_1_5 = w2_1_5;
-	ws2_2_1 = w2_2_1; ws2_2_2 = w2_2_2; ws2_2_3 = w2_2_3; ws2_2_4 = w2_2_4; ws2_2_5 = w2_2_5;
-	ws2_3_1 = w2_3_1; ws2_3_2 = w2_3_2; ws2_3_3 = w2_3_3; ws2_3_4 = w2_3_4; ws2_3_5 = w2_3_5;
-	ws2_4_1 = w2_4_1; ws2_4_2 = w2_4_2; ws2_4_3 = w2_4_3; ws2_4_4 = w2_4_4; ws2_4_5 = w2_4_5;
-	ws2_5_1 = w2_5_1; ws2_5_2 = w2_5_2; ws2_5_3 = w2_5_3; ws2_5_4 = w2_5_4; ws2_5_5 = w2_5_5;
-	ws2_6_1 = w2_6_1; ws2_6_2 = w2_6_2; ws2_6_3 = w2_6_3; ws2_6_4 = w2_6_4; ws2_6_5 = w2_6_5;
-	ws2_7_1 = w2_7_1; ws2_7_2 = w2_7_2; ws2_7_3 = w2_7_3; ws2_7_4 = w2_7_4; ws2_7_5 = w2_7_5;
-	ws2_8_1 = w2_8_1; ws2_8_2 = w2_8_2; ws2_8_3 = w2_8_3; ws2_8_4 = w2_8_4; ws2_8_5 = w2_8_5;
-	ws2_9_1 = w2_9_1; ws2_9_2 = w2_9_2; ws2_9_3 = w2_9_3; ws2_9_4 = w2_9_4; ws2_9_5 = w2_9_5;
+	ws2_1_1 = w2_1_1; ws2_1_2 = w2_1_2; ws2_1_3 = w2_1_3; ws2_1_4 = w2_1_4; ws2_1_5 = w2_1_5; ws2_1_6 = w2_1_6;
+	ws2_2_1 = w2_2_1; ws2_2_2 = w2_2_2; ws2_2_3 = w2_2_3; ws2_2_4 = w2_2_4; ws2_2_5 = w2_2_5; ws2_2_6 = w2_2_6;
+	ws2_3_1 = w2_3_1; ws2_3_2 = w2_3_2; ws2_3_3 = w2_3_3; ws2_3_4 = w2_3_4; ws2_3_5 = w2_3_5; ws2_3_6 = w2_3_6;
+	ws2_4_1 = w2_4_1; ws2_4_2 = w2_4_2; ws2_4_3 = w2_4_3; ws2_4_4 = w2_4_4; ws2_4_5 = w2_4_5; ws2_4_6 = w2_4_6;
+	ws2_5_1 = w2_5_1; ws2_5_2 = w2_5_2; ws2_5_3 = w2_5_3; ws2_5_4 = w2_5_4; ws2_5_5 = w2_5_5; ws2_5_6 = w2_5_6;
+	ws2_6_1 = w2_6_1; ws2_6_2 = w2_6_2; ws2_6_3 = w2_6_3; ws2_6_4 = w2_6_4; ws2_6_5 = w2_6_5; ws2_6_6 = w2_6_6;
+	ws2_7_1 = w2_7_1; ws2_7_2 = w2_7_2; ws2_7_3 = w2_7_3; ws2_7_4 = w2_7_4; ws2_7_5 = w2_7_5; ws2_7_6 = w2_7_6;
+	ws2_8_1 = w2_8_1; ws2_8_2 = w2_8_2; ws2_8_3 = w2_8_3; ws2_8_4 = w2_8_4; ws2_8_5 = w2_8_5; ws2_8_6 = w2_8_6;
+	ws2_9_1 = w2_9_1; ws2_9_2 = w2_9_2; ws2_9_3 = w2_9_3; ws2_9_4 = w2_9_4; ws2_9_5 = w2_9_5; ws2_9_6 = w2_9_6;
 
 	ws3_1_1 = w3_1_1; ws3_1_2 = w3_1_2; ws3_1_3 = w3_1_3; ws3_1_4 = w3_1_4; ws3_1_5 = w3_1_5; ws3_1_6 = w3_1_6; ws3_1_7 = w3_1_7; ws3_1_8 = w3_1_8; ws3_1_9 = w3_1_9;
 	ws3_2_1 = w3_2_1; ws3_2_2 = w3_2_2; ws3_2_3 = w3_2_3; ws3_2_4 = w3_2_4; ws3_2_5 = w3_2_5; ws3_2_6 = w3_2_6; ws3_2_7 = w3_2_7; ws3_2_8 = w3_2_8; ws3_2_9 = w3_2_9;
@@ -574,17 +578,18 @@ void save1() {
 	wsf3 = arifmetic(wf3, wsf3); ws3_1 = arifmetic(ws3_1, w3_1); ws2_2 = arifmetic(ws3_2, w3_2); ws3_3 = arifmetic(ws3_3, w3_3); ws3_4 = arifmetic(ws3_4, w3_4); ws3_5 = arifmetic(ws3_5, w3_5); ws3_6 = arifmetic(ws3_6, w3_6); ws3_7 = arifmetic(ws3_7, w3_7); ws3_8 = arifmetic(ws3_8, w3_8); ws3_9 = arifmetic(ws3_9, w3_9); ws3_10 = arifmetic(ws3_10, w3_10); ws3_11 = arifmetic(ws3_11, w3_11); ws3_12 = arifmetic(ws3_12, w3_12); ws3_13 = arifmetic(ws3_13, w3_13); ws3_14 = arifmetic(ws3_14, w3_14);
 	wsf4 = arifmetic(wf4, wsf4); ws4_1 = arifmetic(ws4_1, w4_1); ws4_2 = arifmetic(ws4_2, w4_2); ws4_3 = arifmetic(ws4_3, w4_3); ws4_4 = arifmetic(ws4_4, w4_4); ws4_5 = arifmetic(ws4_5, w4_5); ws4_6 = arifmetic(ws4_6, w4_6); ws4_7 = arifmetic(ws4_7, w4_7); ws4_8 = arifmetic(ws4_8, w4_8); ws4_9 = arifmetic(ws4_9, w4_9); ws4_10 = arifmetic(ws4_10, w4_10); ws4_11 = arifmetic(ws4_11, w4_11); ws4_12 = arifmetic(ws4_12, w4_12); ws4_13 = arifmetic(ws4_13, w4_13); ws4_14 = arifmetic(ws4_14, w4_14);
 	wsf5 = arifmetic(wf5, wsf5); ws5_1 = arifmetic(ws5_1, w5_1); ws5_2 = arifmetic(ws5_2, w5_2); ws5_3 = arifmetic(ws5_3, w5_3); ws5_4 = arifmetic(ws5_4, w5_4); ws5_5 = arifmetic(ws5_5, w5_5); ws5_6 = arifmetic(ws5_6, w5_6); ws5_7 = arifmetic(ws5_7, w5_7); ws5_8 = arifmetic(ws5_8, w5_8); ws5_9 = arifmetic(ws5_9, w5_9); ws5_10 = arifmetic(ws5_10, w5_10); ws5_11 = arifmetic(ws5_11, w5_11); ws5_12 = arifmetic(ws5_12, w5_12); ws5_13 = arifmetic(ws5_13, w5_13); ws5_14 = arifmetic(ws5_14, w5_14);
+	wsf6 = arifmetic(wf6, wsf6); ws6_1 = arifmetic(ws6_1, w6_1); ws6_2 = arifmetic(ws6_2, w6_2); ws6_3 = arifmetic(ws6_3, w6_3); ws6_4 = arifmetic(ws6_4, w6_4); ws6_5 = arifmetic(ws6_5, w6_5); ws6_6 = arifmetic(ws6_6, w6_6); ws6_7 = arifmetic(ws6_7, w6_7); ws6_8 = arifmetic(ws6_8, w6_8); ws6_9 = arifmetic(ws6_9, w6_9); ws6_10 = arifmetic(ws6_10, w6_10); ws6_11 = arifmetic(ws6_11, w6_11); ws6_12 = arifmetic(ws6_12, w6_12); ws6_13 = arifmetic(ws6_13, w6_13); ws6_14 = arifmetic(ws6_14, w6_14);
 }
 void save2() {
-	ws2_1_1 = arifmetic(ws2_1_1, w2_1_1); ws2_1_2 = arifmetic(ws2_1_2, w2_1_2); ws2_1_3 = arifmetic(ws2_1_3, w2_1_3); ws2_1_4 = arifmetic(ws2_1_4, w2_1_4); ws2_1_5 = arifmetic(ws2_1_5, w2_1_5);
-	ws2_2_1 = arifmetic(ws2_2_1, w2_2_1); ws2_2_2 = arifmetic(ws2_2_2, w2_2_2); ws2_2_3 = arifmetic(ws2_2_3, w2_2_3); ws2_2_4 = arifmetic(ws2_2_4, w2_2_4); ws2_2_5 = arifmetic(ws2_2_5, w2_2_5);
-	ws2_3_1 = arifmetic(ws2_3_1, w2_3_1); ws2_3_2 = arifmetic(ws2_3_2, w2_3_2); ws2_3_3 = arifmetic(ws2_3_3, w2_3_3); ws2_3_4 = arifmetic(ws2_3_4, w2_3_4); ws2_3_5 = arifmetic(ws2_3_5, w2_3_5);
-	ws2_4_1 = arifmetic(ws2_4_1, w2_4_1); ws2_4_2 = arifmetic(ws2_4_2, w2_4_2); ws2_4_3 = arifmetic(ws2_4_3, w2_4_3); ws2_4_4 = arifmetic(ws2_4_4, w2_4_4); ws2_4_5 = arifmetic(ws2_4_5, w2_4_5);
-	ws2_5_1 = arifmetic(ws2_5_1, w2_5_1); ws2_5_2 = arifmetic(ws2_5_2, w2_5_2); ws2_5_3 = arifmetic(ws2_5_3, w2_5_3); ws2_5_4 = arifmetic(ws2_5_4, w2_5_4); ws2_5_5 = arifmetic(ws2_5_5, w2_5_5);
-	ws2_6_1 = arifmetic(ws2_6_1, w2_6_1); ws2_6_2 = arifmetic(ws2_6_2, w2_6_2); ws2_6_3 = arifmetic(ws2_6_3, w2_6_3); ws2_6_4 = arifmetic(ws2_6_4, w2_6_4); ws2_6_5 = arifmetic(ws2_6_5, w2_6_5);
-	ws2_7_1 = arifmetic(ws2_7_1, w2_7_1); ws2_7_2 = arifmetic(ws2_7_2, w2_7_2); ws2_7_3 = arifmetic(ws2_7_3, w2_7_3); ws2_7_4 = arifmetic(ws2_7_4, w2_7_4); ws2_7_5 = arifmetic(ws2_7_5, w2_7_5);
-	ws2_8_1 = arifmetic(ws2_8_1, w2_8_1); ws2_8_2 = arifmetic(ws2_8_2, w2_8_2); ws2_8_3 = arifmetic(ws2_8_3, w2_8_3); ws2_8_4 = arifmetic(ws2_8_4, w2_8_4); ws2_8_5 = arifmetic(ws2_8_5, w2_8_5);
-	ws2_9_1 = arifmetic(ws2_9_1, w2_9_1); ws2_9_2 = arifmetic(ws2_9_2, w2_9_2); ws2_9_3 = arifmetic(ws2_9_3, w2_9_3); ws2_9_4 = arifmetic(ws2_9_4, w2_9_4); ws2_9_5 = arifmetic(ws2_9_5, w2_9_5);
+	ws2_1_1 = arifmetic(ws2_1_1, w2_1_1); ws2_1_2 = arifmetic(ws2_1_2, w2_1_2); ws2_1_3 = arifmetic(ws2_1_3, w2_1_3); ws2_1_4 = arifmetic(ws2_1_4, w2_1_4); ws2_1_5 = arifmetic(ws2_1_5, w2_1_5); ws2_1_6 = arifmetic(ws2_1_6, w2_1_6);
+	ws2_2_1 = arifmetic(ws2_2_1, w2_2_1); ws2_2_2 = arifmetic(ws2_2_2, w2_2_2); ws2_2_3 = arifmetic(ws2_2_3, w2_2_3); ws2_2_4 = arifmetic(ws2_2_4, w2_2_4); ws2_2_5 = arifmetic(ws2_2_5, w2_2_5); ws2_2_6 = arifmetic(ws2_2_6, w2_2_6);
+	ws2_3_1 = arifmetic(ws2_3_1, w2_3_1); ws2_3_2 = arifmetic(ws2_3_2, w2_3_2); ws2_3_3 = arifmetic(ws2_3_3, w2_3_3); ws2_3_4 = arifmetic(ws2_3_4, w2_3_4); ws2_3_5 = arifmetic(ws2_3_5, w2_3_5); ws2_3_6 = arifmetic(ws2_3_6, w2_3_6);
+	ws2_4_1 = arifmetic(ws2_4_1, w2_4_1); ws2_4_2 = arifmetic(ws2_4_2, w2_4_2); ws2_4_3 = arifmetic(ws2_4_3, w2_4_3); ws2_4_4 = arifmetic(ws2_4_4, w2_4_4); ws2_4_5 = arifmetic(ws2_4_5, w2_4_5); ws2_4_6 = arifmetic(ws2_4_6, w2_4_6);
+	ws2_5_1 = arifmetic(ws2_5_1, w2_5_1); ws2_5_2 = arifmetic(ws2_5_2, w2_5_2); ws2_5_3 = arifmetic(ws2_5_3, w2_5_3); ws2_5_4 = arifmetic(ws2_5_4, w2_5_4); ws2_5_5 = arifmetic(ws2_5_5, w2_5_5); ws2_5_6 = arifmetic(ws2_5_6, w2_5_6);
+	ws2_6_1 = arifmetic(ws2_6_1, w2_6_1); ws2_6_2 = arifmetic(ws2_6_2, w2_6_2); ws2_6_3 = arifmetic(ws2_6_3, w2_6_3); ws2_6_4 = arifmetic(ws2_6_4, w2_6_4); ws2_6_5 = arifmetic(ws2_6_5, w2_6_5); ws2_6_6 = arifmetic(ws2_6_6, w2_6_6);
+	ws2_7_1 = arifmetic(ws2_7_1, w2_7_1); ws2_7_2 = arifmetic(ws2_7_2, w2_7_2); ws2_7_3 = arifmetic(ws2_7_3, w2_7_3); ws2_7_4 = arifmetic(ws2_7_4, w2_7_4); ws2_7_5 = arifmetic(ws2_7_5, w2_7_5); ws2_7_6 = arifmetic(ws2_7_6, w2_7_6);
+	ws2_8_1 = arifmetic(ws2_8_1, w2_8_1); ws2_8_2 = arifmetic(ws2_8_2, w2_8_2); ws2_8_3 = arifmetic(ws2_8_3, w2_8_3); ws2_8_4 = arifmetic(ws2_8_4, w2_8_4); ws2_8_5 = arifmetic(ws2_8_5, w2_8_5); ws2_8_6 = arifmetic(ws2_8_6, w2_8_6);
+	ws2_9_1 = arifmetic(ws2_9_1, w2_9_1); ws2_9_2 = arifmetic(ws2_9_2, w2_9_2); ws2_9_3 = arifmetic(ws2_9_3, w2_9_3); ws2_9_4 = arifmetic(ws2_9_4, w2_9_4); ws2_9_5 = arifmetic(ws2_9_5, w2_9_5); ws2_9_6 = arifmetic(ws2_9_6, w2_9_6);
 }
 
 void save3() {
@@ -734,9 +739,47 @@ int langulange;
 string check_lang;
 string file_data;
 int is_opened;
-
+int reg_lang;
 int main(int argc, char* argv[]) {
 	setlocale(LC_ALL, "rus");
+	/*HKEY hKey;
+
+	LONG error = RegOpenKeyEx(
+		HKEY_CURRENT_USER,
+		L"SOFTWARE\\hacerio\\Stavki na Sport\\settings",
+		NULL,
+		KEY_QUERY_VALUE,
+		&hKey
+		);
+	if (error == ERROR_SUCCESS) {
+		unsigned char buffer[MAX_PATH];
+		DWORD bufferSize = MAX_PATH;
+		LONG result = RegQueryValueEx(
+			hKey,
+			L"langulange",
+			NULL,
+			NULL,
+			(LPBYTE)&buffer,
+			&bufferSize
+		);
+
+		if (result == ERROR_SUCCESS) {
+			reg_lang = (int)*buffer;
+			cout << (int)*buffer;
+		}
+		else {
+			cout << "error" << endl;
+		}
+	}
+	else {
+		cout << "не відкрито" << endl;
+	}
+	BYTE* data = (BYTE*)2;
+	LSTATUS status1 = RegSetValueEx(hKey, L"langulange", NULL, REG_SZ, data, 2);
+	*/
+	//LSTATUS status2 = RegDeleteValue(hKey, L"langulange");
+	//LSTATUS status1 = RegSetValueEx(hKey, L"langulange", NULL, REG_SZ, data, 2);
+	//RegCloseKey(hKey);
 	/*ifstream file("config.txt");
 	is_opened = file.is_open();
 	file.close();
@@ -785,15 +828,15 @@ int main(int argc, char* argv[]) {
 	cout << endl << endl;
 	for (int i = 1; i <= 38; i++) {
 		cout << ("#");
-		Sleep(5);
+		Sleep(2);
 	}
 	cout << endl;
 	//cout << ("######################################") << endl;
-	cout << ("Stavki Na Sport (CyberSport edition)") << endl;
+	cout << ("Stavki Na Sport") << endl;
 	Sleep(100);
 	for (int i = 1; i <= 38; i++) {
 		cout << ("#");
-		Sleep(5);
+		Sleep(2);
 	}
 	cout << endl;
 	//cout << ("######################################") << endl;
@@ -860,7 +903,7 @@ int main(int argc, char* argv[]) {
 						cout << ("Глубокое обучение !deeplearning") << endl;
 					}
 					else if (langulange == 2) {
-						cout << ("Information!info") << endl;
+						cout << ("Information !info") << endl;
 						//cout << ("Langulange !langulange") << endl;
 						cout << ("Autostart after learning !autostart") << endl;
 						cout << ("Close settings !exit") << endl;
@@ -927,9 +970,11 @@ int main(int argc, char* argv[]) {
 					}
 					if (langulange == 1) {
 						cout << "Установлено на: " << stepin_navchania << endl;
+						is_learning_complete = 0;
 					}
 					else if (langulange == 2) {
 						cout << "Changed to: " << stepin_navchania << endl;
+						is_learning_complete = 0;
 					}
 				}
 				/*else if (com == "!langulange") {
@@ -1123,7 +1168,10 @@ int main(int argc, char* argv[]) {
 								break;
 							}
 						}
-					}			
+					}
+					else {
+					is_autostart = 0;
+					}
 				}
 				else {
 					if (langulange == 1) {
@@ -1201,6 +1249,7 @@ int main(int argc, char* argv[]) {
 		else {
 			cout << "Programe is learning, please wait" << endl << endl;
 		}
+		is_autostart = 0;
 	for (int i = 0; i <= 20000 * stepin_navchania; i++) {
 		if (i % (500 * stepin_navchania) == 0) {
 			cout << i / (500 * stepin_navchania)<< endl;
@@ -1214,6 +1263,7 @@ int main(int argc, char* argv[]) {
 			thread th2(random2_1);
 			thread th3(random2_2);
 			thread th11(random2_3);
+			thread th17(random2_4);
 			thread th4(random3_1);
 			thread th5(random3_2);
 			thread th6(random3_3);
@@ -1232,6 +1282,7 @@ int main(int argc, char* argv[]) {
 			th14.join();
 			th15.join();
 			th16.join();
+			th17.join();
 			th.join();
 			th1.join();
 			th2.join();
@@ -1306,6 +1357,7 @@ int main(int argc, char* argv[]) {
 				thread th(random2_1);
 				thread th3(random2_2);
 				thread th4(random2_3);
+				thread th5(random2_4);
 				thread th1(load_base);
 				thread th2(stadium);
 				th.join();
@@ -1313,6 +1365,7 @@ int main(int argc, char* argv[]) {
 				th2.join();
 				th3.join();
 				th4.join();
+				th5.join();
 			}
 			else {
 				random2();
@@ -1380,6 +1433,7 @@ int main(int argc, char* argv[]) {
 			thread th2(random2_1);
 			thread th3(random2_2);
 			thread th11(random2_3);
+			thread th17(random2_4);
 			thread th4(random3_1);
 			thread th5(random3_2);
 			thread th6(random3_3);
@@ -1398,6 +1452,7 @@ int main(int argc, char* argv[]) {
 			th14.join();
 			th15.join();
 			th16.join();
+			th17.join();
 			th.join();
 			th1.join();
 			th2.join();
@@ -1469,6 +1524,7 @@ int main(int argc, char* argv[]) {
 				thread th(random2_1);
 				thread th1(random2_2);
 				thread th4(random2_3);
+				thread th5(random2_4);
 				thread th2(load_base);
 				thread th3(stadium);
 				th.join();
@@ -1476,6 +1532,7 @@ int main(int argc, char* argv[]) {
 				th2.join();
 				th3.join();
 				th4.join();
+				th5.join();
 			}
 			else {
 				random2();

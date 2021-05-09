@@ -36,8 +36,8 @@ int neyron2(double field, double wf, double n1, double n2, double n3, double n4,
 	return ney2 * chislo_zv;
 }
 
-int neyron3(double n1, double n2, double n3, double n4, double n5 , double w1, double w2, double w3, double w4, double w5) {
-	ney3 = n1 * w1 / chislo_zv + n2 * w2 / chislo_zv + n3 * w3 / chislo_zv + n4 * w4 / chislo_zv + n5 * w5 / chislo_zv;
+int neyron3(double n1, double n2, double n3, double n4, double n5, double n6, double w1, double w2, double w3, double w4, double w5, double w6) {
+	ney3 = n1 * w1 / chislo_zv + n2 * w2 / chislo_zv + n3 * w3 / chislo_zv + n4 * w4 / chislo_zv + n5 * w5 / chislo_zv + n6 * w6 / chislo_zv;
 	return ney3 * chislo_zv;
 }
 
