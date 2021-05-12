@@ -326,14 +326,14 @@ void neyro_start() {
 	ney2_6 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w6_1, w6_2, w6_3, w6_4, w6_5, w6_6, w6_7, w6_8, w6_9, w6_10, w6_11, w6_12, w6_13, w6_14);
 
 	ney3_1 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_1_1, w2_1_2, w2_1_3, w2_1_4, w2_1_5, w2_1_5);
-	ney3_2 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_2_1, w2_2_2, w2_2_3, w2_2_4, w2_2_5, w2_2_5);
-	ney3_3 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_3_1, w2_3_2, w2_3_3, w2_3_4, w2_3_5, w2_3_5);
-	ney3_4 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_4_1, w2_4_2, w2_4_3, w2_4_4, w2_4_5, w2_4_5);
-	ney3_5 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_5_1, w2_5_2, w2_5_3, w2_5_4, w2_5_5, w2_5_5);
-	ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_6_1, w2_6_2, w2_6_3, w2_6_4, w2_6_5, w2_6_5);
-	ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_7_1, w2_7_2, w2_7_3, w2_7_4, w2_7_5, w2_7_5);
-	ney3_8 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_8_1, w2_8_2, w2_8_3, w2_8_4, w2_8_5, w2_8_5);
-	ney3_9 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_9_1, w2_9_2, w2_9_3, w2_9_4, w2_9_5, w2_9_5);
+	ney3_2 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_2_1, w2_2_2, w2_2_3, w2_2_4, w2_2_5, w2_2_6);
+	ney3_3 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_3_1, w2_3_2, w2_3_3, w2_3_4, w2_3_5, w2_3_6);
+	ney3_4 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_4_1, w2_4_2, w2_4_3, w2_4_4, w2_4_5, w2_4_6);
+	ney3_5 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_5_1, w2_5_2, w2_5_3, w2_5_4, w2_5_5, w2_5_6);
+	ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_6_1, w2_6_2, w2_6_3, w2_6_4, w2_6_5, w2_6_6);
+	ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_7_1, w2_7_2, w2_7_3, w2_7_4, w2_7_5, w2_7_6);
+	ney3_8 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_8_1, w2_8_2, w2_8_3, w2_8_4, w2_8_5, w2_8_6);
+	ney3_9 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, w2_9_1, w2_9_2, w2_9_3, w2_9_4, w2_9_5, w2_9_6);
 
 	neyr3_1 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_1_1, w3_1_2, w3_1_3, w3_1_4, w3_1_5, w3_1_6, w3_1_7, w3_1_8, w3_1_9);
 	neyr3_2 = neyron4(ney3_1, ney3_2, ney3_3, ney3_4, ney3_5, ney3_6, ney3_7, ney3_8, ney3_9, w3_2_1, w3_2_2, w3_2_3, w3_2_4, w3_2_5, w3_2_6, w3_2_7, w3_2_8, w3_2_9);
@@ -375,9 +375,9 @@ void neyro_start() {
 }
 int arifmetic(double a, double b) {
 	a = a * 5;
-	b = b * 4;
+	b = b * 3;
 	a = a + b;
-	a / 9;
+	a / 3;
 	return a;
 }
 void do_correct() {
@@ -1783,6 +1783,8 @@ int main(int argc, char* argv[]) {
 		ney2_3 = neyron2(0, wsf3, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws3_1, ws3_2, ws3_3, ws3_4, ws3_5, ws3_6, ws3_7, ws3_8, ws3_9, ws3_10, ws3_11, ws3_12, ws3_13, ws3_14);
 		ney2_4 = neyron2(0, wsf4, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws4_1, ws4_2, ws4_3, ws4_4, ws4_5, ws4_6, ws4_7, ws4_8, ws4_9, ws4_10, ws4_11, ws4_12, ws4_13, ws4_14);
 		ney2_5 = neyron2(0, wsf5, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws5_1, ws5_2, ws5_3, ws5_4, ws5_5, ws5_6, ws5_7, ws5_8, ws5_9, ws5_10, ws5_11, ws5_12, ws5_13, ws5_14);
+		ney2_6 = neyron2(0, wsf5, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws6_1, ws6_2, ws6_3, ws6_4, ws6_5, ws6_6, ws6_7, ws6_8, ws6_9, ws6_10, ws6_11, ws6_12, ws6_13, ws6_14);
+
 		/*if (debb == 1) {
 			debug_file(2, ney2_1);
 			debug_file(2, ney2_2);
@@ -1797,15 +1799,15 @@ int main(int argc, char* argv[]) {
 		cout << ws4_1 << " " << ws4_2 << " " << ws4_3 << " " << ws4_4 << " " << ws4_5 << " " << ws4_6 << " " << ws4_7 << " " << ws4_8 << " " << ws4_9 << " " << ws4_10 << " " << ws4_11 << " " << ws4_12 << " " << ws4_13 << " " << ws4_14 << endl;
 		cout << ws5_1 << " " << ws5_2 << " " << ws5_3 << " " << ws5_4 << " " << ws5_5 << " " << ws5_6 << " " << ws5_7 << " " << ws5_8 << " " << ws5_9 << " " << ws5_10 << " " << ws5_11 << " " << ws5_12 << " " << ws5_13 << " " << ws5_14 << endl << endl;
 		*/
-		ney3_1 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_1_1, ws2_1_2, ws2_1_3, ws2_1_4, ws2_1_5);
-		ney3_2 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_2_1, ws2_2_2, ws2_2_3, ws2_2_4, ws2_2_5);
-		ney3_3 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_3_1, ws2_3_2, ws2_3_3, ws2_3_4, ws2_3_5);
-		ney3_4 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_4_1, ws2_4_2, ws2_4_3, ws2_4_4, ws2_4_5);
-		ney3_5 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_5_1, ws2_5_2, ws2_5_3, ws2_5_4, ws2_5_5);
-		ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_6_1, ws2_6_2, ws2_6_3, ws2_6_4, ws2_6_5);
-		ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_7_1, ws2_7_2, ws2_7_3, ws2_7_4, ws2_7_5);
-		ney3_8 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_8_1, ws2_8_2, ws2_8_3, ws2_8_4, ws2_8_5);
-		ney3_9 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ws2_9_1, ws2_9_2, ws2_9_3, ws2_9_4, ws2_9_5);
+		ney3_1 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, ws2_1_1, ws2_1_2, ws2_1_3, ws2_1_4, ws2_1_5, ws2_1_6);
+		ney3_2 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, ws2_2_1, ws2_2_2, ws2_2_3, ws2_2_4, ws2_2_5, ws2_1_6);
+		ney3_3 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, ws2_3_1, ws2_3_2, ws2_3_3, ws2_3_4, ws2_3_5, ws2_1_6);
+		ney3_4 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, ws2_4_1, ws2_4_2, ws2_4_3, ws2_4_4, ws2_4_5, ws2_1_6);
+		ney3_5 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, ws2_5_1, ws2_5_2, ws2_5_3, ws2_5_4, ws2_5_5, ws2_1_6);
+		ney3_6 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, ws2_6_1, ws2_6_2, ws2_6_3, ws2_6_4, ws2_6_5, ws2_1_6);
+		ney3_7 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, ws2_7_1, ws2_7_2, ws2_7_3, ws2_7_4, ws2_7_5, ws2_1_6);
+		ney3_8 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, ws2_8_1, ws2_8_2, ws2_8_3, ws2_8_4, ws2_8_5, ws2_1_6);
+		ney3_9 = neyron3(ney2_1, ney2_2, ney2_3, ney2_4, ney2_5, ney2_6, ws2_9_1, ws2_9_2, ws2_9_3, ws2_9_4, ws2_9_5, ws2_1_6);
 
 	/*	cout << ws2_1_1 << " " << ws2_1_2 << " " << ws2_1_3 << " " << ws2_1_4 << " " << ws2_1_5 <<endl;
 		cout << ws2_2_1 << " " << ws2_2_2 << " " << ws2_2_3 << " " << ws2_2_4 << " " << ws2_2_5 <<endl;
