@@ -13,16 +13,16 @@ float chance_win;
 int again;
 int stadium_number;
 int debb;
-//База данних
+//ГЃЕ•Г§Е• Г¤Е•Г­Г­ДЌЕ‘
 int is_learning_complete;
 int results_correct[] = {
-	2 , 2 , 2 , 2 , 2 , 2 , 4 , 2 , 2 , 3 , 10, 1 , 8 , 5 , 1 , 1 , 1 , 12, 3 , 3 , 3 , 3 , 3 , 3 , 7 , 12, 13, 4 , 4 , 4 , 5 , 5 , 5 , 5 , 5 , 7 , 13, 6 , 6 , 13, 6 , 6 , 10, 7 , 7 , 9 , 11, 10, 12, 10, 10, 10, 13, 14, 3 , 3 , 5 , 7 , 1 , 13, 3 , 3
+	2 , 2 , 2 , 2 , 2 , 2 , 4 , 2 , 2 , 3 , 10, 1 , 8 , 5 , 1 , 1 , 1 , 12, 3 , 3 , 3 , 3 , 3 , 3 , 7 , 12, 13, 4 , 4 , 4 , 5 , 5 , 5 , 5 , 5 , 7 , 13, 6 , 6 , 13, 6 , 6 , 10, 7 , 7 , 9 , 11, 10, 12, 10, 10, 10, 13, 14, 3 , 3 , 5 , 7 , 1 , 13, 3 , 3 , 3
 };
 int first_command_correct[] = {
-	2 , 8 , 2 , 2 , 1 , 2 , 2 , 2 , 10, 3 , 1 , 1 , 8 , 5 , 1 , 5 , 9 , 1 , 7 , 6 , 3 , 14, 5 , 3 , 3 , 3 , 13, 4 , 4 , 4 , 10, 6 , 12, 7 , 5 , 7 , 13, 13, 6 , 6 , 14, 11, 10, 14, 7 , 13, 11, 14, 12, 14, 10, 10, 11, 11, 3 , 3 , 14, 7 , 7 , 13, 3 , 2
+	2 , 8 , 2 , 2 , 1 , 2 , 2 , 2 , 10, 3 , 1 , 1 , 8 , 5 , 1 , 5 , 9 , 1 , 7 , 6 , 3 , 14, 5 , 3 , 3 , 3 , 13, 4 , 4 , 4 , 10, 6 , 12, 7 , 5 , 7 , 13, 13, 6 , 6 , 14, 11, 10, 14, 7 , 13, 11, 14, 12, 14, 10, 10, 11, 11, 3 , 3 , 14, 7 , 7 , 13, 3 , 2 , 3
 };
 int second_command_correct[] = {
-	5 , 2 , 3 , 12, 2 , 10, 4 , 12, 2 , 1 , 10, 11, 1 , 1 , 7 , 1 , 1 , 12, 3 , 3 , 14, 3 , 3 , 12, 7 , 12, 3 , 13, 10, 12, 5 , 5 , 5 , 5 , 9 , 5 , 5 , 6 , 7 , 13, 6 , 6 , 6 , 7 , 9 , 9 , 9 , 10, 10, 10, 11, 13, 13, 14, 11, 5 , 5 , 5 , 1 , 6 , 4 , 3
+	5 , 2 , 3 , 12, 2 , 10, 4 , 12, 2 , 1 , 10, 11, 1 , 1 , 7 , 1 , 1 , 12, 3 , 3 , 14, 3 , 3 , 12, 7 , 12, 3 , 13, 10, 12, 5 , 5 , 5 , 5 , 9 , 5 , 5 , 6 , 7 , 13, 6 , 6 , 6 , 7 , 9 , 9 , 9 , 10, 10, 10, 11, 13, 13, 14, 11, 5 , 5 , 5 , 1 , 6 , 4 , 3 , 1
 };
 
 /*
@@ -41,21 +41,21 @@ int second_command_correct[] = {
 	13.Complexity *
 	14.Faze *
 */
-	//1 Ювентус
-	//2 Реал Мадрид
-	//3 Барселона
-	//4 Манчестер Юнайтед
-	//5 Арсенал
-	//6 Баварія
-	//7 Ліверпуль
-	//8 Борусія
-	//9 Манчестер Сіті
-	//10 Челси
-	//11 Мілан
-	//12 Байєр
-	//13 Лестер Сіті
-	//14 Тоттенгем
-//Бібліотеки
+	//1 ЕўГўДєГ­Е€ГіЕ„
+	//2 ДђДєЕ•Г« ДљЕ•Г¤Д‘ДЌГ¤
+	//3 ГЃЕ•Д‘Е„ДєГ«Г®Г­Е•
+	//4 ДљЕ•Г­Г·ДєЕ„Е€ДєД‘ ЕўГ­Е•Г©Е€ДєГ¤
+	//5 Е”Д‘Е„ДєГ­Е•Г«
+	//6 ГЃЕ•ГўЕ•Д‘Е‚Л™
+	//7 Г‹Е‚ГўДєД‘ДЏГіГ«Гј
+	//8 ГЃГ®Д‘ГіЕ„Е‚Л™
+	//9 ДљЕ•Г­Г·ДєЕ„Е€ДєД‘ ЕѓЕ‚Е€Е‚
+	//10 Г—ДєГ«Е„ДЌ
+	//11 ДљЕ‚Г«Е•Г­
+	//12 ГЃЕ•Г©ЕџД‘
+	//13 Г‹ДєЕ„Е€ДєД‘ ЕѓЕ‚Е€Е‚
+	//14 Е‡Г®Е€Е€ДєГ­ДѓДєД›
+//ГЃЕ‚ГЎГ«Е‚Г®Е€ДєД™ДЌ
 #include <omp.h>
 #include <iostream>
 #include <string>
@@ -85,10 +85,10 @@ int real_correct;
 int times_correct;
 string com;
 int stepin_navchania = 2;
-//Нова механіка вибору команд
+//ГЌГ®ГўЕ• Д›ДєЕ‘Е•Г­Е‚Д™Е• ГўДЌГЎГ®Д‘Гі Д™Г®Д›Е•Г­Г¤
 int command_choose1;
 int command_choose2;
-//Змінні для зберігання данних нейронів
+//Г‡Д›Е‚Г­Г­Е‚ Г¤Г«Л™ Г§ГЎДєД‘Е‚ДѓЕ•Г­Г­Л™ Г¤Е•Г­Г­ДЌЕ‘ Г­ДєГ©Д‘Г®Г­Е‚Гў
 int stadiumn_choose;
 int ney1_1;
 int ney1_2;
@@ -134,7 +134,7 @@ double neyr3_11;
 double neyr3_12;
 double neyr3_13;
 double neyr3_14;
-//Ініціалізація весов
+//Л›Г­Е‚Г¶Е‚Е•Г«Е‚Г§Е•Г¶Е‚Л™ ГўДєЕ„Г®Гў
 
 double wf1; double w1_1; double w1_2; double w1_3; double w1_4; double w1_5; double w1_6; double w1_7; double w1_8; double w1_9; double w1_10; double w1_11; double w1_12; double w1_13; double w1_14;
 double wf2; double w2_1; double w2_2; double w2_3; double w2_4; double w2_5; double w2_6; double w2_7; double w2_8; double w2_9; double w2_10; double w2_11; double w2_12; double w2_13; double w2_14;
@@ -167,7 +167,7 @@ double w3_11_1; double w3_11_2; double w3_11_3; double w3_11_4; double w3_11_5; 
 double w3_12_1; double w3_12_2; double w3_12_3; double w3_12_4; double w3_12_5; double w3_12_6; double w3_12_7; double w3_12_8; double w3_12_9;
 double w3_13_1; double w3_13_2; double w3_13_3; double w3_13_4; double w3_13_5; double w3_13_6; double w3_13_7; double w3_13_8; double w3_13_9;
 double w3_14_1; double w3_14_2; double w3_14_3; double w3_14_4; double w3_14_5; double w3_14_6; double w3_14_7; double w3_14_8; double w3_14_9;
-//Ініціалізація весов для збереження
+//Л›Г­Е‚Г¶Е‚Е•Г«Е‚Г§Е•Г¶Е‚Л™ ГўДєЕ„Г®Гў Г¤Г«Л™ Г§ГЎДєД‘ДєД‡ДєГ­Г­Л™
 
 double wsf1; double ws1_1; double ws1_2; double ws1_3; double ws1_4; double ws1_5; double ws1_6; double ws1_7; double ws1_8; double ws1_9; double ws1_10; double ws1_11; double ws1_12; double ws1_13; double ws1_14;
 double wsf2; double ws2_1; double ws2_2; double ws2_3; double ws2_4; double ws2_5; double ws2_6; double ws2_7; double ws2_8; double ws2_9; double ws2_10; double ws2_11; double ws2_12; double ws2_13; double ws2_14;
@@ -772,7 +772,7 @@ int main(int argc, char* argv[]) {
 		}
 	}
 	else {
-		cout << "не відкрито" << endl;
+		cout << "Г­Дє ГўЕ‚Г¤Д™Д‘ДЌЕ€Г®" << endl;
 	}
 	BYTE* data = (BYTE*)2;
 	LSTATUS status1 = RegSetValueEx(hKey, L"langulange", NULL, REG_SZ, data, 2);
@@ -794,7 +794,7 @@ int main(int argc, char* argv[]) {
 	file1.close();*/
 	if (file_data == "" || file_data == "0") {
 		cout << "Welcome to Stavki Na Sport! Choose your langulange" << endl;
-		cout << "1. Русский" << endl << "2. English" << endl;
+		cout << "1. ДђГіЕ„Е„Д™ДЌГ©" << endl << "2. English" << endl;
 		while (1) {
 			cin >> com;
 			if (com == "1") {
@@ -856,14 +856,14 @@ int main(int argc, char* argv[]) {
 		out << langulange;
 		out.close();
 	}*/
-	int cores_count = thread::hardware_concurrency(); //Узнаем к-во ядер
+	int cores_count = thread::hardware_concurrency(); //Г“Г§Г­Е•ДєД› Д™-ГўГ® Л™Г¤ДєД‘
 	string get_sys_info = GetCpuVendorString();
 	cout << get_sys_info << endl;
 	bool is_multipotok = 1;
 	string multipotok;
 	cout << endl << endl;
 	if (langulange == 1) {
-		cout << ("Привет, напиши, что хочешь делать. Для помощи !help . Для выхода !exit") << endl;
+		cout << ("ДЋД‘ДЌГўДєЕ€, Г­Е•ДЏДЌЕ™ДЌ, Г·Е€Г® Е‘Г®Г·ДєЕ™Гј Г¤ДєГ«Е•Е€Гј. Г„Г«Л™ ДЏГ®Д›Г®ЕЇДЌ !help . Г„Г«Л™ ГўЕ±Е‘Г®Г¤Е• !exit") << endl;
 	}
 	else if (langulange == 2) {
 		cout << ("Hello! Write a command. For help !help . For exit ! exit") << endl;
@@ -874,9 +874,9 @@ int main(int argc, char* argv[]) {
 		cin >> com;
 		if (com == "!help") {
 			if (langulange == 1) {
-				cout << ("Запуск !start") << endl;
-				cout << ("Настройки !settings") << endl;
-				cout << ("Для выхода с программы !exit") << endl;
+				cout << ("Г‡Е•ДЏГіЕ„Д™ !start") << endl;
+				cout << ("ГЌЕ•Е„Е€Д‘Г®Г©Д™ДЌ !settings") << endl;
+				cout << ("Г„Г«Л™ ГўЕ±Е‘Г®Г¤Е• Е„ ДЏД‘Г®ДѓД‘Е•Д›Д›Е± !exit") << endl;
 			}
 			else if (langulange == 2) {
 				cout << ("For start !start") << endl;
@@ -895,12 +895,12 @@ int main(int argc, char* argv[]) {
 				cin >> com;
 				if (com == "!help") {
 					if (langulange == 1) {
-						cout << ("Посмотреть информацию !info") << endl;
-						//cout << ("Язык !langulange") << endl;
-						cout << ("Автостарт после обучения !autostart") << endl;
-						cout << ("Для выхода из настроек !exit") << endl;
-						cout << ("Настройка степени обучения !learning") << endl;
-						cout << ("Глубокое обучение !deeplearning") << endl;
+						cout << ("ДЋГ®Е„Д›Г®Е€Д‘ДєЕ€Гј ДЌГ­ГґГ®Д‘Д›Е•Г¶ДЌЕЈ !info") << endl;
+						//cout << ("ГџГ§Е±Д™ !langulange") << endl;
+						cout << ("Е”ГўЕ€Г®Е„Е€Е•Д‘Е€ ДЏГ®Е„Г«Дє Г®ГЎГіГ·ДєГ­ДЌЛ™ !autostart") << endl;
+						cout << ("Г„Г«Л™ ГўЕ±Е‘Г®Г¤Е• ДЌГ§ Г­Е•Е„Е€Д‘Г®ДєД™ !exit") << endl;
+						cout << ("ГЌЕ•Е„Е€Д‘Г®Г©Д™Е• Е„Е€ДєДЏДєГ­ДЌ Г®ГЎГіГ·ДєГ­ДЌЛ™ !learning") << endl;
+						cout << ("Д‚Г«ГіГЎГ®Д™Г®Дє Г®ГЎГіГ·ДєГ­ДЌДє !deeplearning") << endl;
 					}
 					else if (langulange == 2) {
 						cout << ("Information !info") << endl;
@@ -917,7 +917,7 @@ int main(int argc, char* argv[]) {
 				}
 				else if (com == "!deeplearning") {
 					if (langulange == 1) {
-						cout << ("В разработке... Ожидайте") << endl;
+						cout << ("Г‚ Д‘Е•Г§Д‘Е•ГЎГ®Е€Д™Дє... ГЋД‡ДЌГ¤Е•Г©Е€Дє") << endl;
 					}
 					else if (langulange == 2) {
 						cout << ("In development.. Please wait") << endl;
@@ -925,12 +925,12 @@ int main(int argc, char* argv[]) {
 				}
 				else if (com == "!info") {
 					if (langulange == 1) {
-						cout << ("Ядер процессора ") << cores_count << endl;
-						cout << ("Процессор: ") << get_sys_info << endl;
-						cout << ("Язык: Русский") << endl;
-						cout << ("Степпень обучения: ") << stepin_navchania << endl;
+						cout << ("ГџГ¤ДєД‘ ДЏД‘Г®Г¶ДєЕ„Е„Г®Д‘Е• ") << cores_count << endl;
+						cout << ("ДЋД‘Г®Г¶ДєЕ„Е„Г®Д‘: ") << get_sys_info << endl;
+						cout << ("ГџГ§Е±Д™: ДђГіЕ„Е„Д™ДЌГ©") << endl;
+						cout << ("ЕѓЕ€ДєДЏДЏДєГ­Гј Г®ГЎГіГ·ДєГ­ДЌЛ™: ") << stepin_navchania << endl;
 						cout << ("-----------------------") << endl;
-						cout << ("Автор: hacerio") << endl;
+						cout << ("Е”ГўЕ€Г®Д‘: hacerio") << endl;
 					}
 					else if (langulange == 2) {
 						cout << ("CPU cores ") << cores_count << endl;
@@ -943,8 +943,8 @@ int main(int argc, char* argv[]) {
 				}
 				else if (com == "!learning") {
 					if (langulange == 1) {
-						cout << "Вкажите степпень обучения програмы. 1. Слабый 2. Средний 3. Сильный . Чем больше степень обучения, тем точнее результаты, но это может занять больше времени. Standart - 2" << endl;
-						cout << "Сейчас: " << stepin_navchania << endl;
+						cout << "Г‚Д™Е•Д‡ДЌЕ€Дє Е„Е€ДєДЏДЏДєГ­Гј Г®ГЎГіГ·ДєГ­ДЌЛ™ ДЏД‘Г®ДѓД‘Е•Д›Е±. 1. ЕѓГ«Е•ГЎЕ±Г© 2. ЕѓД‘ДєГ¤Г­ДЌГ© 3. ЕѓДЌГ«ГјГ­Е±Г© . Г—ДєД› ГЎГ®Г«ГјЕ™Дє Е„Е€ДєДЏДєГ­Гј Г®ГЎГіГ·ДєГ­ДЌЛ™, Е€ДєД› Е€Г®Г·Г­ДєДє Д‘ДєГ§ГіГ«ГјЕ€Е•Е€Е±, Г­Г® ГЅЕ€Г® Д›Г®Д‡ДєЕ€ Г§Е•Г­Л™Е€Гј ГЎГ®Г«ГјЕ™Дє ГўД‘ДєД›ДєГ­ДЌ. Standart - 2" << endl;
+						cout << "ЕѓДєГ©Г·Е•Е„: " << stepin_navchania << endl;
 					}
 					else if (langulange == 2) {
 						cout << "Indicate the degree of learning of the program. 1. Weak 2. Medium 3. Strong. The greater the degree of training, the more accurate the results, but this may take longer. Standart - 2 " << endl;
@@ -969,7 +969,7 @@ int main(int argc, char* argv[]) {
 						}
 					}
 					if (langulange == 1) {
-						cout << "Установлено на: " << stepin_navchania << endl;
+						cout << "Г“Е„Е€Е•Г­Г®ГўГ«ДєГ­Г® Г­Е•: " << stepin_navchania << endl;
 						is_learning_complete = 0;
 					}
 					else if (langulange == 2) {
@@ -978,7 +978,7 @@ int main(int argc, char* argv[]) {
 					}
 				}
 				/*else if (com == "!langulange") {
-					cout << "1. Русский" << endl << "2. English" << endl;
+					cout << "1. ДђГіЕ„Е„Д™ДЌГ©" << endl << "2. English" << endl;
 					while (1) {
 						cin >> com;
 						if (com == "1") {
@@ -1023,8 +1023,8 @@ int main(int argc, char* argv[]) {
 				}*/
 				else if (com == "!autostart") {
 					if (langulange == 1) {
-						cout << "На некоторых системах обучение программы занимает некоторое время, если нужно отлучится на время, то можете включить автостарт, который сразу же после обучения выдаст вам результат, и по приходу у вас будет готовый результат" << endl;
-						cout << "Чтобы запустить автостарт напишите !on , чтобы не запускать напишите любые символы" << endl;
+						cout << "ГЌЕ• Г­ДєД™Г®Е€Г®Д‘Е±Е‘ Е„ДЌЕ„Е€ДєД›Е•Е‘ Г®ГЎГіГ·ДєГ­ДЌДє ДЏД‘Г®ДѓД‘Е•Д›Д›Е± Г§Е•Г­ДЌД›Е•ДєЕ€ Г­ДєД™Г®Е€Г®Д‘Г®Дє ГўД‘ДєД›Л™, ДєЕ„Г«ДЌ Г­ГіД‡Г­Г® Г®Е€Г«ГіГ·ДЌЕ€Е„Л™ Г­Е• ГўД‘ДєД›Л™, Е€Г® Д›Г®Д‡ДєЕ€Дє ГўД™Г«ЕЈГ·ДЌЕ€Гј Е•ГўЕ€Г®Е„Е€Е•Д‘Е€, Д™Г®Е€Г®Д‘Е±Г© Е„Д‘Е•Г§Гі Д‡Дє ДЏГ®Е„Г«Дє Г®ГЎГіГ·ДєГ­ДЌЛ™ ГўЕ±Г¤Е•Е„Е€ ГўЕ•Д› Д‘ДєГ§ГіГ«ГјЕ€Е•Е€, ДЌ ДЏГ® ДЏД‘ДЌЕ‘Г®Г¤Гі Гі ГўЕ•Е„ ГЎГіГ¤ДєЕ€ ДѓГ®Е€Г®ГўЕ±Г© Д‘ДєГ§ГіГ«ГјЕ€Е•Е€" << endl;
+						cout << "Г—Е€Г®ГЎЕ± Г§Е•ДЏГіЕ„Е€ДЌЕ€Гј Е•ГўЕ€Г®Е„Е€Е•Д‘Е€ Г­Е•ДЏДЌЕ™ДЌЕ€Дє !on , Г·Е€Г®ГЎЕ± Г­Дє Г§Е•ДЏГіЕ„Д™Е•Е€Гј Г­Е•ДЏДЌЕ™ДЌЕ€Дє Г«ЕЈГЎЕ±Дє Е„ДЌД›ГўГ®Г«Е±" << endl;
 					}
 					else if (langulange == 2) {
 						cout << "In the some systems learning spend some time, you can on autostart and you can go do your affairs, and when you return result will be" << endl;
@@ -1048,7 +1048,7 @@ int main(int argc, char* argv[]) {
 						cout << "14.Faze" << endl;
 						while (1) {
 							if (langulange == 1) {
-								cout << ("Напиши номер первой команды") << endl;
+								cout << ("ГЌЕ•ДЏДЌЕ™ДЌ Г­Г®Д›ДєД‘ ДЏДєД‘ГўГ®Г© Д™Г®Д›Е•Г­Г¤Е±") << endl;
 							}
 							else if (langulange == 2) {
 								cout << ("Number of first command") << endl;
@@ -1101,7 +1101,7 @@ int main(int argc, char* argv[]) {
 								continue;
 							}
 							if (langulange == 1) {
-								cout << ("Напиши номер второй команды") << endl;
+								cout << ("ГЌЕ•ДЏДЌЕ™ДЌ Г­Г®Д›ДєД‘ ГўЕ€Г®Д‘Г®Г© Д™Г®Д›Е•Г­Г¤Е±") << endl;
 							}
 							else if (langulange == 2) {
 								cout << ("Number of second command") << endl;
@@ -1159,7 +1159,7 @@ int main(int argc, char* argv[]) {
 							}
 							else {
 								if (langulange == 1) {
-									cout << "Автостарт успешно запущен. Можете запускать программу" << endl;
+									cout << "Е”ГўЕ€Г®Е„Е€Е•Д‘Е€ ГіЕ„ДЏДєЕ™Г­Г® Г§Е•ДЏГіЕЇДєГ­. ДљГ®Д‡ДєЕ€Дє Г§Е•ДЏГіЕ„Д™Е•Е€Гј ДЏД‘Г®ДѓД‘Е•Д›Д›Гі" << endl;
 								}
 								else if (langulange == 2) {
 									cout << "Autostart is on" << endl;
@@ -1175,7 +1175,7 @@ int main(int argc, char* argv[]) {
 				}
 				else {
 					if (langulange == 1) {
-						cout << ("Неизвестная команда ") << com << (". Напиши !help") << endl;
+						cout << ("ГЌДєДЌГ§ГўДєЕ„Е€Г­Е•Л™ Д™Г®Д›Е•Г­Г¤Е• ") << com << (". ГЌЕ•ДЏДЌЕ™ДЌ !help") << endl;
 					}
 					else if (langulange == 1) {
 						cout << ("Unknown command ") << com << (". To help !help") << endl;
@@ -1193,7 +1193,7 @@ int main(int argc, char* argv[]) {
 		}
 		else {
 			if (langulange == 1) {
-				cout << ("Неизвестная команда ") << com << (". Напиши !help") << endl;
+				cout << ("ГЌДєДЌГ§ГўДєЕ„Е€Г­Е•Л™ Д™Г®Д›Е•Г­Г¤Е• ") << com << (". ГЌЕ•ДЏДЌЕ™ДЌ !help") << endl;
 			}
 			else if (langulange == 1) {
 				cout << ("Unknown command ") << com << (". To help !help") << endl;
@@ -1202,7 +1202,7 @@ int main(int argc, char* argv[]) {
 	}
 		if (cores_count < 4 && is_multipotok == 1) {
 			if(langulange == 1){
-				cout << ("У твоего процессора ") << cores_count << ("ядер. Для роботы нужно минимум 4 ядер") << endl;
+				cout << ("Г“ Е€ГўГ®ДєДѓГ® ДЏД‘Г®Г¶ДєЕ„Е„Г®Д‘Е• ") << cores_count << ("Л™Г¤ДєД‘. Г„Г«Л™ Д‘Г®ГЎГ®Е€Е± Г­ГіД‡Г­Г® Д›ДЌГ­ДЌД›ГіД› 4 Л™Г¤ДєД‘") << endl;
 
 			}
 			else if (langulange == 2) {
@@ -1213,10 +1213,10 @@ int main(int argc, char* argv[]) {
 		else {
 			cout << ("CPU cores: ") << cores_count <<endl;
 	}/*ofstream fout("data_base", ios_base::trunc);
-	/*ifstream fin("data_base" , ios_base::in); // открыли файл для чтения
+	/*ifstream fin("data_base" , ios_base::in); // Г®Е€Д™Д‘Е±Г«ДЌ ГґЕ•Г©Г« Г¤Г«Л™ Г·Е€ДєГ­ДЌЛ™
 	fin >> lmasive;
 	fin.close();*/
-	//-----------------Ліцензія----------------------
+	//-----------------Г‹Е‚Г¶ДєГ­Г§Е‚Л™----------------------
 		/*time_t seconds;
 		seconds = time(NULL);
 		days = seconds / 60 / 60 /24;
@@ -1239,12 +1239,12 @@ int main(int argc, char* argv[]) {
 			cout << ("You have unlimited license") << endl;
 		}*/
 
-		//-----------------Навчання----------------------
+		//-----------------ГЌЕ•ГўГ·Е•Г­Г­Л™----------------------
 		if (is_learning_complete == 1) {
 			goto programe;
 	}
 		if (langulange == 1) {
-			cout << "Идет обучение програмы, ожидайте" << endl << endl;
+			cout << "ДЊГ¤ДєЕ€ Г®ГЎГіГ·ДєГ­ДЌДє ДЏД‘Г®ДѓД‘Е•Д›Е±, Г®Д‡ДЌГ¤Е•Г©Е€Дє" << endl << endl;
 	}
 		else {
 			cout << "Programe is learning, please wait" << endl << endl;
@@ -1312,7 +1312,7 @@ int main(int argc, char* argv[]) {
 	}
 	times_correct = 0;
 	allClear();
-	//-----------------------------------------------------------Друга-Стадія-Навчання------------------------------------------------
+	//-----------------------------------------------------------Г„Д‘ГіДѓЕ•-ЕѓЕ€Е•Г¤Е‚Л™-ГЌЕ•ГўГ·Е•Г­Г­Л™------------------------------------------------
 	for (int d = 1; d < 40; d++) {
 		if (d % 2 == 0) {
 		cout << d / 2 + 40<< endl;
@@ -1418,7 +1418,7 @@ int main(int argc, char* argv[]) {
 			st++;
 		}
 	}
-	//-----------------------------------------------------------Третя-Стадія-Навчання------------------------------------------------
+	//-----------------------------------------------------------Е‡Д‘ДєЕ€Л™-ЕѓЕ€Е•Г¤Е‚Л™-ГЌЕ•ГўГ·Е•Г­Г­Л™------------------------------------------------
 
 	for (int c = 0; c < 10000 * stepin_navchania; c++) {
 		if (c % (500 * stepin_navchania) == 0) {
@@ -1481,7 +1481,7 @@ int main(int argc, char* argv[]) {
 		}
 		st++;
 	}
-	//---------------------------------------------------------------Четверта-Стадія-Навчання---------------------------------------------
+	//---------------------------------------------------------------Г—ДєЕ€ГўДєД‘Е€Е•-ЕѓЕ€Е•Г¤Е‚Л™-ГЌЕ•ГўГ·Е•Г­Г­Л™---------------------------------------------
 
 	for (int d = 0; d < 20; d++) {
 		cout << d + 80 << endl;
@@ -1587,22 +1587,22 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-	//1 Ювентус
-	//2 Реал Мадрид
-	//3 Барселона
-	//4 Манчестер Юнайтед
-	//5 Арсенал
-	//6 Баварія
-	//7 Ліверпуль
-	//8 Борусія
-	//9 Манчестер Сіті
-	//10 Челси
-	//11 Мілан 
+	//1 ЕўГўДєГ­Е€ГіЕ„
+	//2 ДђДєЕ•Г« ДљЕ•Г¤Д‘ДЌГ¤
+	//3 ГЃЕ•Д‘Е„ДєГ«Г®Г­Е•
+	//4 ДљЕ•Г­Г·ДєЕ„Е€ДєД‘ ЕўГ­Е•Г©Е€ДєГ¤
+	//5 Е”Д‘Е„ДєГ­Е•Г«
+	//6 ГЃЕ•ГўЕ•Д‘Е‚Л™
+	//7 Г‹Е‚ГўДєД‘ДЏГіГ«Гј
+	//8 ГЃГ®Д‘ГіЕ„Е‚Л™
+	//9 ДљЕ•Г­Г·ДєЕ„Е€ДєД‘ ЕѓЕ‚Е€Е‚
+	//10 Г—ДєГ«Е„ДЌ
+	//11 ДљЕ‚Г«Е•Г­ 
 		programe:
 	for (int i = 0; i > -1; i++) {
 		/*cout << ("Debug? ");
 		cin >> debb;*/
-		//-----------------------------------------------------------------Опитування-----------------------------------------------------
+		//-----------------------------------------------------------------ГЋДЏДЌЕ€ГіГўЕ•Г­Г­Л™-----------------------------------------------------
 		ney1_1 = 0;
 		ney1_2 = 0;
 		ney1_3 = 0;
@@ -1619,20 +1619,20 @@ int main(int argc, char* argv[]) {
 		ney1_14 = 0;
 		allClear();
 
-	/*	cout << ("1.Ювентус") << endl;
-		cout << ("2.Реал Мадрид") << endl;
-		cout << ("3.Барселона") << endl;
-		cout << ("4.Манчестер Юнайтед") << endl;
-		cout << ("5.Арсенал") << endl;
-		cout << ("6.Бавария") << endl;
-		cout << ("7.Ливерпуль") << endl;
-		cout << ("8.Борусия Д") << endl;
-		cout << ("9.Манчестер Сити") << endl;
-		cout << ("10.Челси") << endl;
-		cout << ("11.Милан") << endl;
-		cout << ("12.Байер") << endl;
-		cout << ("13.Лестер") << endl;
-		cout << ("14.Тоттенгем") << endl;
+	/*	cout << ("1.ЕўГўДєГ­Е€ГіЕ„") << endl;
+		cout << ("2.ДђДєЕ•Г« ДљЕ•Г¤Д‘ДЌГ¤") << endl;
+		cout << ("3.ГЃЕ•Д‘Е„ДєГ«Г®Г­Е•") << endl;
+		cout << ("4.ДљЕ•Г­Г·ДєЕ„Е€ДєД‘ ЕўГ­Е•Г©Е€ДєГ¤") << endl;
+		cout << ("5.Е”Д‘Е„ДєГ­Е•Г«") << endl;
+		cout << ("6.ГЃЕ•ГўЕ•Д‘ДЌЛ™") << endl;
+		cout << ("7.Г‹ДЌГўДєД‘ДЏГіГ«Гј") << endl;
+		cout << ("8.ГЃГ®Д‘ГіЕ„ДЌЛ™ Г„") << endl;
+		cout << ("9.ДљЕ•Г­Г·ДєЕ„Е€ДєД‘ ЕѓДЌЕ€ДЌ") << endl;
+		cout << ("10.Г—ДєГ«Е„ДЌ") << endl;
+		cout << ("11.ДљДЌГ«Е•Г­") << endl;
+		cout << ("12.ГЃЕ•Г©ДєД‘") << endl;
+		cout << ("13.Г‹ДєЕ„Е€ДєД‘") << endl;
+		cout << ("14.Е‡Г®Е€Е€ДєГ­ДѓДєД›") << endl;
 */
 		if (!is_autostart) {
 			cout << "1.Astralis" << endl;
@@ -1651,7 +1651,7 @@ int main(int argc, char* argv[]) {
 			cout << "14.Faze" << endl;
 			while (1) {
 				if (langulange == 1) {
-					cout << ("Напиши номер первой команды") << endl;
+					cout << ("ГЌЕ•ДЏДЌЕ™ДЌ Г­Г®Д›ДєД‘ ДЏДєД‘ГўГ®Г© Д™Г®Д›Е•Г­Г¤Е±") << endl;
 				}
 				else if (langulange == 2) {
 					cout << ("Write number of first command") << endl;
@@ -1704,7 +1704,7 @@ int main(int argc, char* argv[]) {
 					continue;
 				}
 				if (langulange == 1) {
-					cout << ("Напиши номер второй команды") << endl;
+					cout << ("ГЌЕ•ДЏДЌЕ™ДЌ Г­Г®Д›ДєД‘ ГўЕ€Г®Д‘Г®Г© Д™Г®Д›Е•Г­Г¤Е±") << endl;
 				}
 				else if (langulange == 2) {
 					cout << "Write number of second command" << endl;
@@ -1777,7 +1777,7 @@ int main(int argc, char* argv[]) {
 			continue;
 		}
 		choose_command();
-		//------------------------------------------------------------------Нейрони--------------------------------------------------------
+		//------------------------------------------------------------------ГЌДєГ©Д‘Г®Г­ДЌ--------------------------------------------------------
 		ney2_1 = neyron2(0, wsf1, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws1_1, ws1_2, ws1_3, ws1_4, ws1_5, ws1_6, ws1_7, ws1_8, ws1_9, ws1_10, ws1_11, ws1_12, ws1_13, ws1_14);
 		ney2_2 = neyron2(0, wsf2, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws2_1, ws2_2, ws2_3, ws2_4, ws2_5, ws2_6, ws2_7, ws2_8, ws2_9, ws2_10, ws2_11, ws2_12, ws2_13, ws2_14);
 		ney2_3 = neyron2(0, wsf3, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ws3_1, ws3_2, ws3_3, ws3_4, ws3_5, ws3_6, ws3_7, ws3_8, ws3_9, ws3_10, ws3_11, ws3_12, ws3_13, ws3_14);
@@ -1877,7 +1877,7 @@ int main(int argc, char* argv[]) {
 		correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
 		//if (correct != 0) {
 		if (langulange == 1) {
-			cout << "Номер команды победителя: " << correct << endl;
+			cout << "ГЌГ®Д›ДєД‘ Д™Г®Д›Е•Г­Г¤Е± ДЏГ®ГЎДєГ¤ДЌЕ€ДєГ«Л™: " << correct << endl;
 		}
 		else if (langulange == 2) {
 			cout << "Number of winning command: " << correct << endl;
@@ -1887,7 +1887,7 @@ int main(int argc, char* argv[]) {
 		/*if (debb == 1) {
 			debug_file(5, correct);
 		}*/
-		//Кінцевий вивід
+		//ДЕ‚Г­Г¶ДєГўДЌГ© ГўДЌГўЕ‚Г¤
 		/*else {
 			cout << ("") << endl;
 		}*/
@@ -1907,59 +1907,59 @@ int main(int argc, char* argv[]) {
 		if (ney1_14 == 0) neyr3_14 = 0;
 		if (ney1_1) {
 			cout << "Astralis: " << neyr3_1 << " power points." << endl;
-			cout << "Шанс победы Astralis " << neyr3_1 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± Astralis " << neyr3_1 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_2) {
 			cout << "Gambit: " << neyr3_2 << "power points." << endl;
-			cout << "Шанс победы Gambit " << neyr3_2 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + +neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± Gambit " << neyr3_2 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + +neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_3) {
 			cout << "Na`vi: " << neyr3_3 << " power points." << endl;
-			cout << "Шанс победы Na`vi " << neyr3_3 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± Na`vi " << neyr3_3 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_4) {
 			cout << "Heroic: " << neyr3_4 << " power points." << endl;
-			cout << "Шанс победы Heroic" << neyr3_4 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± Heroic" << neyr3_4 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_5) {
 			cout << "Virtus.pro: " << neyr3_5 << " power points." << endl;
-			cout << "Шанс победы Virtus.pro " << neyr3_5 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± Virtus.pro " << neyr3_5 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_6) {
 			cout << "Vitality: " << neyr3_6 << " power points." << endl;
-			cout << "Шанс победы Vitality " << neyr3_6 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± Vitality " << neyr3_6 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_7) {
 			cout << "Liquid: " << neyr3_7  << " power points." << endl;
-			cout << "Шанс победы Liquid " << neyr3_7 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± Liquid " << neyr3_7 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_8) {
 			cout << "Spirit: " << neyr3_8  << " power points." << endl;
-			cout << "Шанс победы Spirit " << neyr3_8 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± Spirit " << neyr3_8 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_9) {
 			cout << "fnatic: " << neyr3_9  <<" power points." << endl;
-			cout << "Шанс победы fnatic " << neyr3_9 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± fnatic " << neyr3_9 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_10) {
 			cout << "NIP: " << neyr3_10  << " power points." << endl;
-			cout << "Шанс победы NIP " << neyr3_10 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± NIP " << neyr3_10 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_11) {
 			cout << "mousesports: " << neyr3_11  << " power points." << endl;
-			cout << "Шанс победы mousesports " << neyr3_11 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± mousesports " << neyr3_11 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_12) {
 			cout << "Furia: " << neyr3_12 << " power points." << endl;
-			cout << "Шанс победы Furia " << neyr3_12 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± Furia " << neyr3_12 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_13) {
 			cout << "Complexity: " << neyr3_13  << " power points." << endl;
-			cout << "Шанс победы Complexity " << neyr3_13 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± Complexity " << neyr3_13 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		if (ney1_14) {
 			cout << "Faze: " << neyr3_14  << " power points." << endl;
-			cout << "Шанс победы Faze " << neyr3_14 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
+			cout << "ЕЕ•Г­Е„ ДЏГ®ГЎДєГ¤Е± Faze " << neyr3_14 / (neyr3_1 + neyr3_2 + neyr3_3 + neyr3_4 + neyr3_5 + neyr3_6 + neyr3_7 + neyr3_8 + neyr3_9 + neyr3_10 + neyr3_11 + neyr3_12 + neyr3_13 + neyr3_14) * 100 << endl << endl;
 		}
 		is_autostart = 0;
 		is_learning_complete = 1;
