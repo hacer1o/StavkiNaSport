@@ -11,7 +11,7 @@ double ney2;
 double ney3;
 double ney4;
 
-double ney4_1;
+/*double ney4_1;
 double ney4_2;
 double ney4_3;
 double ney4_4;
@@ -24,7 +24,7 @@ double ney4_10;
 double ney4_11;
 double ney4_12;
 double ney4_13;
-double ney4_14;
+double ney4_14;*/
 int chislo_zv = 1;
 //Функція модуля в математиці
 int abc(float x) {
