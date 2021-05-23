@@ -15,14 +15,14 @@ int stadium_number;
 int debb;
 //Áŕçŕ äŕííčő
 int is_learning_complete;
-int results_correct[] = {
-	2 , 2 , 2 , 2 , 2 , 2 , 4 , 2 , 2 , 3 , 10, 1 , 8 , 5 , 1 , 1 , 1 , 12, 3 , 3 , 3 , 3 , 3 , 3 , 7 , 12, 13, 4 , 4 , 4 , 5 , 5 , 5 , 5 , 5 , 7 , 13, 6 , 6 , 13, 6 , 6 , 10, 7 , 7 , 9 , 11, 10, 12, 10, 10, 10, 13, 14, 3 , 3 , 5 , 7 , 1 , 13, 3 , 3 , 13, 3 , 8
+const int results_correct[] = {
+	2 , 2 , 2 , 2 , 2 , 2 , 4 , 2 , 2 , 3 , 10, 1 , 8 , 5 , 1 , 1 , 1 , 12, 3 , 3 , 3 , 3 , 3 , 3 , 7 , 12, 13, 4 , 4 , 4 , 5 , 5 , 5 , 5 , 5 , 7 , 13, 6 , 6 , 13, 6 , 6 , 10, 7 , 7 , 9 , 11, 10, 12, 10, 10, 10, 13, 14, 3 , 3 , 5 , 7 , 1 , 13, 3 , 3 , 13, 3 , 8 , 4 , 3
 };
-int first_command_correct[] = {
-	2 , 8 , 2 , 2 , 1 , 2 , 2 , 2 , 10, 3 , 1 , 1 , 8 , 5 , 1 , 5 , 9 , 1 , 7 , 6 , 3 , 14, 5 , 3 , 3 , 3 , 13, 4 , 4 , 4 , 10, 6 , 12, 7 , 5 , 7 , 13, 13, 6 , 6 , 14, 11, 10, 14, 7 , 13, 11, 14, 12, 14, 10, 10, 11, 11, 3 , 3 , 14, 7 , 7 , 13, 3 , 2 , 9 , 3 , 8
+const int first_command_correct[] = {
+	2 , 8 , 2 , 2 , 1 , 2 , 2 , 2 , 10, 3 , 1 , 1 , 8 , 5 , 1 , 5 , 9 , 1 , 7 , 6 , 3 , 14, 5 , 3 , 3 , 3 , 13, 4 , 4 , 4 , 10, 6 , 12, 7 , 5 , 7 , 13, 13, 6 , 6 , 14, 11, 10, 14, 7 , 13, 11, 14, 12, 14, 10, 10, 11, 11, 3 , 3 , 14, 7 , 7 , 13, 3 , 2 , 9 , 3 , 8 , 4 , 2
 };
-int second_command_correct[] = {
-	5 , 2 , 3 , 12, 2 , 10, 4 , 12, 2 , 1 , 10, 11, 1 , 1 , 7 , 1 , 1 , 12, 3 , 3 , 14, 3 , 3 , 12, 7 , 12, 3 , 13, 10, 12, 5 , 5 , 5 , 5 , 9 , 5 , 5 , 6 , 7 , 13, 6 , 6 , 6 , 7 , 9 , 9 , 9 , 10, 10, 10, 11, 13, 13, 14, 11, 5 , 5 , 5 , 1 , 6 , 4 , 3 , 13, 4 , 2
+const int second_command_correct[] = {
+	5 , 2 , 3 , 12, 2 , 10, 4 , 12, 2 , 1 , 10, 11, 1 , 1 , 7 , 1 , 1 , 12, 3 , 3 , 14, 3 , 3 , 12, 7 , 12, 3 , 13, 10, 12, 5 , 5 , 5 , 5 , 9 , 5 , 5 , 6 , 7 , 13, 6 , 6 , 6 , 7 , 9 , 9 , 9 , 10, 10, 10, 11, 13, 13, 14, 11, 5 , 5 , 5 , 1 , 6 , 4 , 3 , 13, 4 , 2 , 13, 3
 };
 
 /*
@@ -41,21 +41,6 @@ int second_command_correct[] = {
 	13.Complexity *
 	14.Faze *
 */
-	//1 Ţâĺíňóń
-	//2 Đĺŕë Ěŕäđčä
-	//3 Áŕđńĺëîíŕ
-	//4 Ěŕí÷ĺńňĺđ Ţíŕéňĺä
-	//5 Ŕđńĺíŕë
-	//6 Áŕâŕđł˙
-	//7 Ëłâĺđďóëü
-	//8 Áîđóńł˙
-	//9 Ěŕí÷ĺńňĺđ Ńłňł
-	//10 ×ĺëńč
-	//11 Ěłëŕí
-	//12 Áŕéşđ
-	//13 Ëĺńňĺđ Ńłňł
-	//14 Ňîňňĺíăĺě
-//Áłáëłîňĺęč
 #include <omp.h>
 #include <iostream>
 #include <string>
@@ -72,8 +57,7 @@ int second_command_correct[] = {
 #include <thread>
 #include <fstream>
 #include <Windows.h>
-#include <Windows.h>
-#include<Psapi.h>
+#include <Psapi.h>
 #include <intrin.h>
 #include <cstring>
 #include <cstdlib>
@@ -205,7 +189,39 @@ double ws3_11_1; double ws3_11_2; double ws3_11_3; double ws3_11_4; double ws3_1
 double ws3_12_1; double ws3_12_2; double ws3_12_3; double ws3_12_4; double ws3_12_5; double ws3_12_6; double ws3_12_7; double ws3_12_8; double ws3_12_9; double ws3_12_10;
 double ws3_13_1; double ws3_13_2; double ws3_13_3; double ws3_13_4; double ws3_13_5; double ws3_13_6; double ws3_13_7; double ws3_13_8; double ws3_13_9; double ws3_13_10;
 double ws3_14_1; double ws3_14_2; double ws3_14_3; double ws3_14_4; double ws3_14_5; double ws3_14_6; double ws3_14_7; double ws3_14_8; double ws3_14_9; double ws3_14_10;
+// deep learning
+double w1sf1; double w1s1_1; double w1s1_2; double w1s1_3; double w1s1_4; double w1s1_5; double w1s1_6; double w1s1_7; double w1s1_8; double w1s1_9; double w1s1_10; double w1s1_11; double w1s1_12; double w1s1_13; double w1s1_14;
+double w1sf2; double w1s2_1; double w1s2_2; double w1s2_3; double w1s2_4; double w1s2_5; double w1s2_6; double w1s2_7; double w1s2_8; double w1s2_9; double w1s2_10; double w1s2_11; double w1s2_12; double w1s2_13; double w1s2_14;
+double w1sf3; double w1s3_1; double w1s3_2; double w1s3_3; double w1s3_4; double w1s3_5; double w1s3_6; double w1s3_7; double w1s3_8; double w1s3_9; double w1s3_10; double w1s3_11; double w1s3_12; double w1s3_13; double w1s3_14;
+double w1sf4; double w1s4_1; double w1s4_2; double w1s4_3; double w1s4_4; double w1s4_5; double w1s4_6; double w1s4_7; double w1s4_8; double w1s4_9; double w1s4_10; double w1s4_11; double w1s4_12; double w1s4_13; double w1s4_14;
+double w1sf5; double w1s5_1; double w1s5_2; double w1s5_3; double w1s5_4; double w1s5_5; double w1s5_6; double w1s5_7; double w1s5_8; double w1s5_9; double w1s5_10; double w1s5_11; double w1s5_12; double w1s5_13; double w1s5_14;
+double w1sf6; double w1s6_1; double w1s6_2; double w1s6_3; double w1s6_4; double w1s6_5; double w1s6_6; double w1s6_7; double w1s6_8; double w1s6_9; double w1s6_10; double w1s6_11; double w1s6_12; double w1s6_13; double w1s6_14;
 
+double w1s2_1_1; double w1s2_1_2; double w1s2_1_3; double w1s2_1_4; double w1s2_1_5; double w1s2_1_6;
+double w1s2_2_1; double w1s2_2_2; double w1s2_2_3; double w1s2_2_4; double w1s2_2_5; double w1s2_2_6;
+double w1s2_3_1; double w1s2_3_2; double w1s2_3_3; double w1s2_3_4; double w1s2_3_5; double w1s2_3_6;
+double w1s2_4_1; double w1s2_4_2; double w1s2_4_3; double w1s2_4_4; double w1s2_4_5; double w1s2_4_6;
+double w1s2_5_1; double w1s2_5_2; double w1s2_5_3; double w1s2_5_4; double w1s2_5_5; double w1s2_5_6;
+double w1s2_6_1; double w1s2_6_2; double w1s2_6_3; double w1s2_6_4; double w1s2_6_5; double w1s2_6_6;
+double w1s2_7_1; double w1s2_7_2; double w1s2_7_3; double w1s2_7_4; double w1s2_7_5; double w1s2_7_6;
+double w1s2_8_1; double w1s2_8_2; double w1s2_8_3; double w1s2_8_4; double w1s2_8_5; double w1s2_8_6;
+double w1s2_9_1; double w1s2_9_2; double w1s2_9_3; double w1s2_9_4; double w1s2_9_5; double w1s2_9_6;
+double w1s2_10_1; double w1s2_10_2; double w1s2_10_3; double w1s2_10_4; double w1s2_10_5; double w1s2_10_6;
+
+double w1s3_1_1; double w1s3_1_2; double w1s3_1_3; double w1s3_1_4; double w1s3_1_5; double w1s3_1_6; double w1s3_1_7; double w1s3_1_8; double w1s3_1_9; double w1s3_1_10;
+double w1s3_2_1; double w1s3_2_2; double w1s3_2_3; double w1s3_2_4; double w1s3_2_5; double w1s3_2_6; double w1s3_2_7; double w1s3_2_8; double w1s3_2_9; double w1s3_2_10;
+double w1s3_3_1; double w1s3_3_2; double w1s3_3_3; double w1s3_3_4; double w1s3_3_5; double w1s3_3_6; double w1s3_3_7; double w1s3_3_8; double w1s3_3_9; double w1s3_3_10;
+double w1s3_4_1; double w1s3_4_2; double w1s3_4_3; double w1s3_4_4; double w1s3_4_5; double w1s3_4_6; double w1s3_4_7; double w1s3_4_8; double w1s3_4_9; double w1s3_4_10;
+double w1s3_5_1; double w1s3_5_2; double w1s3_5_3; double w1s3_5_4; double w1s3_5_5; double w1s3_5_6; double w1s3_5_7; double w1s3_5_8; double w1s3_5_9; double w1s3_5_10;
+double w1s3_6_1; double w1s3_6_2; double w1s3_6_3; double w1s3_6_4; double w1s3_6_5; double w1s3_6_6; double w1s3_6_7; double w1s3_6_8; double w1s3_6_9; double w1s3_6_10;
+double w1s3_7_1; double w1s3_7_2; double w1s3_7_3; double w1s3_7_4; double w1s3_7_5; double w1s3_7_6; double w1s3_7_7; double w1s3_7_8; double w1s3_7_9; double w1s3_7_10;
+double w1s3_8_1; double w1s3_8_2; double w1s3_8_3; double w1s3_8_4; double w1s3_8_5; double w1s3_8_6; double w1s3_8_7; double w1s3_8_8; double w1s3_8_9; double w1s3_8_10;
+double w1s3_9_1; double w1s3_9_2; double w1s3_9_3; double w1s3_9_4; double w1s3_9_5; double w1s3_9_6; double w1s3_9_7; double w1s3_9_8; double w1s3_9_9; double w1s3_9_10;
+double w1s3_10_1; double w1s3_10_2; double w1s3_10_3; double w1s3_10_4; double w1s3_10_5; double w1s3_10_6; double w1s3_10_7; double w1s3_10_8; double w1s3_10_9; double w1s3_10_10;
+double w1s3_11_1; double w1s3_11_2; double w1s3_11_3; double w1s3_11_4; double w1s3_11_5; double w1s3_11_6; double w1s3_11_7; double w1s3_11_8; double w1s3_11_9; double w1s3_11_10;
+double w1s3_12_1; double w1s3_12_2; double w1s3_12_3; double w1s3_12_4; double w1s3_12_5; double w1s3_12_6; double w1s3_12_7; double w1s3_12_8; double w1s3_12_9; double w1s3_12_10;
+double w1s3_13_1; double w1s3_13_2; double w1s3_13_3; double w1s3_13_4; double w1s3_13_5; double w1s3_13_6; double w1s3_13_7; double w1s3_13_8; double w1s3_13_9; double w1s3_13_10;
+double w1s3_14_1; double w1s3_14_2; double w1s3_14_3; double w1s3_14_4; double w1s3_14_5; double w1s3_14_6; double w1s3_14_7; double w1s3_14_8; double w1s3_14_9; double w1s3_14_10;
 namespace
 {
 
