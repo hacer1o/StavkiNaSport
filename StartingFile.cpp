@@ -290,7 +290,13 @@ int _stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLin
 	);
 	return EXIT_SUCCESS;
 }
-
+void save_deeplearning() {
+	w1s1_1 = ws1_1; w1s1_2 = ws1_2; w1s1_3 = ws1_3; w1s1_4 = ws1_4; w1s1_5 = ws1_5; w1s1_6 = ws1_6; w1s1_7 = ws1_7; w1s1_8 = ws1_8; w1s1_9 = ws1_9; w1s1_10 = ws1_10; w1s1_11 = ws1_11; w1s1_12 = ws1_12; w1s1_13 = ws1_13; w1s1_14 = ws1_14;
+	w1s2_1 = ws2_1; w1s2_2 = ws2_2; w1s2_3 = ws2_3; w1s2_4 = ws2_4; w1s2_5 = ws2_5; w1s2_6 = ws2_6; w1s2_7 = ws2_7; w1s2_8 = ws2_8; w1s2_9 = ws2_9; w1s2_10 = ws2_10; w1s2_11 = ws2_11; w1s2_12 = ws2_12; w1s2_13 = ws2_13; w1s2_14 = ws2_14;
+	w1s3_1 = ws3_1; w1s3_2 = ws3_2; w1s3_3 = ws3_3; w1s3_4 = ws3_4; w1s3_5 = ws3_5; w1s3_6 = ws3_6; w1s3_7 = ws3_7; w1s3_8 = ws3_8; w1s3_9 = ws3_9; w1s3_10 = ws3_10; w1s3_11 = ws3_11; w1s3_12 = ws3_12; w1s3_13 = ws3_13; w1s3_14 = ws3_14;
+	w1s4_1 = ws4_1; w1s4_2 = ws4_2; w1s4_3 = ws4_3; w1s4_4 = ws4_4; w1s4_5 = ws4_5; w1s4_6 = ws4_6; w1s4_7 = ws4_7; w1s4_8 = ws4_8; w1s4_9 = ws4_9; w1s4_10 = ws4_10; w1s4_11 = ws4_11; w1s4_12 = ws4_12; w1s4_13 = ws4_13; w1s4_14 = ws4_14;
+	w1s5_1 = ws5_1; w1s5_2 = ws5_2; w1s5_3 = ws5_3; w1s5_4 = ws5_4; w1s5_5 = ws5_5; w1s5_6 = ws5_6; w1s5_7 = ws5_7; w1s5_8 = ws5_8; w1s5_9 = ws5_9; w1s5_10 = ws5_10; w1s5_11 = ws5_11; w1s5_12 = ws5_12; w1s5_13 = ws5_13; w1s5_14 = ws5_14;
+}
 int* debug_arr = new int[1000];
 int debug_arr_inf;
 void debug_file(int debug_code, int debug_status) {
