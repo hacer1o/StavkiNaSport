@@ -16,13 +16,13 @@ int debb;
 //Áŕçŕ äŕííčő
 bool is_learning_complete;
 const int results_correct[] = {
-	2 , 2 , 2 , 2 , 2 , 2 , 4 , 2 , 2 , 3 , 10, 1 , 8 , 5 , 1 , 1 , 1 , 12, 3 , 3 , 3 , 3 , 3 , 3 , 7 , 12, 13, 4 , 4 , 4 , 5 , 5 , 5 , 5 , 5 , 7 , 13, 6 , 6 , 13, 6 , 6 , 10, 7 , 7 , 9 , 11, 10, 12, 10, 10, 10, 13, 14, 3 , 3 , 5 , 7 , 1 , 13, 3 , 3 , 13, 3 , 8 , 4 , 3 , 4 , 10, 8 , 7 , 2 , 11 , 7
+	2 , 2 , 2 , 2 , 2 , 2 , 4 , 2 , 2 , 3 , 10, 1 , 8 , 5 , 1 , 1 , 1 , 12, 3 , 3 , 3 , 3 , 3 , 3 , 7 , 12, 13, 4 , 4 , 4 , 5 , 5 , 5 , 5 , 5 , 7 , 13, 6 , 6 , 13, 6 , 6 , 10, 7 , 7 , 9 , 11, 10, 12, 10, 10, 10, 13, 14, 3 , 3 , 5 , 7 , 1 , 13, 3 , 3 , 13, 3 , 8 , 4 , 3 , 4 , 10, 8 , 7 , 2 , 11, 7 , 6 , 10, 2 , 10, 2
 };
 const int first_command_correct[] = {
-	2 , 8 , 2 , 2 , 1 , 2 , 2 , 2 , 10, 3 , 1 , 1 , 8 , 5 , 1 , 5 , 9 , 1 , 7 , 6 , 3 , 14, 5 , 3 , 3 , 3 , 13, 4 , 4 , 4 , 10, 6 , 12, 7 , 5 , 7 , 13, 13, 6 , 6 , 14, 11, 10, 14, 7 , 13, 11, 14, 12, 14, 10, 10, 11, 11, 3 , 3 , 14, 7 , 7 , 13, 3 , 2 , 9 , 3 , 8 , 4 , 2 , 4 , 4 , 3 , 12, 2 , 11 , 7
+	2 , 8 , 2 , 2 , 1 , 2 , 2 , 2 , 10, 3 , 1 , 1 , 8 , 5 , 1 , 5 , 9 , 1 , 7 , 6 , 3 , 14, 5 , 3 , 3 , 3 , 13, 4 , 4 , 4 , 10, 6 , 12, 7 , 5 , 7 , 13, 13, 6 , 6 , 14, 11, 10, 14, 7 , 13, 11, 14, 12, 14, 10, 10, 11, 11, 3 , 3 , 14, 7 , 7 , 13, 3 , 2 , 9 , 3 , 8 , 4 , 2 , 4 , 4 , 3 , 12, 2 , 11, 7 , 6 , 9 , 2 , 10, 2
 };
 const int second_command_correct[] = {
-	5 , 2 , 3 , 12, 2 , 10, 4 , 12, 2 , 1 , 10, 11, 1 , 1 , 7 , 1 , 1 , 12, 3 , 3 , 14, 3 , 3 , 12, 7 , 12, 3 , 13, 10, 12, 5 , 5 , 5 , 5 , 9 , 5 , 5 , 6 , 7 , 13, 6 , 6 , 6 , 7 , 9 , 9 , 9 , 10, 10, 10, 11, 13, 13, 14, 11, 5 , 5 , 5 , 1 , 6 , 4 , 3 , 13, 4 , 2 , 13, 3 , 6 , 10, 3 , 7 , 5 , 10, 12
+	5 , 2 , 3 , 12, 2 , 10, 4 , 12, 2 , 1 , 10, 11, 1 , 1 , 7 , 1 , 1 , 12, 3 , 3 , 14, 3 , 3 , 12, 7 , 12, 3 , 13, 10, 12, 5 , 5 , 5 , 5 , 9 , 5 , 5 , 6 , 7 , 13, 6 , 6 , 6 , 7 , 9 , 9 , 9 , 10, 10, 10, 11, 13, 13, 14, 11, 5 , 5 , 5 , 1 , 6 , 4 , 3 , 13, 4 , 2 , 13, 3 , 6 , 10, 3 , 7 , 5 , 10, 12, 2 , 10, 1 , 4 , 13
 };
 
 /*
@@ -40,6 +40,12 @@ const int second_command_correct[] = {
 	12.Furia *
 	13.Complexity *
 	14.Faze *
+	15.//G2
+	16.//Entropiq
+	17.//forZe
+	18.//BIG
+	19.//HAVU
+	20.//FunPlus Phoenix
 */
 #include <omp.h>
 #include <iostream>
@@ -320,6 +326,28 @@ int _stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLin
 	);
 	return EXIT_SUCCESS;
 }
+void allClear() {
+	ney1_1 = 0;
+	ney1_2 = 0;
+	ney1_3 = 0;
+	ney1_4 = 0;
+	ney1_5 = 0;
+	ney1_6 = 0;
+	ney1_7 = 0;
+	ney1_8 = 0;
+	ney1_9 = 0;
+	ney1_10 = 0;
+	ney1_11 = 0;
+	ney1_12 = 0;
+	ney1_13 = 0;
+	ney1_14 = 0;
+	ney1_15 = 0;
+	ney1_16 = 0;
+	ney1_17 = 0;
+	ney1_18 = 0;
+	ney1_19 = 0;
+	ney1_20 = 0;
+}
 void save_deeplearning() {
 	w1s1_1 = ws1_1; w1s1_2 = ws1_2; w1s1_3 = ws1_3; w1s1_4 = ws1_4; w1s1_5 = ws1_5; w1s1_6 = ws1_6; w1s1_7 = ws1_7; w1s1_8 = ws1_8; w1s1_9 = ws1_9; w1s1_10 = ws1_10; w1s1_11 = ws1_11; w1s1_12 = ws1_12; w1s1_13 = ws1_13; w1s1_14 = ws1_14;
 	w1s2_1 = ws2_1; w1s2_2 = ws2_2; w1s2_3 = ws2_3; w1s2_4 = ws2_4; w1s2_5 = ws2_5; w1s2_6 = ws2_6; w1s2_7 = ws2_7; w1s2_8 = ws2_8; w1s2_9 = ws2_9; w1s2_10 = ws2_10; w1s2_11 = ws2_11; w1s2_12 = ws2_12; w1s2_13 = ws2_13; w1s2_14 = ws2_14;
@@ -354,54 +382,8 @@ void save_deeplearning() {
 	w1s3_13_1 = ws3_13_1; w1s3_13_2 = ws3_13_2; w1s3_13_3 = ws3_13_3; w1s3_13_4 = ws3_13_4; w1s3_13_5 = ws3_13_5; w1s3_13_6 = ws3_13_6; w1s3_13_7 = ws3_13_7; w1s3_13_8 = ws3_13_8; w1s3_13_9 = ws3_13_9; w1s3_13_10 = ws3_13_10;
 	w1s3_14_1 = ws3_14_1; w1s3_14_2 = ws3_14_2; w1s3_14_3 = ws3_14_3; w1s3_14_4 = ws3_14_4; w1s3_14_5 = ws3_14_5; w1s3_14_6 = ws3_14_6; w1s3_14_7 = ws3_14_7; w1s3_14_8 = ws3_14_8; w1s3_14_9 = ws3_14_9; w1s3_14_10 = ws3_14_10;
 }
-int* debug_arr = new int[1000];
-int debug_arr_inf;
-void debug_file(int debug_code, int debug_status) {
-	ofstream fout("debug_log.txt");
-	/*if (debug_code == 1) {
-		debug_arr[debug_arr_inf] = 111;
-		debug_arr_inf++;
-		debug_arr[debug_arr_inf] = debug_status;
-		debug_arr_inf++;
-	}
-	else if (debug_code == 2) {
-		debug_arr[debug_arr_inf] = 211;
-		debug_arr_inf++;
-		debug_arr[debug_arr_inf] = debug_status;
-		debug_arr_inf++;
-	}
-	else if (debug_code == 3) {
-		debug_arr[debug_arr_inf] = 311;
-		debug_arr_inf++;
-		debug_arr[debug_arr_inf] = debug_status;
-		debug_arr_inf++;
-	}
-	else if (debug_code == 4) {
-		debug_arr[debug_arr_inf] = 411;
-		debug_arr_inf++;
-		debug_arr[debug_arr_inf] = debug_status;
-		debug_arr_inf++;
-	}
-	else if (debug_code == 5) {
-		debug_arr[debug_arr_inf] = 511;
-		debug_arr_inf++;
-		debug_arr[debug_arr_inf] = debug_status;
-		debug_arr_inf++;
-	}
-	else{
-		fout << debug_arr;
-		fout.close();
-	}*/
-	
-}
 string user_input;
 void neyro_start() {
-/*	neyron2_1(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w1_1, w1_2, w1_3, w1_4, w1_5, w1_6, w1_7, w1_8, w1_9, w1_10, w1_11, w1_12, w1_13, w1_14);
-	neyron2_2(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w2_1, w2_2, w2_3, w2_4, w2_5, w2_6, w2_7, w2_8, w2_9, w2_10, w2_11, w2_12, w2_13, w2_14);
-	neyron2_3(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w3_1, w3_2, w3_3, w3_4, w3_5, w3_6, w3_7, w3_8, w3_9, w3_10, w3_11, w3_12, w3_13, w3_14);
-	neyron2_4(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w4_1, w4_2, w4_3, w4_4, w4_5, w4_6, w4_7, w4_8, w4_9, w4_10, w4_11, w4_12, w4_13, w4_14);
-	neyron2_5(ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, w5_1, w5_2, w5_3, w5_4, w5_5, w5_6, w5_7, w5_8, w5_9, w5_10, w5_11, w5_12, w5_13, w5_14);
-*/
 	ney2_1 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ney1_15, ney1_16, ney1_17, ney1_18, ney1_19, ney1_20, w1_1, w1_2, w1_3, w1_4, w1_5, w1_6, w1_7, w1_8, w1_9, w1_10, w1_11, w1_12, w1_13, w1_14, w1_15, w1_16, w1_17, w1_18, w1_19, w1_20);
 	ney2_2 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ney1_15, ney1_16, ney1_17, ney1_18, ney1_19, ney1_20, w2_1, w2_2, w2_3, w2_4, w2_5, w2_6, w2_7, w2_8, w2_9, w2_10, w2_11, w2_12, w2_13, w2_14, w2_15, w2_16, w2_17, w2_18, w2_19, w2_20);
 	ney2_3 = neyron2(0, 0, ney1_1, ney1_2, ney1_3, ney1_4, ney1_5, ney1_6, ney1_7, ney1_8, ney1_9, ney1_10, ney1_11, ney1_12, ney1_13, ney1_14, ney1_15, ney1_16, ney1_17, ney1_18, ney1_19, ney1_20, w3_1, w3_2, w3_3, w3_4, w3_5, w3_6, w3_7, w3_8, w3_9, w3_10, w3_11, w3_12, w3_13, w3_14, w3_15, w3_16, w3_17, w3_18, w3_19, w3_20);
@@ -726,6 +708,7 @@ void save3() {
 	ws3_20_1 = arifmetic(ws3_20_1, w3_20_1); ws3_20_2 = arifmetic(ws3_20_2, w3_20_2); ws3_20_3 = arifmetic(ws3_20_3, w3_20_3); ws3_20_4 = arifmetic(ws3_20_4, w3_20_4); ws3_20_5 = arifmetic(ws3_20_5, w3_20_5); ws3_20_6 = arifmetic(ws3_20_6, w3_20_6); ws3_20_7 = arifmetic(ws3_20_7, w3_20_7); ws3_14_8 = arifmetic(ws3_14_8, w3_14_8); ws3_20_9 = arifmetic(ws3_20_9, w3_20_9); ws3_20_10 = arifmetic(ws3_20_10, w3_20_10);
 }
 void load_base() {
+	allClear();
 	real_correct = results_correct[st];
 	command_choose1 = first_command_correct[st];
 	command_choose2 = second_command_correct[st];
@@ -788,6 +771,7 @@ void load_base() {
 	ney1_14 = command_correct14[st];*/
 }
 void choose_command() {
+	allClear();
 	if (command_choose1 == 1) ney1_1 = 1;
 	else if (command_choose1 == 2) ney1_2 = 1;
 	else if (command_choose1 == 3) ney1_3 = 1;
@@ -886,58 +870,6 @@ int is_opened;
 int reg_lang;
 int main(int argc, char* argv[]) {
 	setlocale(LC_ALL, "");
-	/*SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-	HKEY hKey;
-
-	LONG error = RegOpenKeyEx(
-		HKEY_CURRENT_USER,
-		L"SOFTWARE\\hacerio\\Stavki na Sport\\settings",
-		NULL,
-		KEY_QUERY_VALUE,
-		&hKey
-		);
-	if (error == ERROR_SUCCESS) {
-		unsigned char buffer[MAX_PATH];
-		DWORD bufferSize = MAX_PATH;
-		LONG result = RegQueryValueEx(
-			hKey,
-			L"langulange",
-			NULL,
-			NULL,
-			(LPBYTE)&buffer,
-			&bufferSize
-		);
-
-		if (result == ERROR_SUCCESS) {
-			reg_lang = (int)*buffer;
-			cout << (int)*buffer;
-		}
-		else {
-			cout << "error" << endl;
-		}
-	}
-	else {
-		cout << "íĺ âłäęđčňî" << endl;
-	}
-	BYTE* data = (BYTE*)2;
-	LSTATUS status1 = RegSetValueEx(hKey, L"langulange", NULL, REG_SZ, data, 2);
-	*/
-	//LSTATUS status2 = RegDeleteValue(hKey, L"langulange");
-	//LSTATUS status1 = RegSetValueEx(hKey, L"langulange", NULL, REG_SZ, data, 2);
-	//RegCloseKey(hKey);
-	/*ifstream file("config.txt");
-	is_opened = file.is_open();
-	file.close();
-	if (!is_opened) {
-		ofstream out("config.txt");
-		out << langulange;
-		out.close();
-		return 0;
-	}
-	ifstream file1("config.txt");
-	file1 >> file_data;
-	file1.close();*/
 	if (file_data == "" || file_data == "0") {
 		cout << "Welcome to Stavki Na Sport! Choose your langulange" << endl;
 		wcout << L"1. Русский" << endl << "2. English" << endl;
@@ -1122,7 +1054,7 @@ int main(int argc, char* argv[]) {
 						wcout << (L"Ядер ") << cores_count << endl;
 						wcout << (L"CPU: ");
 						cout << get_sys_info << endl;
-						wcout << (L"Язык русский") << endl;
+						wcout << (L"Язык: русский") << endl;
 						wcout << (L"Степень обучения˙: ");
 						cout << stepin_navchania << endl;
 						wcout << (L"-----------------------") << endl;
@@ -1410,52 +1342,26 @@ int main(int argc, char* argv[]) {
 			}
 		}
 	}
-		if (cores_count < 4 && is_multipotok == 1) {
+		if (cores_count < 3 && is_multipotok == 1) {
 			if(langulange == 1){
-				wcout << (L"Ядер процесора ") << cores_count << (L"надо минимум 4") << endl;
+				wcout << (L"Ядер процесора ") << cores_count << (L"надо минимум 3") << endl;
 
 			}
 			else if (langulange == 2) {
-				cout << ("CPU cores ") << cores_count << (". Need min 4") << endl;
+				cout << ("CPU cores ") << cores_count << (". Need min 3") << endl;
 			}
 			goto main_menu;
 		}
 		else {
-			cout << ("CPU cores: ") << cores_count <<endl;
-	}/*ofstream fout("data_base", ios_base::trunc);
-	/*ifstream fin("data_base" , ios_base::in); // îňęđűëč ôŕéë äë˙ ÷ňĺíč˙
-	fin >> lmasive;
-	fin.close();*/
-	//-----------------Ëłöĺíçł˙----------------------
-		/*time_t seconds;
-		seconds = time(NULL);
-		days = seconds / 60 / 60 /24;
-		license_value = 18629 + license_value;
-		if (days >= license_value && license_value != -1) {
-			cout<<("Please buy a new license")<<endl;
-			/*cout << ("Full Edition 24.99$ per mouth: ") << endl;
-			cout << ("Have big Data-Base, all updates is free") << endl << endl;
-			cout << ("Medium Edition  14.99$ per mouth") << endl;
-			cout << ("Have medium Data-Base, some updates are paid") << endl;
-			cout << ("Updates are cost 0.99$ - 4.99$") << endl << endl;
-			cout << ("Basic Edition 9.99$ per mouth") << endl;
-			cout << ("Have small Data-Base, all updates are paid") << endl;
-			cout << ("Updates are cost 0.99$ - 9.99$") << endl;*/
-		/*}
-		if (license_value != -1) {
-			cout << ("You can use this programe: ") << license_value - days << (" days") << endl;
+			cout << ("CPU cores: ") << cores_count << endl;
 		}
-		else {
-			cout << ("You have unlimited license") << endl;
-		}*/
-
 		//-----------------Íŕâ÷ŕíí˙----------------------
 		if (is_learning_complete == 1) {
 			goto programe;
-	}
+		}
 		if (langulange == 1) {
 			wcout << L"Програма учится, ожидайте" << endl << endl;
-	}
+		}
 		else {
 			cout << "Programe is learning, please wait" << endl << endl;
 		}
@@ -1473,6 +1379,13 @@ int main(int argc, char* argv[]) {
 			thread th2(random2_1);
 			thread th3(random2_2);
 			thread th11(random2_3);
+			th15.join();
+			th2.join();
+			th11.join();
+			th.join();
+			th12.join();
+			th1.join();
+			th14.join();
 			thread th17(random2_4);
 			thread th4(random3_1);
 			thread th5(random3_2);
@@ -1483,24 +1396,17 @@ int main(int argc, char* argv[]) {
 			thread th16(random3_7);
 			thread th9(load_base);
 			thread th10(stadium);
-			th8.join();
-			th9.join();
-			th10.join();
-			th11.join();
-			th12.join();
-			th13.join();
-			th14.join();
-			th15.join();
-			th16.join();
-			th17.join();
-			th.join();
-			th1.join();
-			th2.join();
 			th3.join();
 			th4.join();
 			th5.join();
 			th6.join();
 			th7.join();
+			th8.join();
+			th9.join();
+			th10.join();
+			th13.join();
+			th16.join();
+			th17.join();
 		}
 		stadium();
 		neyro_start();
@@ -1796,19 +1702,8 @@ int main(int argc, char* argv[]) {
 		}
 	}
 	*/
-	//1 Ţâĺíňóń
-	//2 Đĺŕë Ěŕäđčä
-	//3 Áŕđńĺëîíŕ
-	//4 Ěŕí÷ĺńňĺđ Ţíŕéňĺä
-	//5 Ŕđńĺíŕë
-	//6 Áŕâŕđł˙
-	//7 Ëłâĺđďóëü
-	//8 Áîđóńł˙
-	//9 Ěŕí÷ĺńňĺđ Ńłňł
-	//10 ×ĺëńč
-	//11 Ěłëŕí 
 		programe:
-	while(1) {
+	while (1) {
 		/*cout << ("Debug? ");
 		cin >> debb;*/
 		//-----------------------------------------------------------------Îďčňóâŕíí˙-----------------------------------------------------
@@ -1827,22 +1722,6 @@ int main(int argc, char* argv[]) {
 		ney1_13 = 0;
 		ney1_14 = 0;
 		allClear();
-
-	/*	cout << ("1.Ţâĺíňóń") << endl;
-		cout << ("2.Đĺŕë Ěŕäđčä") << endl;
-		cout << ("3.Áŕđńĺëîíŕ") << endl;
-		cout << ("4.Ěŕí÷ĺńňĺđ Ţíŕéňĺä") << endl;
-		cout << ("5.Ŕđńĺíŕë") << endl;
-		cout << ("6.Áŕâŕđč˙") << endl;
-		cout << ("7.Ëčâĺđďóëü") << endl;
-		cout << ("8.Áîđóńč˙ Ä") << endl;
-		cout << ("9.Ěŕí÷ĺńňĺđ Ńčňč") << endl;
-		cout << ("10.×ĺëńč") << endl;
-		cout << ("11.Ěčëŕí") << endl;
-		cout << ("12.Áŕéĺđ") << endl;
-		cout << ("13.Ëĺńňĺđ") << endl;
-		cout << ("14.Ňîňňĺíăĺě") << endl;
-*/
 		if (!is_autostart) {
 			cout << "1.Astralis" << endl;
 			cout << "2.Gambit" << endl;
@@ -1974,13 +1853,13 @@ int main(int argc, char* argv[]) {
 			cout << "Error" << endl;
 			continue;
 		}*/
-	/*	stadium();
-		if (debb == 1) {
-			debug_file(1, command_choose1);
-			debug_file(1, command_choose2);
-			debug_file(1, stadiumn_choose);
-		}
-		*/
+		/*	stadium();
+			if (debb == 1) {
+				debug_file(1, command_choose1);
+				debug_file(1, command_choose2);
+				debug_file(1, stadiumn_choose);
+			}
+			*/
 		if (command_choose1 == command_choose2 || command_choose1 > 14 || command_choose2 > 14 || command_choose1 < 1 || command_choose2 < 1) {
 			cout << "error" << endl;
 			continue;
@@ -2081,42 +1960,8 @@ int main(int argc, char* argv[]) {
 			cout << ws3_14_1 << " " << ws3_14_2 << " " << ws3_14_3 << " " << ws3_14_4 << " " << ws3_14_5 << " " << ws3_14_6 << " " << ws3_14_7 << " " << ws3_14_8 << " " << ws3_14_9 << " " << ws3_14_10 << " " << endl;
 
 		}
-
-		/*if (debb == 1) {
-			debug_file(4, ney4_1);
-			debug_file(4, ney4_2);
-			debug_file(4, ney4_3);
-			debug_file(4, ney4_4);
-			debug_file(4, ney4_5);
-			debug_file(4, ney4_6);
-			debug_file(4, ney4_7);
-			debug_file(4, ney4_8);
-			debug_file(4, ney4_9);
-			debug_file(4, ney4_10);
-			debug_file(4, ney4_11);
-			debug_file(4, ney4_12);
-			debug_file(4, ney4_13);
-			debug_file(4, ney4_14);
-		}*/
-
 		do_correct();
-		//correct = maximum(neyr3_1, neyr3_2, neyr3_3, neyr3_4, neyr3_5, neyr3_6, neyr3_7, neyr3_8, neyr3_9, neyr3_10, neyr3_11, neyr3_12, neyr3_13, neyr3_14);
-		//if (correct != 0) {
-		/*if (langulange == 1) {
-			cout << "Íîěĺđ ęîěŕíäű ďîáĺäčňĺë˙: " << correct << endl;
-		}
-		else if (langulange == 2) {
-			cout << "Number of winning command: " << correct << endl;
-		}
-		*/
-		//}
-		/*if (debb == 1) {
-			debug_file(5, correct);
-		}*/
-		//Ęłíöĺâčé âčâłä
-		/*else {
-			cout << ("") << endl;
-		}*/
+		
 		if (ney1_1) {
 			//cout << "Astralis: " << neyr3_1 << " power points." << endl;
 			cout << "Chance of win Astralis " << ney4_1 / sum_com() * 100 << endl << endl;
@@ -2173,6 +2018,24 @@ int main(int argc, char* argv[]) {
 			//cout << "Faze: " << neyr3_14  << " power points." << endl;
 			cout << "Chance of win Faze " << ney4_14 / sum_com() * 100 << endl << endl;
 		}
+		if (ney1_15) {
+
+		}
+		if (ney1_16) {
+
+		}
+		if (ney1_17) {
+
+		}
+		if (ney1_18) {
+
+		}
+		if (ney1_19) {
+
+		}
+		if (ney1_20) {
+
+		}
 		is_autostart = 0;
 		is_learning_complete = 1;
 		again:
@@ -2181,6 +2044,5 @@ int main(int argc, char* argv[]) {
 	end:
 		cout << "Press any key to continue" << endl;
 		_getch();
-		debug_file(6, 0);
 return 0;
 }

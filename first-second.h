@@ -24,9 +24,4 @@ int neyron4(double n1, double n2, double n3, double n4, double n5, double n6, do
 	ney4 = n1 * w1 / chislo_zv + n2 * w2 / chislo_zv + n3 * w3 / chislo_zv + n4 * w4 / chislo_zv + n5 * w5 / chislo_zv + n6 * w6 / chislo_zv + n7 * w7 / chislo_zv + n8 * w8 / chislo_zv + n9 * w9 / chislo_zv + n10 * w10 / chislo_zv;
 	return ney4 * chislo_zv;
 }
-
-
-void allClear() {
-
-}
 #endif
